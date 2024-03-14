@@ -1,0 +1,86 @@
+---
+import Section from "../Section.astro"
+import HTML from "@/icons/html.astro"
+import CSS from "@/icons/css.astro"
+import JavaScript from "@/icons/javascript.astro"
+import TypeScript from "@/icons/type.astro"
+import React from "@/icons/react.astro"
+import Node from "@/icons/node.astro"
+import MySQL from "@/icons/sql.astro"
+import Jira from "@/icons/jira.astro"
+import Git from "@/icons/git.astro"
+import GitHub from "@/icons/GitHub.astro"
+import Tailwind from "@/icons/tailwind.astro"
+import Next from "@/icons/next.astro"
+import Figma from "@/icons/figma.astro"
+import { skills } from "@cv"
+import { languages } from "@cv"
+import type { Code } from "astro:components"
+
+const SKILLS_ICONS: Record<string, any> = {
+  HTML,
+  CSS,
+  JavaScript,
+  TypeScript,
+  React,
+  Node,
+  MySQL,
+  Git,
+  GitHub,
+  Next,
+  Tailwind,
+  Jira,
+  Figma,
+}
+---
+
+<Section title="Habilidades y conocimientos">
+  <ul>
+    {
+      skills.map(({ name, keywords }) => {
+        const iconName = name === "Next.js" ? "Next" : name
+        const Icon = SKILLS_ICONS[iconName]
+
+        return (
+          <li title={keywords}>
+            {Icon && <Icon />} <span>{name}</span>
+          </li>
+        )
+      })
+    }
+  </ul>
+</Section>
+<Section title="Idiomas">
+  <ul>
+    {
+      languages.map(({ language, fluency }) => {
+        return (
+          <li>
+            <p>{language}</p>
+            <span>{fluency}</span>
+          </li>
+        )
+      })
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  li {
+    align-items: center;
+    background: #eee;
+    border-radius: 6px;
+    color: black;
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: 500;
+    gap: 4px;
+    padding: 0.2rem 0.6rem;
+  }
+</style>

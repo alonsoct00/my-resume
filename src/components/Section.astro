@@ -1,0 +1,13 @@
+---
+// se ejecuta en el servidor o en build time <----
+const { title, id } = Astro.props
+---
+
+<section id={id}>
+  {title && <h2>{title}</h2>}
+  <slot />
+</section>
+
+<script>
+  // se ejecuta en el cliente <----
+</script>

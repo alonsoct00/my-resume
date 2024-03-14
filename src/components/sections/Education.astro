@@ -1,0 +1,85 @@
+---
+import Section from "../Section.astro"
+
+import { education } from "@cv"
+import { courses } from "@cv"
+import { certifications } from "@cv";
+---
+
+<Section title="Educación" id="education" class="educaction">
+  <ul id="institution_list">
+    {
+      education.map(({ institution, startDate, endDate, area, studyType, logo}) => {
+        const startYear = new Date(startDate).getFullYear()
+        const endYear =
+          endDate != null ? new Date(endDate).getFullYear() : "Actual"
+        const years = `${startYear} - ${endYear}`
+
+        return (
+          <li class="institution-item">
+            <article>
+              <header>
+                <div class="header_school">
+                  <span class="school_item_image"><img src={logo} alt={institution}></span>
+                <div>
+                  <h3>{institution}</h3>
+                  <p><span>{studyType}</span> en {area}</p>
+                </div>
+
+                </div>
+
+                <time>{years}</time>
+              </header>
+
+              <footer>
+
+              </footer>
+            </article>
+          </li>
+        )
+      })
+    }
+  </ul>
+</Section>
+<Section title="Certificados y Cursos" id="courses" class="educaction">
+  <ul id="courses_list">
+    {
+      courses.map(({ courseName, institution, date, url}) => {
+        return (
+          <li class="course_item">
+            <article>
+              <header>
+                <h3>{courseName}</h3>
+                <time>{date}</time>
+              </header>
+              <footer>
+                <p><a href={url} title={courseName} target="_blank">{institution}</a></p>
+              </footer>
+            </article>
+          </li>
+        )
+      })
+    }
+    </ul>
+    <ul id="certifications_list">
+      {
+        certifications.map(({ name, date, issuer, license, url}) => {
+          return (
+            <li class="certification_item">
+              <article>
+                <header>
+                  <h3>{name}</h3>
+                  <time>{date}</time>
+                </header>
+
+                <footer>
+                  <p><a href={url} title="name" target="_blank">{issuer}</a> <span>{license}</span></p>
+                </footer>
+              </article>
+            </li>
+          )
+        })
+      }
+    </ul>
+
+</Section>

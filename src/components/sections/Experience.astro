@@ -1,0 +1,53 @@
+---
+import Section from "../Section.astro"
+
+import { work } from "@cv"
+---
+
+<Section title="Experiencia laboral" id="experience">
+  <ul id="work_list">
+    {
+      work.map(
+        ({ name, startDate, endDate, position, summary, highlights, url, type, logo }) => {
+          const startYear = new Date(startDate).getFullYear()
+          const endYear =
+            endDate != null ? new Date(endDate).getFullYear() : "Actual"
+          const years = `${startYear} - ${endYear}`
+
+          return (
+            <li class="work_item">
+              <article>
+                <header>
+                  <div>
+                      <a href={url} title={`Ver ${name}`} target="_blank">
+                        <span class="work_item_image"><img src={logo} alt={name}></span>
+                        <h2>
+                          {name} <br/>
+                          <span>{position}</span>
+                        </h2>
+                      </a>
+                  </div>
+                  <div class="work-info">
+                    <time>{years}</time>
+                    <p>{type}</p>
+                  </div>
+                </header>
+                <footer>
+                  <p>{summary}</p>
+                  {highlights && (
+                  <ul id="work_highlights">
+                    {highlights.map((highlight, index) => (
+                      <li key={index}>{highlight}</li>
+                    ))}
+                  </ul>
+                  )}
+                </footer>
+              </article>
+            </li>
+          )
+        }
+      )
+    }
+  </ul>
+</Section>
+

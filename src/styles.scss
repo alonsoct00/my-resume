@@ -1,0 +1,213 @@
+section {
+    max-width: 940px;
+    margin: 0 auto 48px;
+
+    h2 {
+        margin-bottom: 20px;
+        ;
+    }
+}
+
+h2 {
+    margin-bottom: 8px;
+    font-weight: 700;
+    line-height: 1.5;
+    font-size: 1.5rem;
+}
+
+@media (width <=700px) {
+    section {
+        margin-bottom: 40px;
+    }
+}
+
+#summary {
+    .summary-text {
+        font-size: 16px;
+        color: #101010;
+    }
+}
+
+#experience {
+    #work_list {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        article a {
+            color: #111;
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+        }
+
+        article a:hover {
+            text-decoration: underline;
+        }
+
+        article h2 {
+            color: #222;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: normal;
+            margin-bottom: 4px;
+        }
+
+        article h2 span {
+            color: #101010;
+            font-size: 16px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+
+        footer {
+            p {
+                color: #101010;
+                font-size: 14px;
+            }
+        }
+
+        .work_item_image {
+            display: inline-flex;
+            width: 50px;
+            height: auto;
+        }
+
+        .work-info {
+            text-align: right;
+            color: #555;
+
+            p {
+                font-size: 12px;
+            }
+        }
+
+        time {
+            font-size: 0.85rem;
+            min-width: 102px;
+        }
+
+        #work_highlights {
+            padding-left: 18px;
+            list-style-type: disc;
+            margin: 8px auto 4px 0px;
+            color: #333;
+
+            li {
+                display: list-item;
+                margin-bottom: 4px;
+                line-height: normal;
+                font-size: 13px;
+                color: #333;
+            }
+        }
+
+    }
+
+    @media (width <=700px) {
+        time {
+            text-align: right;
+        }
+        #work_list{
+            article {
+                a {
+                    align-items: flex-start;
+                }
+            }
+            .work-info{
+display: none;
+            }
+        }
+    }
+}
+
+#education {
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    article h3 {
+        font-weight: 600;
+        color: #101010;
+        font-size: 18px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 4px;
+    }
+
+    time {
+        color: #555;
+        font-size: 0.85rem;
+        min-width: 102px;
+    }
+
+    .header_school {
+        display: flex;
+        align-items: center;
+    }
+
+    .school_item_image {
+        display: inline-flex;
+        width: 50px;
+        height: auto;
+    }
+
+    @media (width <=700px) {
+        time {
+            text-align: right;
+        }
+        .header_school {
+            align-items: flex-start;
+        }
+        article h3 {
+            font-weight: 600;
+            color: #101010;
+            font-size: 16px;
+        }
+    }
+}
+
+#courses {
+    ul {
+        margin-bottom: 20px;
+        display: grid;
+        li {
+            margin-bottom: 16px;;
+            article {
+                header {
+                    h3 {
+                        font-weight: 600;
+                        color: #101010;
+                        font-size: 18px;
+                    }
+
+                    time {
+                        color: #555;
+                        font-size: 0.85rem;
+                        min-width: 102px;
+                        float: right;
+                        text-align: right;
+                    }
+                }
+
+                footer {
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+        }
+    }
+}

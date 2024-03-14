@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Example of SCSS variables
+$primary-color: #000000;
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  color: $primary-color;
+}
