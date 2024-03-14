@@ -13,9 +13,17 @@ import GitHub from "@/icons/GitHub.astro"
 import Tailwind from "@/icons/tailwind.astro"
 import Next from "@/icons/next.astro"
 import Figma from "@/icons/figma.astro"
-import { skills } from "@cv"
-import { languages } from "@cv"
 import type { Code } from "astro:components"
+
+import { skills as skills_es, languages as languages_es } from "@cv"
+import { skills as skills_en, languages as languages_en } from "@cv_en"
+
+const languaged = "es";
+
+const skills = languaged === "es" ? skills_es : skills_en;
+const languages = languaged === "es" ? languages_es : languages_en;
+
+
 
 const SKILLS_ICONS: Record<string, any> = {
   HTML,

@@ -1,7 +1,13 @@
 ---
 import Section from "../Section.astro"
 
-import { work } from "@cv"
+
+import { work as work_es } from "@cv"
+import { work as work_en } from "@cv_en"
+
+const language = "es";
+
+const work = language === "es" ? work_es : work_en;
 ---
 
 <Section title="Experiencia laboral" id="experience">

@@ -1,9 +1,14 @@
 ---
 import Section from "../Section.astro"
 
-import { education } from "@cv"
-import { courses } from "@cv"
-import { certifications } from "@cv";
+import { education as education_es, courses as courses_es, certifications as certifications_es } from "@cv"
+import { education as education_en, courses as courses_en, certifications as certifications_en } from "@cv_en"
+
+const language = "es";
+
+const education = language === "es" ? education_es : education_en;
+const courses = language === "es" ? courses_es : courses_en;
+const certifications = language === "es" ? certifications_es : certifications_en;
 ---
 
 <Section title="Educación" id="education" class="educaction">

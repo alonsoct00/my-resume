@@ -1,5 +1,6 @@
 ---
-import { basics } from "@cv"
+import { basics as basics_es } from "@cv"
+import { basics as basics_en } from "@cv_en"
 import 'src/styles.scss';
 
 interface Props {
@@ -8,8 +9,11 @@ interface Props {
 
 const { title } = Astro.props
 
-const { image, summary, url } = basics
+const language = "es";
 
+const basics = language === "es" ? basics_es : basics_en;
+const { name, label } = basics;
+const { image, summary, url } = basics_es
 
 ---
 
