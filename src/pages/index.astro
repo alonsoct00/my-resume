@@ -9,8 +9,15 @@ import Projects from "@/components/sections/Projects.astro"
 import Skills from "@/components/sections/Skills.astro"
 import KeyboardManager from "@/components/KeyboardManager.astro"
 
-import { basics } from "@cv"
-const { name, label } = basics
+import { basics as basics_es } from "@cv"
+import { basics as basics_en } from "@cv_en"
+
+const language = "es";
+
+const basics = language === "es" ? basics_es : basics_en;
+const { name, label } = basics;
+
+
 ---
 
 <Layout title={`Portafolio de ${name} - ${label}`}>

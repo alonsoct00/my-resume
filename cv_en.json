@@ -1,5 +1,5 @@
 {
-  "basics_en": {
+  "basics": {
     "name": "Alonso Caballero",
     "label": "Front-End Web Developer with focus on UX/UI",
     "image": "/me.webp",
@@ -280,7 +280,7 @@
       "isActive": true,
       "description": "Website created for a HR consulting firm in the USA",
       "highlights": [
-        "100% free"
+        "HTML5, CSS3"
       ],
       "url": "https://alonsoct00.github.io/websitehr/"
     },

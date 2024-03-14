@@ -1,7 +1,10 @@
 ---
 import Section from "../Section.astro"
 
-import { basics } from "@cv"
+import { basics as basics_es } from "@cv"
+import { basics as basics_en } from "@cv_en"
+const language = "es";
+const basics = language === "es" ? basics_es : basics_en;
 const { summary } = basics
 ---
 
