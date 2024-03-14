@@ -40,9 +40,10 @@ const SKILLS_ICONS: Record<string, any> = {
       skills.map(({ name, keywords }) => {
         const iconName = name === "Next.js" ? "Next" : name
         const Icon = SKILLS_ICONS[iconName]
+        const keyWords = keywords.join('')
 
         return (
-          <li title={keywords}>
+          <li title={keyWords}>
             {Icon && <Icon />} <span>{name}</span>
           </li>
         )
