@@ -1,0 +1,339 @@
+{
+  "basics_en": {
+    "name": "Alonso Caballero",
+    "label": "Front-End Web Developer with focus on UX/UI",
+    "image": "/me.webp",
+    "email": "g.alonso.ct@gmail.com",
+    "phone": "+52 5513 979212",
+    "url": "https://alonsoct.dev",
+    "summary": "I have over 10 years of experience in web development and a broad background in Front-End/UI-UX development and project management. I excel in creating intuitive and attractive web interfaces. \n I have worked with technologies such as HTML5, CSS3, JavaScript, Bootstrap, ReactJS, and TailwindCSS, collaborating closely with UX teams to optimize user experience in the developed products.",
+    "location": {
+      "address": "",
+      "postalCode": "08600",
+      "city": "Mexico City",
+      "countryCode": "MX",
+      "region": "Iztacalco"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "alonsoct",
+        "url": "https://www.linkedin.com/in/alonsoct/"
+      },
+      {
+        "network": "GitHub",
+        "username": "alonsoct00",
+        "url": "https://github.com/alonsoct00"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "GAIA Design",
+      "position": "Front-End Web Developer",
+      "url": "https://www.gaiadesign.com.mx/",
+      "startDate": "2019-03-15",
+      "endDate": "2024-03-01",
+      "type": "Remote - Full-time",
+      "logo": "/gaia_design_logo.jpeg",
+      "summary": "At GAIA Design, I started my career developing landing pages in Magento for promotional campaigns, managing their creation and updates to optimize user experience. I closely collaborated with the UX team, contributing to the development of the new website and the transition to Magento 2. Together, we improved key aspects of the site, such as the homepage and checkout flow, using technologies like PHP, HTML5, CSS3, Bootstrap, JavaScript, and jQuery. \n Later, I took on a role in transitioning to a headless architecture, using new technologies like React.js, NextJS, and TailwindCSS, among others. My work included developing prototypes and components to facilitate a smooth migration to a more scalable system. This experience at GAIA Design allowed me to progress professionally, significantly contributing to the evolution of their digital platform.",
+      "highlights": [
+        "Development of web pages for promotions and e-mail marketing strategies, increasing purchases on the website.",
+        "Optimization of website performance, improving user experience during their purchase.",
+        "Migration from Magento to Headless, improving website optimization and loading."
+      ]
+    },
+    {
+      "name": "Sales Ready Marketing",
+      "position": "Website Content Manager & Webflow Developer",
+      "url": "https://www.srm.mx/",
+      "startDate": "2020-06-01",
+      "endDate": "2023-03-01",
+      "type": "Remote - Contract",
+      "logo": "/salesreadymarketing_logo.jpeg",
+      "summary": "As a web development expert, I have expanded my skills by incorporating innovative tools like Webflow for efficient website management. With Webflow, I can design and develop stunning, fully functional websites.",
+      "highlights": []
+    },
+    {
+      "name": "Interjet",
+      "position": "Front-End Web Developer",
+      "startDate": "2016-01-01",
+      "endDate": "2019-04-01",
+      "type": "Full-time",
+      "logo": "/interjet_air_lines_logo.jpeg",
+      "summary": "In my role as a front-end developer in the UX area for Interjet, I focused on applying my web development knowledge to enrich the digital experience of users. Using advanced technologies like HTML5, CSS3, JavaScript, and Bootstrap 3, I designed responsive and visually appealing web interfaces, focusing on improving usability and user interaction with the website. My involvement extended beyond technical development to include creating creative solutions for E-mail marketing campaigns, using tools like Oracle Responsys to develop effective mailings that captured attention and encouraged greater audience interaction.",
+      "highlights": []
+    },
+    {
+      "name": "Liverpool",
+      "position": "Front-End Web Developer",
+      "startDate": "2013-10-01",
+      "endDate": "2016-07-01",
+      "type": "Full-time",
+      "logo": "/liver.jpeg",
+      "summary": "At Liverpool, I played a key role in strengthening their digital platform, especially through the creation of microsites and migration to Oracle BCC & ATG Web Commerce, improving online store management. I participated in improving the checkout process, collaborating with international teams to efficiently implement new solutions. I developed landing pages for featured brands, maintaining and optimizing the online store. I contributed to the implementation of UX/UI practices to enhance the user experience and contributed to the launch of multi-sites (Williams-Sonoma, Pottery Barn, West-Elm), expanding my technical skills.",
+      "highlights": []
+    },
+    {
+      "name": "CTIN (Telmex Technology and Innovation Center)",
+      "position": "Front-End Web Developer",
+      "startDate": "2011-11-01",
+      "endDate": "2013-07-01",
+      "type": "Intern",
+      "logo": "/ctin.jpeg",
+      "summary": "During my time as an intern at CTIN, I had the opportunity to delve into various aspects of the digital world. My main focus was web development, where I worked with key technologies like HTML5, CSS3, JavaScript, and jQuery to create interactive and visually appealing websites. Additionally, I had the privilege of conducting training workshops at Aldea Digital TELMEX, where I shared my knowledge and experiences with other digital enthusiasts, helping them develop their skills and explore new opportunities in the technology field. My time as an intern at CTIN was an enriching experience that allowed me to grow both personally and professionally, acquiring valuable skills and expanding my knowledge in the world of technology and digital innovation.",
+      "highlights": []
+    },
+    {
+      "name": "Freelance",
+      "position": "Front-End Web Developer",
+      "url": "https://ufoconsultingmx.com/",
+      "startDate": "2008",
+      "endDate": null,
+      "type": "Freelance",
+      "logo": "/alonsoct_me_logo.jpeg",
+      "summary": "As a freelance web development and HTML layout specialist, I specialize in creating visually impactful and functional static websites. My focus is on using technologies like HTML5, CSS3, Bootstrap, and JavaScript frameworks to design intuitive and attractive web experiences. I have gained experience in using content management systems (CMS) like WordPress and Joomla, allowing me to create and maintain dynamic and easily updatable websites for my clients. My versatile approach allows me to adapt to the specific needs of each project and client, offering customized and effective solutions.",
+      "highlights": []
+    }
+  ],
+  "education": [{
+    "institution": "National Polytechnic Institute - UPIICSA",
+    "url": "https://www.ipn.mx/",
+    "area": "Computer Science",
+    "studyType": "Bachelor's Degree",
+    "startDate": "2007-08-01",
+    "endDate": "2013-01-01",
+    "score": "4.0",
+    "logo": "/ipn.jpeg"
+  }],
+  "courses": [
+  {
+    "courseName": "E-Commerce",
+    "institution": "PROTECO - UNAM",
+    "date": "2022",
+    "url": "/docs/ecommerce-proteco-unam.jpeg"
+  },
+  {
+    "courseName": "E-Commerce",
+    "institution": "Google",
+    "date": "2020",
+    "url": "/docs/certificado-e-commerce.pdf"
+  },
+  {
+    "courseName": "Web Development",
+    "institution": "Google",
+    "date": "2018",
+    "url": "/docs/desarrollo_web_google.pdf"
+  }],
+  "certifications": [
+  {
+    "name": "UX Design for Products and Services",
+    "date": "2021",
+    "issuer": "UNAM",
+    "license": "DGTIC - 7697",
+    "url": "https://sigeco.cuaed.unam.mx/valida.php"
+  },
+  {
+    "name": "User Experience Design",
+    "date": "2024",
+    "issuer": "Google",
+    "license": "In progress...",
+    "url": "#"
+  }],
+  "skills": [
+    {
+      "name": "HTML",
+      "level": "Master",
+      "keywords": [
+        "Web Development", "Frontend"
+      ]
+    },
+    {
+      "name": "CSS",
+      "level": "Master",
+      "keywords": [
+        "Web Development", "Frontend", "Responsive Design"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development", "Frontend", "Backend", "Fullstack"
+      ]
+    },
+    {
+      "name": "Tailwind",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development", "Frontend", "CSS Framework", "Responsive Design"
+      ]
+    },
+    {
+      "name": "React",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development", "Frontend", "JavaScript Library", "UI"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Basic",
+      "keywords": [
+        "Web Development", "Frontend", "Backend", "JavaScript"
+      ]
+    },
+    {
+      "name": "MySQL",
+      "level": "Basic",
+      "keywords": [
+        "Databases", "SQL", "Data Storage", "Backend"
+      ]
+    },
+    {
+      "name": "Git",
+      "level": "Advanced",
+      "keywords": [
+        "Version Control", "Collaboration", "Source Code"
+      ]
+    },
+    {
+      "name": "GitHub",
+      "level": "Advanced",
+      "keywords": [
+        "Version Control", "Collaboration", "Source Code", "Git"
+      ]
+    },
+    {
+      "name": "Jira",
+      "level": "Advanced",
+      "keywords": [
+        "Project Management"
+      ]
+    },
+    {
+      "name": "Figma",
+      "level": "Basic",
+      "keywords": [
+        "UX", "UI"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Technical"
+    }
+  ],
+  "interests": [{
+    "name": "Wildlife",
+    "keywords": [
+      "Ferrets",
+      "Unicorns"
+    ]
+  }],
+  "projects": [
+    {
+      "name": "FONIMA",
+      "isActive": false,
+      "description": "Website for the FONIMA festival",
+      "highlights": [
+        "HTML5, CSS3, JavaScript, Bootstrap"
+      ],
+      "url": "https://alonsoct00.github.io/fonima-web/"
+    },
+    {
+      "name": "WNDH",
+      "isActive": true,
+      "description": "Website under construction",
+      "highlights": [
+        "HTML5, CSS3, JavaScript"
+      ],
+      "url": "https://alonsoct00.github.io/wndh/oldindex.html"
+    },
+    {
+      "name": "Casiopea",
+      "isActive": true,
+      "description": "Website created for an animation and design production company.",
+      "highlights": [
+        "HTML5, CSS3, JavaScript"
+      ],
+      "url": "https://casiopea.mx/",
+      "github": "https://github.com/alonsoct00/Casiopea-website"
+    },
+    {
+      "name": "BMI Calculator",
+      "isActive": false,
+      "description": "Calculator for a nutritionist integrated into their WordPress",
+      "highlights": [
+        "HTML5, CSS3, JavaScript"
+      ],
+      "url": "https://alonsoct00.github.io/BMI-calculator-dietamx/bmi-calc.html",
+      "github": "https://github.com/alonsoct00/BMI-calculator-dietamx/blob/main/bmi-calc.html"
+    },
+    {
+      "name": "Additional HR",
+      "isActive": true,
+      "description": "Website created for a HR consulting firm in the USA",
+      "highlights": [
+        "100% free"
+      ],
+      "url": "https://alonsoct00.github.io/websitehr/"
+    },
+    {
+      "name": "IMPSA",
+      "isActive": true,
+      "description": "Website created with Webflow",
+      "highlights": [
+        "Webflow"
+      ],
+      "url": "https://www.impsa.com.mx/index",
+      "webflow": "https://www.impsa.com.mx/index"
+    },
+    {
+      "name": "Bennets",
+      "isActive": true,
+      "description": "Website created with Webflow",
+      "highlights": [
+        "Webflow"
+      ],
+      "url": "https://www.limpiezabennetts.com.mx/",
+      "webflow": "https://www.limpiezabennetts.com.mx/"
+    },
+    {
+      "name": "Graff",
+      "isActive": true,
+      "description": "Website created with Webflow",
+      "highlights": [
+        "Webflow"
+      ],
+      "url": "https://www.graff.mx/",
+      "webflow": "https://www.graff.mx/"
+    },
+    {
+      "name": "SRM",
+      "isActive": true,
+      "description": "Website created with Webflow",
+      "highlights": [
+        "Webflow"
+      ],
+      "url": "https://www.srm.mx/",
+      "webflow": "https://www.srm.mx/"
+    }
+    ,
+    {
+      "name": "Compucentro",
+      "isActive": true,
+      "description": "Sitio web realizado con Webflow",
+      "highlights": [
+        "Webflow"
+      ],
+      "url": "https://www.compucentro.com.mx/",
+      "webflow": "https://www.compucentro.com.mx/"
+    }
+  ]
+}
