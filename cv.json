@@ -35,7 +35,7 @@
       "startDate": "2019-03-15",
       "endDate": "2024-03-01",
       "type": "Remoto - Tiempo completo",
-      "logo": "/public/gaia_design_logo.jpeg",
+      "logo": "gaia_design_logo.jpeg",
       "summary": "En GAIA Design, inicié mi carrera desarrollando landing pages en Magento para campañas promocionales, gestionando su creación y actualización para optimizar la experiencia de usuario. Colaboré estrechamente con el equipo de UX, contribuyendo en el desarrollo del nuevo sitio web y en la transición a Magento 2. En equipo mejoramos los aspectos clave del sitio, como la página de inicio y el flujo de checkout, utilizando tecnologías como PHP, HTML5, CSS3, Bootstrap, JavaScript y jQuery. \n Posteriormente, asumí un rol en la transición hacia una arquitectura headless, utilizando nuevas tecnologías como React.js, NextJS, y TailwindCSS, entre otras. Mi trabajo incluyó el desarrollo de prototipos y componentes para facilitar una migración fluida a un sistema más escalable. Esta experiencia en GAIA Design me permitió avanzar profesionalmente, aportando significativamente a la evolución de su plataforma digital.",
       "highlights": [
         "Desarrollo de páginas web para promociones, y estrategias de e-mail marketing incrementando las compras en el sitio web.",
@@ -50,7 +50,7 @@
       "startDate": "2020-06-01",
       "endDate": "2023-03-01",
       "type": "Remoto - Contract",
-      "logo": "/public/salesreadymarketing_logo.jpeg",
+      "logo": "salesreadymarketing_logo.jpeg",
       "summary": "Como experto en desarrollo web, he ampliado mis habilidades incorporando herramientas innovadoras como Webflow para la administración eficiente de sitios web. Con Webflow, puedo diseñar y desarrollar sitios web impresionantes y totalmente funcionales.",
       "highlights": []
     },
@@ -60,7 +60,7 @@
       "startDate": "2016-01-01",
       "endDate": "2019-04-01",
       "type": "Tiempo completo",
-      "logo": "/public/interjet_air_lines_logo.jpeg",
+      "logo": "interjet_air_lines_logo.jpeg",
       "summary": "En mi rol como desarrollador front-end en el área de UX para Interjet, me dediqué a aplicar mis conocimientos en desarrollo web con el fin de enriquecer la experiencia digital de los usuarios. Haciendo uso de tecnologías avanzadas como HTML5, CSS3, JavaScript y Bootstrap 3, logré diseñar interfaces web receptivas y visualmente atractivas, centradas en mejorar la usabilidad y la interacción del usuario con el sitio web. Mi participación no solo se limitó al desarrollo técnico, sino que también abarcó la creación de soluciones creativas para campañas de E-mail marketing, utilizando herramientas como Oracle Responsys para desarrollar mailings efectivos que lograron captar la atención y fomentar una mayor interacción de nuestra audiencia.",
       "highlights": []
     },
@@ -70,7 +70,7 @@
       "startDate": "2013-10-01",
       "endDate": "2016-07-01",
       "type": "Tiempo completo",
-      "logo": "/public/liver.jpeg",
+      "logo": "liver.jpeg",
       "summary": "En Liverpool, jugué un rol clave en el fortalecimiento de su plataforma digital, especialmente a través de la creación de micrositios y la migración a Oracle BCC & ATG Web Commerce, mejorando la gestión de la tienda en línea. Participé en la mejora del proceso de checkout, colaborando con equipos internacionales para implementar eficientemente nuevas soluciones. Desarrollé landing pages para marcas destacadas, manteniendo y optimizando la tienda en línea. Aporté a la implementación de prácticas UX/UI para enriquecer la experiencia del usuario y contribuí al lanzamiento de mult-sitios (Williams-Sonoma, Pottery Barn, West-Elm), ampliando mis competencias técnicas.",
       "highlights": []
     },
@@ -80,7 +80,7 @@
       "startDate": "2011-11-01",
       "endDate": "2013-07-01",
       "type": "Becario",
-      "logo": "/public/ctin.jpeg",
+      "logo": "ctin.jpeg",
       "summary": "Durante mi tiempo como becario en CTIN, tuve la oportunidad de sumergirme en varios aspectos del mundo digital. Mi enfoque principal fue el desarrollo web, donde trabajé con tecnologías clave como HTML5, CSS3, JavaScript y jQuery para crear sitios web interactivos y visualmente atractivos. Además, tuve el privilegio de impartir talleres de capacitación en Aldea Digital TELMEX, donde compartí mis conocimientos y experiencias con otros entusiastas del mundo digital, ayudándolos a desarrollar sus habilidades y explorar nuevas oportunidades en el ámbito tecnológico. Mi tiempo como becario en CTIN fue una experiencia enriquecedora que me permitió crecer tanto personal como profesionalmente, adquiriendo habilidades valiosas y ampliando mi conocimiento en el mundo de la tecnología y la innovación digital.",
       "highlights": []
     },
@@ -91,7 +91,7 @@
       "startDate": "2008",
       "endDate": null,
       "type": "Freelance",
-      "logo": "/public/alonsoct_me_logo.jpeg",
+      "logo": "alonsoct_me_logo.jpeg",
       "summary": "Como freelance en desarrollo web y maquetación HTML, me especializo en la creación de sitios web estáticos de alto impacto visual y funcionalidad. Mi enfoque se centra en utilizar tecnologías como HTML5, CSS3, Bootstrap y JavaScript frameworks para diseñar experiencias web intuitivas y atractivas. He adquirido experiencia en el uso de sistemas de gestión de contenidos (CMS) como WordPress y Joomla, lo que me permitió crear y mantener sitios web dinámicos y fáciles de actualizar mis clientes. Mi enfoque versátil me permite adaptarme a las necesidades específicas de cada proyecto y cliente, ofreciendo soluciones personalizadas y efectivas.",
       "highlights": []
     }
@@ -115,7 +115,7 @@
     "startDate": "2007-08-01",
     "endDate": "2013-01-01",
     "score": "4.0",
-    "logo": "/public/ipn.jpeg"
+    "logo": "ipn.jpeg"
   }],
   "awards": [{
     "title": "Award",
@@ -128,19 +128,19 @@
     "courseName": "E-Commerce",
     "institution": "PROTECO - UNAM",
     "date": "2022",
-    "url": "/public/docs/ecommerce-proteco-unam.jpeg"
+    "url": "docs/ecommerce-proteco-unam.jpeg"
   },
   {
     "courseName": "E-Commerce",
     "institution": "Google",
     "date": "2020",
-    "url": "/public/docs/certificado-e-commerce.pdf"
+    "url": "docs/certificado-e-commerce.pdf"
   },
   {
     "courseName": "Desarrollo Web",
     "institution": "Google",
     "date": "2018",
-    "url": "/public/docs/desarrollo_web_google.pdf"
+    "url": "docs/desarrollo_web_google.pdf"
   }],
   "certifications": [
   {
