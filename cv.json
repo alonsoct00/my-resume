@@ -57,6 +57,7 @@
     {
       "name": "Interjet",
       "position": "Desarrollador Web Front End",
+      "url": "#",
       "startDate": "2016-01-01",
       "endDate": "2019-04-01",
       "type": "Tiempo completo",
@@ -67,6 +68,7 @@
     {
       "name": "Liverpool",
       "position": "Desarrollador Web Front End",
+      "url": "https://liverpool.com.mx/",
       "startDate": "2013-10-01",
       "endDate": "2016-07-01",
       "type": "Tiempo completo",
@@ -77,6 +79,7 @@
     {
       "name": "CTIN (Centro de Tecnología e innovación Telmex)",
       "position": "Desarrollador Web Front End",
+      "url": "http://www.ctinmx.com/",
       "startDate": "2011-11-01",
       "endDate": "2013-07-01",
       "type": "Becario",
