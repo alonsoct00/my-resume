@@ -268,8 +268,18 @@
       "highlights": [
         "HTML5, CSS3, JavaScript"
       ],
-      "url": "https://alonsoct00.github.io/BMI-calculator-dietamx/bmi-calc.html",
+      "url": "#",
       "github": "https://github.com/alonsoct00/BMI-calculator-dietamx/blob/main/bmi-calc.html"
+    },
+    {
+      "name": "Challenge GBM",
+      "isActive": false,
+      "description": "Un challenge de GBM para participar en la creación de sus landing pages",
+      "highlights": [
+        "HTML5, CSS3, JavaScript, Bootstrap, jQuery"
+      ],
+      "url": "#",
+      "github": "https://alonsoct00.github.io/gbm-demo/"
     },
     {
       "name": "Additional HR",
