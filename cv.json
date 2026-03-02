@@ -6,7 +6,7 @@
     "email": "g.alonso.ct@gmail.com",
     "phone": "+52 5513 979212",
     "url": "https://alonsoct.dev",
-    "summary": "Cuento con más de 10 años de experiencia en desarrollo de sitios web y una amplia trayectoria en desarrollo Front-End/UI-UX y administración de proyectos, me destaco por mi habilidad para crear interfaces web intuitivas y atractivas. \n He trabajado con tecnologías como HTML5, CSS3, JavaScript, Bootstrap, ReactJS y TailwindCSS, colaborando estrechamente con equipos de UX para optimizar la experiencia del usuario en los productos desarrollados.",
+    "summary": "Soy Frontend Developer con más de 10 años creando experiencias web optimizadas, rápidas y útiles. \n Me gusta unir diseño, negocio y código: React, Vue o Astro cuando se necesita robustez; Webflow, WordPress o Shopify cuando importa la velocidad de ejecución. Trabajo con datos, SEO técnico y experimentación A/B (VWO) para mejorar lo que ya existe, no solo lanzar lo nuevo. \n ",
     "location": {
       "address": "",
       "postalCode": "08600",
@@ -28,6 +28,20 @@
     ]
   },
   "work": [
+        {
+      "name": "Viajes el Corte Inglés México",
+      "position": "Desarrollador Web Front End",
+      "url": "https://viajesci.liverpool.com.mx/",
+      "startDate": "2024-06-15",
+      "type": "Híbrido - Tiempo completo",
+      "logo": "/veci-logo.jpeg",
+      "summary": "En Viajes el Corte Inglés México, inicié mi carrera desarrollando landing pages en Magento para campañas promocionales, gestionando su creación y actualización para optimizar la experiencia de usuario. Colaboré estrechamente con el equipo de UX, contribuyendo en el desarrollo del nuevo sitio web y en la transición a Magento 2. En equipo mejoramos los aspectos clave del sitio, como la página de inicio y el flujo de checkout, utilizando tecnologías como PHP, HTML5, CSS3, Bootstrap, JavaScript y jQuery. \n Posteriormente, asumí un rol en la transición hacia una arquitectura headless, utilizando nuevas tecnologías como React.js, NextJS, y TailwindCSS, entre otras. Mi trabajo incluyó el desarrollo de prototipos y componentes para facilitar una migración fluida a un sistema más escalable. Esta experiencia me permitió avanzar profesionalmente, aportando significativamente a la evolución de su plataforma digital.",
+      "highlights": [
+        "Desarrollo de páginas web para promociones, y estrategias de e-mail marketing incrementando las compras en el sitio web.",
+        "Optimización del rendimiento en el sitio web, mejorando la experiencia del usuario durante su compra.",
+        "Migración de Magento a Headless mejorando la optimización y carga del sitio web."
+      ]
+    },
     {
       "name": "GAIA Design",
       "position": "Desarrollador Web Front End",
@@ -151,84 +165,32 @@
     "url": "#"
   }],
   "skills": [
-    {
-      "name": "HTML",
-      "level": "Master",
-      "keywords": [
-        "Desarrollo Web", "Frontend"
-      ]
-    },
-    {
-      "name": "CSS",
-      "level": "Master",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Diseño Responsive"
-      ]
-    },
-    {
-      "name": "JavaScript",
-      "level": "Intermedio",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "Fullstack"
-      ]
-    },
-    {
-      "name": "Tailwind",
-      "level": "Intermedio",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"
-      ]
-    },
-    {
-      "name": "React",
-      "level": "Intermedio",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
-      ]
-    },
-    {
-      "name": "TypeScript",
-      "level": "Básico",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "JavaScript"
-      ]
-    },
-    {
-      "name": "MySQL",
-      "level": "Básico",
-      "keywords": [
-        "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
-      ]
-    },
-    {
-      "name": "Git",
-      "level": "Avanzado",
-      "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente"
-      ]
-    },
-    {
-      "name": "GitHub",
-      "level": "Avanzado",
-      "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente", "Git"
-      ]
-    },
-    {
-      "name": "Jira",
-      "level": "Avanzado",
-      "keywords": [
-        "Gestión de proyectos"
-      ]
-    },
-    {
-      "name": "Figma",
-      "level": "Básico",
-      "keywords": [
-        "UX", "UI"
-      ]
-    }
-  ],
+  { "name": "HTML", "level": "Master", "keywords": ["Desarrollo Web", "Frontend"] },
+  { "name": "CSS", "level": "Master", "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"] },
+  { "name": "JavaScript", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"] },
+  { "name": "TypeScript", "level": "Básico", "keywords": ["Desarrollo Web", "Frontend", "Backend", "JavaScript"] },
+
+  { "name": "Tailwind", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"] },
+  { "name": "SCSS", "level": "Intermedio", "keywords": ["CSS", "Preprocesador"] },
+  { "name": "LESS", "level": "Intermedio", "keywords": ["CSS", "Preprocesador"] },
+
+  { "name": "React", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"] },
+  { "name": "VueJS", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "JavaScript"] },
+  { "name": "Astro", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "SSG"] },
+
+  { "name": "WordPress", "level": "Avanzado", "keywords": ["CMS", "Desarrollo Web"] },
+  { "name": "Webflow", "level": "Avanzado", "keywords": ["CMS", "No-code", "Desarrollo Web"] },
+
+  { "name": "MySQL", "level": "Básico", "keywords": ["Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"] },
+
+  { "name": "Git", "level": "Avanzado", "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"] },
+  { "name": "GitHub", "level": "Avanzado", "keywords": ["Control de Versiones", "Colaboración", "Código Fuente", "Git"] },
+  { "name": "Jira", "level": "Avanzado", "keywords": ["Gestión de proyectos"] },
+
+  { "name": "Figma", "level": "Básico", "keywords": ["UX", "UI"] },
+  { "name": "Sketch", "level": "Básico", "keywords": ["UX", "UI", "Diseño"] },
+  { "name": "AdobeCS", "level": "Avanzado", "keywords": ["Diseño", "Photoshop", "Illustrator"] }
+],
   "languages": [
     {
       "language": "Español",
@@ -236,10 +198,19 @@
     },
     {
       "language": "Inglés",
-      "fluency": "Técnico"
+      "fluency": "Técnico - B2"
     }
   ],
   "projects": [
+  {
+      "name": "Acervo Animación - AAM",
+      "isActive": true,
+      "description": "Sitio web para el Acervo de Animación Mexicana (AAM)",
+      "highlights": [
+        "HTML5, CSS3, Astro, TailwindCSS, JavaScript"
+      ],
+      "url": "https://acervoanimacion.mx/"
+    },
     {
       "name": "FONIMA",
       "isActive": false,
@@ -252,11 +223,20 @@
     {
       "name": "WNDH",
       "isActive": true,
-      "description": "Sitio web en construcción",
+      "description": "Sitio web para artista divergente - WNDH",
       "highlights": [
         "HTML5, CSS3, JavaScript"
       ],
-      "url": "https://alonsoct00.github.io/wndh/oldindex.html"
+      "url": "https://www.worrynoisedirtheat.com/"
+    },
+        {
+      "name": "ROGOFESA",
+      "isActive": true,
+      "description": "Sitio web informativo de servicios legales y asesoría en materia ambiental",
+      "highlights": [
+        "HTML5, CSS3, JavaScript, Bootstrap 4"
+      ],
+      "url": "https://www.rogofesa.com.mx/"
     },
     {
       "name": "Casiopea",
@@ -304,8 +284,8 @@
       "highlights": [
         "Webflow"
       ],
-      "url": "https://www.impsa.com.mx/index",
-      "webflow": "https://www.impsa.com.mx/index"
+      "url": "https://www.impsa.com.mx/",
+      "webflow": "https://www.impsa.com.mx/"
     },
     {
       "name": "Bennets",
