@@ -23,6 +23,9 @@ importers:
       hotkeypad:
         specifier: 0.1.0
         version: 0.1.0
+      minimalist-portfolio-json:
+        specifier: 'link:'
+        version: 'link:'
       postcss:
         specifier: ^8.4.35
         version: 8.5.8
