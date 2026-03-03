@@ -3,42 +3,59 @@ import Section from "../Section.astro"
 
 import { education as education_es, courses as courses_es, certifications as certifications_es } from "@cv"
 import { education as education_en, courses as courses_en, certifications as certifications_en } from "@cv_en"
-
-const language = "es";
-
-const education = language === "es" ? education_es : education_en;
-const courses = language === "es" ? courses_es : courses_en;
-const certifications = language === "es" ? certifications_es : certifications_en;
 ---
 
-<Section title="Educación" id="education" class="educaction">
-  <ul id="institution_list">
-    {
-      education.map(({ institution, startDate, endDate, area, studyType, logo}) => {
-        const startYear = new Date(startDate).getFullYear()
-        const endYear =
-          endDate != null ? new Date(endDate).getFullYear() : "Actual"
-        const years = `${startYear} - ${endYear}`
+<Section id="education" class="educaction">
+  <h2 data-lang-content="es">Educación</h2>
+  <h2 data-lang-content="en">Education</h2>
 
+  <ul id="institution_list" data-lang-content="es">
+    {
+      education_es.map(({ institution, startDate, endDate, area, studyType, logo}) => {
+        const startYear = new Date(startDate).getFullYear()
+        const endYear = endDate != null ? new Date(endDate).getFullYear() : "Actual"
+        const years = `${startYear} - ${endYear}`
         return (
           <li class="institution-item">
             <article>
               <header>
                 <div class="header_school">
                   <span class="school_item_image"><img src={logo} alt={institution}></span>
-                <div>
-                  <h3>{institution}</h3>
-                  <p><span>{studyType}</span> en {area}</p>
+                  <div>
+                    <h3>{institution}</h3>
+                    <p><span>{studyType}</span> en {area}</p>
+                  </div>
                 </div>
-
-                </div>
-
                 <time>{years}</time>
               </header>
+              <footer></footer>
+            </article>
+          </li>
+        )
+      })
+    }
+  </ul>
 
-              <footer>
-
-              </footer>
+  <ul id="institution_list_en" data-lang-content="en">
+    {
+      education_en.map(({ institution, startDate, endDate, area, studyType, logo}) => {
+        const startYear = new Date(startDate).getFullYear()
+        const endYear = endDate != null ? new Date(endDate).getFullYear() : "Present"
+        const years = `${startYear} - ${endYear}`
+        return (
+          <li class="institution-item">
+            <article>
+              <header>
+                <div class="header_school">
+                  <span class="school_item_image"><img src={logo} alt={institution}></span>
+                  <div>
+                    <h3>{institution}</h3>
+                    <p><span>{studyType}</span> in {area}</p>
+                  </div>
+                </div>
+                <time>{years}</time>
+              </header>
+              <footer></footer>
             </article>
           </li>
         )
@@ -46,10 +63,14 @@ const certifications = language === "es" ? certifications_es : certifications_en
     }
   </ul>
 </Section>
-<Section title="Certificados y Cursos" id="courses" class="educaction">
-  <ul id="courses_list">
+
+<Section id="courses" class="education">
+  <h2 data-lang-content="es">Certificados y Cursos</h2>
+  <h2 data-lang-content="en">Certifications & Courses</h2>
+
+  <ul id="courses_list" data-lang-content="es">
     {
-      courses.map(({ courseName, institution, date, url}) => {
+      courses_es.map(({ courseName, institution, date, url}) => {
         return (
           <li class="course_item">
             <article>
@@ -65,26 +86,65 @@ const certifications = language === "es" ? certifications_es : certifications_en
         )
       })
     }
-    </ul>
-    <ul id="certifications_list">
-      {
-        certifications.map(({ name, date, issuer, license, url}) => {
-          return (
-            <li class="certification_item">
-              <article>
-                <header>
-                  <h3>{name}</h3>
-                  <time>{date}</time>
-                </header>
+  </ul>
 
-                <footer>
-                  <p><a href={url} title="name" target="_blank">{issuer}</a> <span>{license}</span></p>
-                </footer>
-              </article>
-            </li>
-          )
-        })
-      }
-    </ul>
+  <ul id="courses_list_en" data-lang-content="en">
+    {
+      courses_en.map(({ courseName, institution, date, url}) => {
+        return (
+          <li class="course_item">
+            <article>
+              <header>
+                <h3>{courseName}</h3>
+                <time>{date}</time>
+              </header>
+              <footer>
+                <p><a href={url} title={courseName} target="_blank">{institution}</a></p>
+              </footer>
+            </article>
+          </li>
+        )
+      })
+    }
+  </ul>
 
+  <ul id="certifications_list" data-lang-content="es">
+    {
+      certifications_es.map(({ name, date, issuer, license, url}) => {
+        return (
+          <li class="certification_item">
+            <article>
+              <header>
+                <h3>{name}</h3>
+                <time>{date}</time>
+              </header>
+              <footer>
+                <p><a href={url} title={name} target="_blank">{issuer}</a> <span>{license}</span></p>
+              </footer>
+            </article>
+          </li>
+        )
+      })
+    }
+  </ul>
+
+  <ul id="certifications_list_en" data-lang-content="en">
+    {
+      certifications_en.map(({ name, date, issuer, license, url}) => {
+        return (
+          <li class="certification_item">
+            <article>
+              <header>
+                <h3>{name}</h3>
+                <time>{date}</time>
+              </header>
+              <footer>
+                <p><a href={url} title={name} target="_blank">{issuer}</a> <span>{license}</span></p>
+              </footer>
+            </article>
+          </li>
+        )
+      })
+    }
+  </ul>
 </Section>

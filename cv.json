@@ -160,9 +160,7 @@
   {
     "name": "Diseño de Experiencia de Usuario",
     "date": "2024",
-    "issuer": "Google",
-    "license": "En proceso...",
-    "url": "#"
+    "issuer": "Google"
   }],
   "skills": [
   { "name": "HTML", "level": "Master", "keywords": ["Desarrollo Web", "Frontend"] },

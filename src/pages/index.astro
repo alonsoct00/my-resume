@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-
 import About from "@/components/sections/About.astro"
 import Education from "@/components/sections/Education.astro"
 import Experience from "@/components/sections/Experience.astro"
@@ -8,38 +7,13 @@ import Hero from "@/components/sections/Hero.astro"
 import Projects from "@/components/sections/Projects.astro"
 import Skills from "@/components/sections/Skills.astro"
 import KeyboardManager from "@/components/KeyboardManager.astro"
-
+import LanguageSwitch from "@/components/LanguageSwitch.astro"
 import { basics as basics_es } from "@cv"
 import { basics as basics_en } from "@cv_en"
-
-const language = "es";
-
-const basics = language === "es" ? basics_es : basics_en;
-const { name, label } = basics;
-
-/*const response = await fetch('https://graphql.datocms.com/', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    Accept: 'application/json',
-    Authorization: `Bearer ${import.meta.env.DATOCMS_API_KEY}`,
-  },
-  body: JSON.stringify({
-    query: `query Homepage {
-          home {
-            title
-          }
-        }
-      `,
-  }),
-});
-
-const json = await response.json();
-const data = json.data.home;
-*/
 ---
 
-<Layout title={`${name} - ${label}`}>
+<Layout title={`${basics_es.name} - ${basics_es.label}`}>
+  <LanguageSwitch />
   <main>
     <Hero />
     <About />
@@ -48,7 +22,6 @@ const data = json.data.home;
     <Projects />
     <Skills />
   </main>
-
   <KeyboardManager />
 </Layout>
 
@@ -62,10 +35,7 @@ const data = json.data.home;
     margin: auto;
     width: 100%;
   }
-
   @media (width <= 700px) {
-    main {
-      padding: 2rem;
-    }
+    main { padding: 2rem; }
   }
 </style>

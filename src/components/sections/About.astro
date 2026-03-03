@@ -1,15 +1,11 @@
 ---
 import Section from "../Section.astro"
-
 import { basics as basics_es } from "@cv"
 import { basics as basics_en } from "@cv_en"
-const language = "es";
-const basics = language === "es" ? basics_es : basics_en;
-const { summary } = basics
 ---
-
-<Section title="Sobre mí" id="summary">
-  <p class="summary-text">
-    {summary}
-  </p>
+<Section id="summary">
+  <h2 data-lang-content="es">Sobre mí</h2>
+  <h2 data-lang-content="en">About me</h2>
+  <p data-lang-content="es" class="summary-text">{basics_es.summary}</p>
+  <p data-lang-content="en" class="summary-text">{basics_en.summary}</p>
 </Section>

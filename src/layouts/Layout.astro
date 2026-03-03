@@ -41,6 +41,15 @@ const { image, summary, url } = basics_es
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={summary} />
     <meta name="twitter:image" content="" />
+
+  <script is:inline>
+    (function() {
+      const saved = localStorage.getItem("cv-lang");
+      const browser = navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
+      document.documentElement.setAttribute("data-lang", saved || browser);
+    })();
+  </script>
+
   </head>
   <body>
     <slot />
@@ -112,6 +121,20 @@ const { image, summary, url } = basics_es
   .print {
     display: none !important;
   }
+
+/* Language switching */
+[data-lang-content="es"],
+[data-lang-content="en"] {
+  display: none !important;
+}
+
+html[data-lang="es"] [data-lang-content="es"] {
+  display: revert !important;
+}
+
+html[data-lang="en"] [data-lang-content="en"] {
+  display: revert !important;
+}
 
   @media print {
     .no-print {

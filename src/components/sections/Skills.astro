@@ -42,7 +42,9 @@ const resolvedSkills = await Promise.all(
 )
 ---
 
-<Section title="Habilidades y conocimientos">
+<Section id="skills">
+  <h2 data-lang-content="es">Habilidades y conocimientos</h2>
+  <h2 data-lang-content="en">Skills & Knowledge</h2>
   <ul>
     {resolvedSkills.map(({ name, keywords, icon }) => {
       const Icon = icon?.type === 'astro' ? icon.Component : null
@@ -57,7 +59,9 @@ const resolvedSkills = await Promise.all(
   </ul>
 </Section>
 
-<Section title="Idiomas">
+<Section id="languages">
+  <h2 data-lang-content="es">Idiomas</h2>
+  <h2 data-lang-content="en">Languages</h2>
   <ul>
     {languages.map(({ language, fluency }) => (
       <li>
