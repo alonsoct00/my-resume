@@ -1,23 +1,27 @@
 ---
 import Section from "../Section.astro"
-
-
 import { work as work_es } from "@cv"
 import { work as work_en } from "@cv_en"
 
-const language = "es";
+const cookieLang = Astro.cookies.get("cv-lang")?.value;
+const language = cookieLang === "en" ? "en" : "es";
 
 const work = language === "es" ? work_es : work_en;
+
+const presentText = language === "es" ? "Actual" : "Present";
+const sectionTitle = language === "es"
+  ? "Experiencia laboral"
+  : "Work Experience";
 ---
 
-<Section title="Experiencia laboral" id="experience">
+<Section title={sectionTitle} id="experience">
   <ul id="work_list">
     {
       work.map(
         ({ name, startDate, endDate, position, summary, highlights, url, type, logo }) => {
           const startYear = new Date(startDate).getFullYear()
           const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
+            endDate != null ? new Date(endDate).getFullYear() : presentText
           const years = `${startYear} - ${endYear}`
 
           return (
@@ -56,4 +60,3 @@ const work = language === "es" ? work_es : work_en;
     }
   </ul>
 </Section>
-

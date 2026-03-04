@@ -59,18 +59,30 @@ const resolvedSkills = await Promise.all(
   </ul>
 </Section>
 
-<Section id="languages">
+<Section id="languages_es" data-lang-content="es">
   <h2 data-lang-content="es">Idiomas</h2>
-  <h2 data-lang-content="en">Languages</h2>
-  <ul>
-    {languages.map(({ language, fluency }) => (
-      <li>
+  <ul data-lang-content="es">
+    {languages_es.map(({ language, fluency }) => (
+      <li style="display: inline-block;">
         <p>{language}</p>
         <span>{fluency}</span>
       </li>
     ))}
   </ul>
 </Section>
+
+<Section id="languages_en" data-lang-content="en">
+  <h2 data-lang-content="en">Languages</h2>
+  <ul data-lang-content="en">
+    {languages_en.map(({ language, fluency }) => (
+      <li style="display: inline-block;">
+        <p>{language}</p>
+        <span>{fluency}</span>
+      </li>
+    ))}
+  </ul>
+</Section>
+
 
 <style>
   ul {
@@ -89,5 +101,6 @@ const resolvedSkills = await Promise.all(
     font-weight: 500;
     gap: 4px;
     padding: 0.2rem 0.6rem;
+    margin-right: 8px;
   }
 </style>
