@@ -136,6 +136,19 @@ html[data-lang="en"] [data-lang-content="en"] {
   display: revert !important;
 }
 
+html[data-lang="es"] .projects-grid[data-lang-content="es"],
+html[data-lang="en"] .projects-grid[data-lang-content="en"] {
+  display: grid !important;
+}
+
+html[data-lang="es"] .work-list[data-lang-content="es"],
+html[data-lang="en"] .work-list[data-lang-content="en"] {
+  display: flex !important;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 40px;
+}
+
   @media print {
     .no-print {
       display: none !important;
