@@ -2,19 +2,28 @@
 import { basics as basics_es } from "@cv"
 import { basics as basics_en } from "@cv_en"
 import Section from "@/components/Section.astro"
-import Mail from "@/icons/Mail.astro"
-import Phone from "@/icons/Phone.astro"
-import X from "@/icons/X.astro"
-import LinkedIn from "@/icons/LinkedIn.astro"
-import GitHub from "@/icons/github.astro"
-import WorldMap from "@/icons/WorldMap.astro"
-import type { SocialIcon } from "@/types"
 
-const SOCIAL_ICONS: SocialIcon = { GitHub, LinkedIn, X }
+// Tipo para los iconos: componente Astro
+type AstroIcon = (props?: any) => any
+
+// Cargamos todos los iconos dinámicamente
+const SOCIAL_ICONS: Record<string, AstroIcon> = {}
+const iconModules = import.meta.glob<{ default: AstroIcon }>('@/icons/*.astro')
+
+for (const [path, loader] of Object.entries(iconModules)) {
+  const name = path.split('/').pop()!.replace('.astro','').toLowerCase()
+  SOCIAL_ICONS[name] = (await loader()).default
+}
+
 const { name, image, profiles, phone, email } = basics_es
-const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
+const linkedInfo = profiles.find(({ network }) => network.toLowerCase() === "linkedin")
 const linkedUrl = linkedInfo?.url
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
+
+// Extraemos los iconos específicos para evitar errores de JSX
+const MailIcon = SOCIAL_ICONS["mail"]
+const PhoneIcon = SOCIAL_ICONS["phone"]
+const WorldMapIcon = SOCIAL_ICONS["worldmap"]
 ---
 <Section id="hero">
   <div class="container">
@@ -25,30 +34,30 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
       <h2 data-lang-content="en">{basics_en.label}</h2>
 
       <span>
-        <WorldMap />
+        {WorldMapIcon && <WorldMapIcon />}
         <span data-lang-content="es">{basics_es.location.city}, {basics_es.location.region}</span>
         <span data-lang-content="en">{basics_en.location.city}, {basics_en.location.region}</span>
       </span>
 
       <footer class="print">{printInfo}</footer>
       <footer class="no-print">
-        {email && (
+        {email && MailIcon && (
           <a href={`mailto:${email}`} title={`Email ${name}`} target="_blank" rel="noopener noreferrer">
-            <Mail />
+            <MailIcon />
           </a>
         )}
-        {phone && (
+        {phone && PhoneIcon && (
           <a href={`tel:${phone}`} title={`Call ${name}`} target="_blank" rel="noopener noreferrer">
-            <Phone />
+            <PhoneIcon />
           </a>
         )}
         {profiles.map(({ network, url }) => {
-          const Icon = SOCIAL_ICONS[network]
-          return (
+          const Component = SOCIAL_ICONS[network.toLowerCase()]
+          return Component ? (
             <a href={url} title={`${name} on ${network}`} target="_blank" rel="noopener noreferrer">
-              <Icon />
+              <Component />
             </a>
-          )
+          ) : null
         })}
       </footer>
     </div>
