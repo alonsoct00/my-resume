@@ -200,7 +200,7 @@
     }
   ],
   "projects": [
-  {
+    {
       "name": "Acervo Animación - AAM",
       "isActive": true,
       "description": "Sitio web para el Acervo de Animación Mexicana (AAM)",
@@ -208,6 +208,15 @@
         "HTML5, CSS3, Astro, TailwindCSS, JavaScript"
       ],
       "url": "https://acervoanimacion.mx/"
+    },
+    {
+      "name": "Gissela Sauñe - Sitio web personal",
+      "isActive": true,
+      "description": "Sitio web personal para la artista visual Gissela Sauñe",
+      "highlights": [
+        "HTML5, CSS3, JavaScript"
+      ],
+      "url": "https://gisselasaune.com.mx/"
     },
     {
       "name": "FONIMA",
@@ -234,7 +243,7 @@
       "highlights": [
         "HTML5, CSS3, JavaScript, Bootstrap 4"
       ],
-      "url": "https://www.rogofesa.com.mx/"
+      "url": "https://www.rogofesa.com/"
     },
     {
       "name": "Casiopea",
