@@ -128,7 +128,9 @@ h2 {
 }
 
 #experience {
-    #work_list, #work_list_en {
+
+    #work_list,
+    #work_list_en {
         display: flex;
         flex-direction: column;
         gap: 40px;
@@ -329,7 +331,7 @@ h2 {
     article {
         border-radius: 8px;
         border: 1px solid #f2f2f2;
-        gap: 16px;
+        gap: 8px;
         display: flex;
         flex-direction: column;
         padding: 16px;
@@ -380,6 +382,33 @@ h2 {
         font-size: 0.6rem;
         font-weight: 500;
         padding: 0.2rem 0.6rem;
+    }
+
+    .framework-icons {
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+
+    .framework-icon {
+        display: inline-flex;
+        width: 1.2rem;
+        height: 1.2rem;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+        padding: unset;
+        background: unset;
+    }
+
+    .framework-icon:hover {
+        opacity: 1;
+    }
+
+    .highlights {
+        display: flex;
+        gap: 8px;
+        line-height: 16px;
     }
 
     .github-code-link {

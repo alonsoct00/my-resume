@@ -1,12 +1,92 @@
 ---
-// Projects.astro
-import Section from "../Section.astro"
-import ICONS from "@/lib/icons"
-import { projects as projects_es } from "@cv"
-import { projects as projects_en } from "@cv_en"
+import Javascript from "@/icons/javascript.astro";
+import Section from "../Section.astro";
+import { projects as projects_es } from "@cv";
+import { projects as projects_en } from "@cv_en";
 
-const GitHubIcon = ICONS["github"]
-const WebflowIcon = ICONS["webflow"]
+type AstroIcon = (props?: any) => any;
+
+const astroIcons = import.meta.glob<{ default: AstroIcon }>("@/icons/*.astro");
+const svgIcons = import.meta.glob<string>("/public/icons/*.svg", {
+  query: "?url",
+  import: "default",
+});
+
+function slugify(name: string) {
+  return name.toLowerCase().replace(/[\s.]/g, "").replace(/-/g, "");
+}
+
+async function getIcon(name: string) {
+  const slug = slugify(name);
+
+  const astroMatch = Object.entries(astroIcons).find(([path]) =>
+    path.toLowerCase().includes(`/${slug}.astro`),
+  );
+  if (astroMatch) {
+    const mod = await astroMatch[1]();
+    return { type: "astro" as const, Component: mod.default };
+  }
+
+  const svgMatch = Object.entries(svgIcons).find(([path]) =>
+    path.toLowerCase().includes(`/${slug}.svg`),
+  );
+  if (svgMatch) return { type: "svg" as const, url: await svgMatch[1]() };
+
+  return null;
+}
+
+// Mapa de keyword en highlights → nombre del icono
+const FRAMEWORK_ICON_MAP: Record<string, string> = {
+  astro: "astro",
+  tailwindcss: "tailwindcss",
+  tailwind: "tailwindcss",
+  vuejs: "vuejs",
+  vue: "vuejs",
+  reactjs: "reactjs",
+  react: "reactjs",
+  bootstrap: "bootstrap",
+  jquery: "jquery",
+  jQuery: "jquery",
+  Javascript: "javascript",
+  JavaScript: "javascript",
+  javascript: "javascript",
+  typescript: "typescript",
+  TypeScript: "typescript",
+};
+
+async function getFrameworkIcons(highlights: string[]) {
+  const found = new Set<string>();
+  for (const h of highlights) {
+    const lower = h.toLowerCase();
+    for (const [keyword, iconName] of Object.entries(FRAMEWORK_ICON_MAP)) {
+      if (lower.includes(keyword)) found.add(iconName);
+    }
+  }
+  return await Promise.all(
+    [...found].map(async (name) => ({
+      name,
+      icon: await getIcon(name),
+    })),
+  );
+}
+
+// Pre-resolvemos todos los iconos en el frontmatter
+const GitHubIcon = await getIcon("github");
+const WebflowIcon = await getIcon("webflow");
+
+const resolvedProjects_es = await Promise.all(
+  projects_es.map(async (project) => ({
+    ...project,
+    frameworkIcons: await getFrameworkIcons(project.highlights),
+  })),
+);
+
+const resolvedProjects_en = await Promise.all(
+  projects_en.map(async (project) => ({
+    ...project,
+    frameworkIcons: await getFrameworkIcons(project.highlights),
+  })),
+);
 ---
 
 <Section id="projects">
@@ -14,57 +94,219 @@ const WebflowIcon = ICONS["webflow"]
   <h2 data-lang-content="en">Projects & Portfolio</h2>
 
   <ul class="projects-grid" data-lang-content="es">
-    {projects_es.map(({ url, description, highlights, name, isActive, github, webflow }) => {
-      return (
-        <li>
-          <article>
-            <header>
-              <h3>
-                <a href={url} target="_blank" title={`Ver el proyecto ${name}`}>{name}</a>
-                {isActive && <span>•</span>}
-                {github && GitHubIcon && <a class="github-code-link" href={github} target="_blank" title={`Código fuente ${name}`}><GitHubIcon /></a>}
-                {webflow && WebflowIcon && <a class="webflow-code-link" href={webflow} target="_blank" title={`Webflow ${name}`}><WebflowIcon /></a>}
-              </h3>
-              <p>{description}</p>
-            </header>
-            <footer>
-              {highlights.map((h) => <span>{h}</span>)}
-            </footer>
-          </article>
-        </li>
+    {
+      resolvedProjects_es.map(
+        ({
+          url,
+          description,
+          highlights,
+          name,
+          isActive,
+          github,
+          webflow,
+          frameworkIcons,
+        }) => {
+          const GH = GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
+          const WF =
+            WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
+          return (
+            <li>
+              <article>
+                <header>
+                  <h3>
+                    <a
+                      href={url}
+                      target="_blank"
+                      title={`Ver el proyecto ${name}`}
+                    >
+                      {name}
+                    </a>
+                    {isActive && <span>•</span>}
+                    {github && GH && (
+                      <a
+                        class="github-code-link"
+                        href={github}
+                        target="_blank"
+                        title={`Código fuente ${name}`}
+                      >
+                        <GH />
+                      </a>
+                    )}
+                    {webflow && WF && (
+                      <a
+                        class="webflow-code-link"
+                        href={webflow}
+                        target="_blank"
+                        title={`Webflow ${name}`}
+                      >
+                        <WF />
+                      </a>
+                    )}
+                  </h3>
+                                    {frameworkIcons.length > 0 && (
+                    <div class="framework-icons">
+                      {frameworkIcons.map(({ name, icon }) => {
+                        const Icon =
+                          icon?.type === "astro" ? icon.Component : null;
+                        return (
+                          <span title={name} class="framework-icon">
+                            {Icon && <Icon />}
+                            {icon?.type === "svg" && (
+                              <img
+                                src={icon.url}
+                                alt={name}
+                                width="14"
+                                height="14"
+                              />
+                            )}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  )}
+                </header>
+                <body>
+                  <p>{description}</p>
+
+                </body>
+                <footer>
+                  <div class="highlights">
+                    {highlights.map((h) => (
+                      <span>{h}</span>
+                    ))}
+                  </div>
+                </footer>
+              </article>
+            </li>
+          );
+        },
       )
-    })}
+    }
   </ul>
 
   <ul class="projects-grid" data-lang-content="en">
-    {projects_en.map(({ url, description, highlights, name, isActive, github, webflow }) => {
-      return (
-        <li>
-          <article>
-            <header>
-              <h3>
-                <a href={url} target="_blank" title={`View project ${name}`}>{name}</a>
-                {isActive && <span>•</span>}
-                {github && GitHubIcon && <a class="github-code-link" href={github} target="_blank" title={`Source code ${name}`}><GitHubIcon /></a>}
-                {webflow && WebflowIcon && <a class="webflow-code-link" href={webflow} target="_blank" title={`Webflow ${name}`}><WebflowIcon /></a>}
-              </h3>
-              <p>{description}</p>
-            </header>
-            <footer>
-              {highlights.map((h) => <span>{h}</span>)}
-            </footer>
-          </article>
-        </li>
+    {
+      resolvedProjects_en.map(
+        ({
+          url,
+          description,
+          highlights,
+          name,
+          isActive,
+          github,
+          webflow,
+          frameworkIcons,
+        }) => {
+          const GH = GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
+          const WF =
+            WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
+          return (
+            <li>
+              <article>
+                <header>
+                  <h3>
+                    <a
+                      href={url}
+                      target="_blank"
+                      title={`View project ${name}`}
+                    >
+                      {name}
+                    </a>
+                    {isActive && <span>•</span>}
+                    {github && GH && (
+                      <a
+                        class="github-code-link"
+                        href={github}
+                        target="_blank"
+                        title={`Source code ${name}`}
+                      >
+                        <GH />
+                      </a>
+                    )}
+                    {webflow && WF && (
+                      <a
+                        class="webflow-code-link"
+                        href={webflow}
+                        target="_blank"
+                        title={`Webflow ${name}`}
+                      >
+                        <WF />
+                      </a>
+                    )}
+                  </h3>
+                  {frameworkIcons.length > 0 && (
+                    <div class="framework-icons">
+                      {frameworkIcons.map(({ name, icon }) => {
+                        const Icon =
+                          icon?.type === "astro" ? icon.Component : null;
+                        return (
+                          <span title={name} class="framework-icon">
+                            {Icon && <Icon />}
+                            {icon?.type === "svg" && (
+                              <img
+                                src={icon.url}
+                                alt={name}
+                                width="14"
+                                height="14"
+                              />
+                            )}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  )}
+                </header>
+                <body>
+                  <p>{description}</p>
+                </body>
+                <footer>
+                  <div class="highlights">
+                    {highlights.map((h) => (
+                      <span>{h}</span>
+                    ))}
+                  </div>
+                </footer>
+              </article>
+            </li>
+          );
+        },
       )
-    })}
+    }
   </ul>
 </Section>
 
 <style>
   #projects .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-inline: -16px;
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-inline: -16px;
+  }
+
+  .framework-icons {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .framework-icon {
+    display: inline-flex;
+    width: 1.2rem;
+    height: 1.2rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    padding: unset;
+    background: unset;
+  }
+
+  .framework-icon:hover {
+    opacity: 1;
+  }
+
+  .highlights {
+    display: flex;
+    gap: 8px;
+    line-height: 16px;
+  }
 </style>

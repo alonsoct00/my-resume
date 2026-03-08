@@ -252,6 +252,16 @@
       "github": "https://github.com/alonsoct00/BMI-calculator-dietamx/blob/main/bmi-calc.html"
     },
     {
+      "name": "Airbnb GOYO",
+      "isActive": false,
+      "description": "Landing page para renta de Airbnb",
+      "highlights": [
+        "HTML5, CSS3, VueJS, JavaScript"
+      ],
+      "url": "https://rent-location-navelito.netlify.app/",
+      "github": "https://github.com/alonsoct00/renta-locacion"
+    },
+    {
       "name": "Challenge GBM",
       "isActive": false,
       "description": "Front-end challenge for GBM — landing page design and development",

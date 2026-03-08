@@ -241,7 +241,7 @@
       "isActive": true,
       "description": "Sitio web informativo de servicios legales y asesoría en materia ambiental",
       "highlights": [
-        "HTML5, CSS3, JavaScript, Bootstrap 4"
+        "HTML5, CSS3, JavaScript, Bootstrap"
       ],
       "url": "https://www.rogofesa.com/"
     },
@@ -264,6 +264,16 @@
       ],
       "url": "https://github.com/alonsoct00/BMI-calculator-dietamx/blob/main/bmi-calc.html",
       "github": "https://github.com/alonsoct00/BMI-calculator-dietamx/blob/main/bmi-calc.html"
+    },
+        {
+      "name": "Airbnb GOYO",
+      "isActive": false,
+      "description": "Landing page para renta de Airbnb",
+      "highlights": [
+        "HTML5, CSS3, VueJS, JavaScript"
+      ],
+      "url": "https://rent-location-navelito.netlify.app/",
+      "github": "https://github.com/alonsoct00/renta-locacion"
     },
     {
       "name": "Challenge GBM",
