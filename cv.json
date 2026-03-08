@@ -28,167 +28,292 @@
     ]
   },
   "work": [
-        {
+    {
       "name": "Viajes el Corte Inglés México",
-      "position": "Desarrollador Web Front End",
+      "position": "Frontend Developer",
       "url": "https://viajesci.liverpool.com.mx/",
       "startDate": "2024-06-15",
       "type": "Híbrido - Tiempo completo",
       "logo": "/veci-logo.jpeg",
-      "summary": "En Viajes el Corte Inglés México, inicié mi carrera desarrollando landing pages en Magento para campañas promocionales, gestionando su creación y actualización para optimizar la experiencia de usuario. Colaboré estrechamente con el equipo de UX, contribuyendo en el desarrollo del nuevo sitio web y en la transición a Magento 2. En equipo mejoramos los aspectos clave del sitio, como la página de inicio y el flujo de checkout, utilizando tecnologías como PHP, HTML5, CSS3, Bootstrap, JavaScript y jQuery. \n Posteriormente, asumí un rol en la transición hacia una arquitectura headless, utilizando nuevas tecnologías como React.js, NextJS, y TailwindCSS, entre otras. Mi trabajo incluyó el desarrollo de prototipos y componentes para facilitar una migración fluida a un sistema más escalable. Esta experiencia me permitió avanzar profesionalmente, aportando significativamente a la evolución de su plataforma digital.",
+      "summary": "Desarrollo y optimizo experiencias digitales para plataformas de viaje de alto tráfico. Construyo componentes reutilizables con React JS, JavaScript vanilla y Styled Components, con enfoque en rendimiento, accesibilidad y mantenibilidad. Colaboro con equipos de UX usando Figma para traducir diseños en interfaces funcionales y centradas en el usuario.",
       "highlights": [
-        "Desarrollo de páginas web para promociones, y estrategias de e-mail marketing incrementando las compras en el sitio web.",
-        "Optimización del rendimiento en el sitio web, mejorando la experiencia del usuario durante su compra.",
-        "Migración de Magento a Headless mejorando la optimización y carga del sitio web."
-      ]
+        "Construcción de componentes reutilizables desde cero con React JS y Styled Components.",
+        "Colaboración con equipos de UX/Figma en entornos internacionales para asegurar consistencia visual.",
+        "Optimización continua de la experiencia de compra con enfoque en performance y testing."
+      ],
+      "skills": ["react", "javascript", "styledcomponents", "figma"]
     },
     {
       "name": "GAIA Design",
-      "position": "Desarrollador Web Front End",
+      "position": "Desarrollador Web Frontend · UX E-Commerce",
       "url": "https://www.gaiadesign.com.mx/",
       "startDate": "2019-03-15",
       "endDate": "2024-03-01",
       "type": "Remoto - Tiempo completo",
       "logo": "/gaia_design_logo.jpeg",
-      "summary": "En GAIA Design, inicié mi carrera desarrollando landing pages en Magento para campañas promocionales, gestionando su creación y actualización para optimizar la experiencia de usuario. Colaboré estrechamente con el equipo de UX, contribuyendo en el desarrollo del nuevo sitio web y en la transición a Magento 2. En equipo mejoramos los aspectos clave del sitio, como la página de inicio y el flujo de checkout, utilizando tecnologías como PHP, HTML5, CSS3, Bootstrap, JavaScript y jQuery. \n Posteriormente, asumí un rol en la transición hacia una arquitectura headless, utilizando nuevas tecnologías como React.js, NextJS, y TailwindCSS, entre otras. Mi trabajo incluyó el desarrollo de prototipos y componentes para facilitar una migración fluida a un sistema más escalable. Esta experiencia en GAIA Design me permitió avanzar profesionalmente, aportando significativamente a la evolución de su plataforma digital.",
+      "summary": "Participé en la evolución del e-commerce desde Magento tradicional hacia una arquitectura headless. Desarrollé y mantuve landing pages promocionales, optimicé páginas clave del funnel (home, listing, PDP, carrito y checkout), y formé parte de la migración a un stack moderno con React, Next.js, Tailwind y DatoCMS.",
       "highlights": [
-        "Desarrollo de páginas web para promociones, y estrategias de e-mail marketing incrementando las compras en el sitio web.",
-        "Optimización del rendimiento en el sitio web, mejorando la experiencia del usuario durante su compra.",
-        "Migración de Magento a Headless mejorando la optimización y carga del sitio web."
-      ]
+        "Migración de Magento a arquitectura headless con React, Next.js, Vercel y TailwindCSS.",
+        "Optimización de páginas clave del funnel mejorando tiempos de carga y reduciendo fricción en el checkout.",
+        "Implementación de pruebas A/B con VWO para experimentación y mejora continua de conversión."
+      ],
+      "skills": ["reactjs", "nextjs", "tailwindcss", "javascript", "datocms"]
     },
     {
-      "name": "Sales Ready Marketing",
+      "name": "Sales Ready Marketing / Inbox Marketing",
       "position": "Website Content Manager & Webflow Developer",
       "url": "https://www.srm.mx/",
       "startDate": "2020-06-01",
-      "endDate": "2023-03-01",
+      "endDate": "2023-01-01",
       "type": "Remoto - Contract",
       "logo": "/salesreadymarketing_logo.jpeg",
-      "summary": "Como experto en desarrollo web, he ampliado mis habilidades incorporando herramientas innovadoras como Webflow para la administración eficiente de sitios web. Con Webflow, puedo diseñar y desarrollar sitios web impresionantes y totalmente funcionales.",
-      "highlights": []
+      "summary": "Diseñé y desarrollé sitios web y landing pages en Webflow desde diseño hasta publicación, partiendo de referencias en Figma y Adobe XD. Implementé integraciones con Zapier, configuré tracking con GA4 y píxeles de redes sociales. Responsable de adaptación responsive, interacciones y optimización de rendimiento orientada a conversión.",
+      "highlights": [
+        "Desarrollo end-to-end de sitios y landing pages en Webflow desde Figma/Adobe XD.",
+        "Integración de herramientas de marketing: GA4, píxeles de redes sociales y automatizaciones con Zapier.",
+        "Optimización de performance y experiencia responsive para mejorar tasas de conversión."
+      ],
+      "skills": ["webflow", "figma", "javascript", "css3"]
     },
     {
       "name": "Interjet",
-      "position": "Desarrollador Web Front End",
+      "position": "Desarrollador Web Frontend · UX",
       "url": "#",
-      "startDate": "2016-01-01",
-      "endDate": "2019-04-01",
+      "startDate": "2016-06-01",
+      "endDate": "2019-03-01",
       "type": "Tiempo completo",
       "logo": "/interjet_air_lines_logo.jpeg",
-      "summary": "En mi rol como desarrollador front-end en el área de UX para Interjet, me dediqué a aplicar mis conocimientos en desarrollo web con el fin de enriquecer la experiencia digital de los usuarios. Haciendo uso de tecnologías avanzadas como HTML5, CSS3, JavaScript y Bootstrap 3, logré diseñar interfaces web receptivas y visualmente atractivas, centradas en mejorar la usabilidad y la interacción del usuario con el sitio web. Mi participación no solo se limitó al desarrollo técnico, sino que también abarcó la creación de soluciones creativas para campañas de E-mail marketing, utilizando herramientas como Oracle Responsys para desarrollar mailings efectivos que lograron captar la atención y fomentar una mayor interacción de nuestra audiencia.",
-      "highlights": []
+      "summary": "Front-End Developer en el equipo de UX, desarrollando interfaces responsivas con HTML5, CSS3, JavaScript y Bootstrap. Participé en campañas de e-marketing con Oracle Responsys y en mejoras continuas del header, footer y secciones principales del sitio. Desarrollé el micrositio de venta de boletos para Disneyland y landing pages para el mercado canadiense.",
+      "highlights": [
+        "Desarrollo del micrositio de venta de boletos para Disneyland y landing pages para mercado canadiense.",
+        "Campañas de e-mail marketing con Oracle Responsys orientadas a conversión en distintos mercados.",
+        "Mejoras continuas de componentes clave del sitio incrementando consistencia visual y usabilidad."
+      ],
+      "skills": ["javascript", "bootstrap", "css3", "html5"]
     },
     {
       "name": "Liverpool",
-      "position": "Desarrollador Web Front End",
+      "position": "Desarrollador Web Frontend · E-Commerce",
       "url": "https://liverpool.com.mx/",
       "startDate": "2013-10-01",
       "endDate": "2016-07-01",
       "type": "Tiempo completo",
       "logo": "/liver.jpeg",
-      "summary": "En Liverpool, jugué un rol clave en el fortalecimiento de su plataforma digital, especialmente a través de la creación de micrositios y la migración a Oracle BCC & ATG Web Commerce, mejorando la gestión de la tienda en línea. Participé en la mejora del proceso de checkout, colaborando con equipos internacionales para implementar eficientemente nuevas soluciones. Desarrollé landing pages para marcas destacadas, manteniendo y optimizando la tienda en línea. Aporté a la implementación de prácticas UX/UI para enriquecer la experiencia del usuario y contribuí al lanzamiento de mult-sitios (Williams-Sonoma, Pottery Barn, West-Elm), ampliando mis competencias técnicas.",
-      "highlights": []
+      "summary": "Formé parte del equipo Front-End de liverpool.com.mx, desarrollando micrositios y experiencias digitales orientadas a conversión. Participé en la migración a Oracle ATG Web Commerce, desarrollé prototipos interactivos HTML para el nuevo flujo de checkout y colaboré con equipos internacionales en el lanzamiento de multisitios para Williams-Sonoma, Pottery Barn y West Elm.",
+      "highlights": [
+        "Migración a Oracle ATG Web Commerce y desarrollo de prototipos HTML para el nuevo checkout.",
+        "Lanzamiento de multisitios internacionales: Williams-Sonoma, Pottery Barn y West Elm.",
+        "Desarrollo de landing pages para campañas comerciales y optimización de componentes del sitio."
+      ],
+      "skills": ["javascript", "bootstrap", "css3", "html5"]
     },
     {
-      "name": "CTIN (Centro de Tecnología e innovación Telmex)",
-      "position": "Desarrollador Web Front End",
+      "name": "CTIN (Centro de Tecnología e Innovación Telmex)",
+      "position": "Desarrollador Web Frontend",
       "url": "http://www.ctinmx.com/",
       "startDate": "2011-11-01",
       "endDate": "2013-07-01",
       "type": "Becario",
       "logo": "/ctin.jpeg",
-      "summary": "Durante mi tiempo como becario en CTIN, tuve la oportunidad de sumergirme en varios aspectos del mundo digital. Mi enfoque principal fue el desarrollo web, donde trabajé con tecnologías clave como HTML5, CSS3, JavaScript y jQuery para crear sitios web interactivos y visualmente atractivos. Además, tuve el privilegio de impartir talleres de capacitación en Aldea Digital TELMEX, donde compartí mis conocimientos y experiencias con otros entusiastas del mundo digital, ayudándolos a desarrollar sus habilidades y explorar nuevas oportunidades en el ámbito tecnológico. Mi tiempo como becario en CTIN fue una experiencia enriquecedora que me permitió crecer tanto personal como profesionalmente, adquiriendo habilidades valiosas y ampliando mi conocimiento en el mundo de la tecnología y la innovación digital.",
-      "highlights": []
+      "summary": "Desarrollo web con HTML5, CSS3, JavaScript y jQuery, creando sitios interactivos y visualmente atractivos. Impartí talleres de capacitación en Aldea Digital TELMEX, compartiendo conocimientos técnicos y fomentando habilidades digitales en nuevos talentos.",
+      "highlights": [
+        "Desarrollo de sitios web interactivos con HTML5, CSS3, JavaScript y jQuery.",
+        "Impartición de talleres de capacitación técnica en Aldea Digital TELMEX."
+      ],
+      "skills": ["javascript", "jquery", "css3", "html5"]
     },
     {
       "name": "Freelance",
-      "position": "Desarrollador Web Front End",
+      "position": "Frontend Web Developer · Webflow · WordPress · Shopify",
       "url": "https://ufoconsultingmx.com/",
-      "startDate": "2008",
+      "startDate": "2008-01-01",
       "endDate": null,
       "type": "Freelance",
       "logo": "/alonsoct_me_logo.jpeg",
-      "summary": "Como freelance en desarrollo web y maquetación HTML, me especializo en la creación de sitios web estáticos de alto impacto visual y funcionalidad. Mi enfoque se centra en utilizar tecnologías como HTML5, CSS3, Bootstrap y JavaScript frameworks para diseñar experiencias web intuitivas y atractivas. He adquirido experiencia en el uso de sistemas de gestión de contenidos (CMS) como WordPress y Joomla, lo que me permitió crear y mantener sitios web dinámicos y fáciles de actualizar mis clientes. Mi enfoque versátil me permite adaptarme a las necesidades específicas de cada proyecto y cliente, ofreciendo soluciones personalizadas y efectivas.",
-      "highlights": []
+      "summary": "Desarrollador Frontend freelance especializado en sitios de alto rendimiento. Construyo y optimizo en Webflow, WordPress y Shopify, combinando HTML5, CSS3 y frameworks modernos como React, Vue y Astro. Gestiono proyectos end-to-end desde conceptualización hasta publicación, aplicando WPO, SEO técnico y buenas prácticas de UX.",
+      "highlights": [
+        "Desarrollo end-to-end en Webflow, WordPress y Shopify para clientes de distintos sectores.",
+        "Aplicación de WPO y SEO técnico para mejorar rendimiento y visibilidad en buscadores.",
+        "Consultoría técnica y soporte en implementación web para e-commerce y sitios corporativos."
+      ],
+      "skills": [
+        "webflow",
+        "wordpress",
+        "reactjs",
+        "vuejs",
+        "astro",
+        "javascript",
+        "shopify"
+      ]
     }
   ],
-  "education": [{
-    "institution": "Instituto Politécnico Nacional - UPIICSA",
-    "url": "https://www.ipn.mx/",
-    "area": "Ciencias de la Informática",
-    "studyType": "Licenciatura",
-    "startDate": "2007-08-01",
-    "endDate": "2013-01-01",
-    "score": "4.0",
-    "logo": "/ipn.jpeg"
-  }],
+  "education": [
+    {
+      "institution": "Instituto Politécnico Nacional - UPIICSA",
+      "url": "https://www.ipn.mx/",
+      "area": "Ciencias de la Informática",
+      "studyType": "Licenciatura",
+      "startDate": "2007-08-01",
+      "endDate": "2013-01-01",
+      "score": "4.0",
+      "logo": "/ipn.jpeg"
+    }
+  ],
   "courses": [
-  {
-    "courseName": "E-Commerce",
-    "institution": "PROTECO - UNAM",
-    "date": "2022",
-    "url": "/docs/ecommerce-proteco-unam.jpeg"
-  },
-  {
-    "courseName": "E-Commerce",
-    "institution": "Google",
-    "date": "2020",
-    "url": "/docs/certificado-e-commerce.pdf"
-  },
-  {
-    "courseName": "Desarrollo Web",
-    "institution": "Google",
-    "date": "2018",
-    "url": "/docs/desarrollo_web_google.pdf"
-  }],
+    {
+      "courseName": "E-Commerce",
+      "institution": "PROTECO - UNAM",
+      "date": "2022",
+      "url": "/docs/ecommerce-proteco-unam.jpeg"
+    },
+    {
+      "courseName": "E-Commerce",
+      "institution": "Google",
+      "date": "2020",
+      "url": "/docs/certificado-e-commerce.pdf"
+    },
+    {
+      "courseName": "Desarrollo Web",
+      "institution": "Google",
+      "date": "2018",
+      "url": "/docs/desarrollo_web_google.pdf"
+    }
+  ],
   "certifications": [
-  {
-    "name": "UX Diseño de productos y servicios",
-    "date": "2021",
-    "issuer": "UNAM",
-    "license": "DGTIC - 7697",
-    "url": "https://sigeco.cuaed.unam.mx/valida.php"
-  },
-  {
-    "name": "Commerce Management Certification - Level 1",
-    "date": "2024",
-    "issuer": "EICOM Institute",
-    "license": "8411940",
-    "url": "https://achievements.eicom.org/1760940f-baa4-48ad-ba73-4e3e33813aa3#gs.7r5qsx"
-  },
-  {
-    "name": "Diseño de Experiencia de Usuario",
-    "date": "2024",
-    "issuer": "Google"
-  }],
+    {
+      "name": "UX Diseño de productos y servicios",
+      "date": "2021",
+      "issuer": "UNAM",
+      "license": "DGTIC - 7697",
+      "url": "https://sigeco.cuaed.unam.mx/valida.php"
+    },
+    {
+      "name": "Commerce Management Certification - Level 1",
+      "date": "2024",
+      "issuer": "EICOM Institute",
+      "license": "8411940",
+      "url": "https://achievements.eicom.org/1760940f-baa4-48ad-ba73-4e3e33813aa3#gs.7r5qsx"
+    },
+    {
+      "name": "Diseño de Experiencia de Usuario",
+      "date": "2024",
+      "issuer": "Google"
+    }
+  ],
   "skills": [
-  { "name": "HTML", "level": "Master", "keywords": ["Desarrollo Web", "Frontend"] },
-  { "name": "CSS", "level": "Master", "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"] },
-  { "name": "JavaScript", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"] },
-  { "name": "TypeScript", "level": "Básico", "keywords": ["Desarrollo Web", "Frontend", "Backend", "JavaScript"] },
+    {
+      "name": "HTML",
+      "level": "Master",
+      "keywords": ["Desarrollo Web", "Frontend"]
+    },
+    {
+      "name": "CSS",
+      "level": "Master",
+      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Básico",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "JavaScript"]
+    },
 
-  { "name": "Tailwind", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"] },
-  { "name": "SCSS", "level": "Intermedio", "keywords": ["CSS", "Preprocesador"] },
-  { "name": "LESS", "level": "Intermedio", "keywords": ["CSS", "Preprocesador"] },
+    {
+      "name": "Tailwind",
+      "level": "Intermedio",
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "CSS Framework",
+        "Diseño Responsive"
+      ]
+    },
+    {
+      "name": "SCSS",
+      "level": "Intermedio",
+      "keywords": ["CSS", "Preprocesador"]
+    },
+    {
+      "name": "LESS",
+      "level": "Intermedio",
+      "keywords": ["CSS", "Preprocesador"]
+    },
 
-  { "name": "React", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"] },
-  { "name": "VueJS", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "JavaScript"] },
-  { "name": "Astro", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "SSG"] },
+    {
+      "name": "React",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "VueJS",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript"]
+    },
+    {
+      "name": "Astro",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "SSG"]
+    },
 
-  { "name": "WordPress", "level": "Avanzado", "keywords": ["CMS", "Desarrollo Web"] },
-  { "name": "Webflow", "level": "Avanzado", "keywords": ["CMS", "No-code", "Desarrollo Web"] },
+    {
+      "name": "WordPress",
+      "level": "Avanzado",
+      "keywords": ["CMS", "Desarrollo Web"]
+    },
+    {
+      "name": "Webflow",
+      "level": "Avanzado",
+      "keywords": ["CMS", "No-code", "Desarrollo Web"]
+    },
+    {
+      "name": "Shopify",
+      "level": "Avanzado",
+      "keywords": ["E-commerce", "CMS", "Desarrollo Web"]
+    },
+    {
+      "name": "MySQL",
+      "level": "Básico",
+      "keywords": [
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
 
-  { "name": "MySQL", "level": "Básico", "keywords": ["Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"] },
+    {
+      "name": "Git",
+      "level": "Avanzado",
+      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Avanzado",
+      "keywords": [
+        "Control de Versiones",
+        "Colaboración",
+        "Código Fuente",
+        "Git"
+      ]
+    },
+    {
+      "name": "Jira",
+      "level": "Avanzado",
+      "keywords": ["Gestión de proyectos"]
+    },
 
-  { "name": "Git", "level": "Avanzado", "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"] },
-  { "name": "GitHub", "level": "Avanzado", "keywords": ["Control de Versiones", "Colaboración", "Código Fuente", "Git"] },
-  { "name": "Jira", "level": "Avanzado", "keywords": ["Gestión de proyectos"] },
-
-  { "name": "Figma", "level": "Básico", "keywords": ["UX", "UI"] },
-  { "name": "Sketch", "level": "Básico", "keywords": ["UX", "UI", "Diseño"] },
-  { "name": "AdobeCS", "level": "Avanzado", "keywords": ["Diseño", "Photoshop", "Illustrator"] }
-],
+    { "name": "Figma", "level": "Básico", "keywords": ["UX", "UI"] },
+    { "name": "Sketch", "level": "Básico", "keywords": ["UX", "UI", "Diseño"] },
+    {
+      "name": "AdobeCS",
+      "level": "Avanzado",
+      "keywords": ["Diseño", "Photoshop", "Illustrator"]
+    }
+  ],
   "languages": [
     {
       "language": "Español",
@@ -204,54 +329,58 @@
       "name": "Acervo Animación - AAM",
       "isActive": true,
       "description": "Sitio web para el Acervo de Animación Mexicana (AAM)",
-      "highlights": [
-        "HTML5, CSS3, Astro, TailwindCSS, JavaScript"
-      ],
+      "highlights": ["HTML5, CSS3, Astro, TailwindCSS, JavaScript"],
       "url": "https://acervoanimacion.mx/"
     },
     {
       "name": "Gissela Sauñe - Sitio web personal",
       "isActive": true,
       "description": "Sitio web personal para la artista visual Gissela Sauñe",
-      "highlights": [
-        "HTML5, CSS3, JavaScript"
-      ],
+      "highlights": ["HTML5, CSS3, JavaScript"],
       "url": "https://gisselasaune.com.mx/"
+    },
+    {
+      "name": "ZentoMX",
+      "isActive": true,
+      "description": "E-commerce de venta de muebles",
+      "highlights": ["Liquid", "JavaScript", "CSS3"],
+      "url": "https://www.zento.mx/",
+      "shopify": "https://www.zento.mx/"
+    },
+    {
+      "name": "Calladitos",
+      "isActive": true,
+      "description": "Tienda de arte en línea",
+      "highlights": ["Liquid", "CSS3"],
+      "url": "https://calladitos-2.myshopify.com/",
+      "shopify": "https://calladitos-2.myshopify.com/"
     },
     {
       "name": "FONIMA",
       "isActive": false,
       "description": "Sitio web para el festival FONIMA",
-      "highlights": [
-        "HTML5, CSS3, JavaScript, Bootstrap"
-      ],
+      "highlights": ["HTML5, CSS3, JavaScript, Bootstrap"],
       "url": "https://alonsoct00.github.io/fonima-web/"
     },
     {
       "name": "WNDH",
       "isActive": true,
       "description": "Sitio web para artista divergente - WNDH",
-      "highlights": [
-        "HTML5, CSS3, JavaScript"
-      ],
+      "highlights": ["HTML5, CSS3, JavaScript"],
       "url": "https://www.worrynoisedirtheat.com/"
     },
-        {
+    {
       "name": "ROGOFESA",
       "isActive": true,
       "description": "Sitio web informativo de servicios legales y asesoría en materia ambiental",
-      "highlights": [
-        "HTML5, CSS3, JavaScript, Bootstrap"
-      ],
+      "highlights": ["HTML5, CSS3, JavaScript, Bootstrap"],
       "url": "https://www.rogofesa.com/"
     },
     {
       "name": "Casiopea",
       "isActive": true,
       "description": "Sitio web realizado para una productora de animación y diseño.",
-      "highlights": [
-        "HTML5, CSS3, JavaScript"
-      ],
+      "highlights": ["HTML5, CSS3, JavaScript"],
       "url": "https://casiopea.mx/",
       "github": "https://github.com/alonsoct00/Casiopea-website"
     },
@@ -259,19 +388,15 @@
       "name": "Calculadora BMI",
       "isActive": false,
       "description": "Calculadora para médico nutricionista integrado a su WordPress",
-      "highlights": [
-        "HTML5, CSS3, JavaScript"
-      ],
+      "highlights": ["HTML5, CSS3, JavaScript"],
       "url": "https://github.com/alonsoct00/BMI-calculator-dietamx/blob/main/bmi-calc.html",
       "github": "https://github.com/alonsoct00/BMI-calculator-dietamx/blob/main/bmi-calc.html"
     },
-        {
+    {
       "name": "Airbnb GOYO",
       "isActive": false,
       "description": "Landing page para renta de Airbnb",
-      "highlights": [
-        "HTML5, CSS3, VueJS, JavaScript"
-      ],
+      "highlights": ["HTML5, CSS3, VueJS, JavaScript"],
       "url": "https://rent-location-navelito.netlify.app/",
       "github": "https://github.com/alonsoct00/renta-locacion"
     },
@@ -279,9 +404,7 @@
       "name": "Challenge GBM",
       "isActive": false,
       "description": "Un challenge de GBM para participar en la creación de sus landing pages",
-      "highlights": [
-        "HTML5, CSS3, JavaScript, Bootstrap, jQuery"
-      ],
+      "highlights": ["HTML5, CSS3, JavaScript, Bootstrap, jQuery"],
       "url": "https://alonsoct00.github.io/gbm-demo/",
       "github": "https://alonsoct00.github.io/gbm-demo/"
     },
@@ -289,18 +412,14 @@
       "name": "Additional HR",
       "isActive": true,
       "description": "Sitio web realizado para una consultora de HR de USA",
-      "highlights": [
-        "HTML5, CSS3"
-      ],
+      "highlights": ["HTML5, CSS3"],
       "url": "https://alonsoct00.github.io/websitehr/"
     },
     {
       "name": "IMPSA",
       "isActive": true,
       "description": "Sitio web realizado con Webflow",
-      "highlights": [
-        "Webflow"
-      ],
+      "highlights": ["Webflow"],
       "url": "https://www.impsa.com.mx/",
       "webflow": "https://www.impsa.com.mx/"
     },
@@ -308,9 +427,7 @@
       "name": "Bennets",
       "isActive": true,
       "description": "Sitio web realizado con Webflow",
-      "highlights": [
-        "Webflow"
-      ],
+      "highlights": ["Webflow"],
       "url": "https://www.limpiezabennetts.com.mx/",
       "webflow": "https://www.limpiezabennetts.com.mx/"
     },
@@ -318,9 +435,7 @@
       "name": "Graff",
       "isActive": true,
       "description": "Sitio web realizado con Webflow",
-      "highlights": [
-        "Webflow"
-      ],
+      "highlights": ["Webflow"],
       "url": "https://www.graff.mx/",
       "webflow": "https://www.graff.mx/"
     },
@@ -328,20 +443,15 @@
       "name": "SRM",
       "isActive": true,
       "description": "Sitio web realizado con Webflow",
-      "highlights": [
-        "Webflow"
-      ],
+      "highlights": ["Webflow"],
       "url": "https://www.srm.mx/",
       "webflow": "https://www.srm.mx/"
-    }
-    ,
+    },
     {
       "name": "Compucentro",
       "isActive": true,
       "description": "Sitio web realizado con Webflow",
-      "highlights": [
-        "Webflow"
-      ],
+      "highlights": ["Webflow"],
       "url": "https://www.compucentro.com.mx/",
       "webflow": "https://www.compucentro.com.mx/"
     }

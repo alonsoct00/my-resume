@@ -30,87 +30,120 @@
   "work": [
     {
       "name": "Viajes el Corte Inglés México",
-      "position": "Front-End Web Developer",
+      "position": "Frontend Developer",
       "url": "https://viajesci.liverpool.com.mx/",
       "startDate": "2024-06-15",
       "type": "Hybrid - Full-time",
       "logo": "/veci-logo.jpeg",
-      "summary": "At Viajes el Corte Inglés México, I joined the team to strengthen their digital presence by developing promotional landing pages on Magento, managing the full creation and update lifecycle to optimize user experience. I collaborated closely with the UX team, contributing to the redesign of the website and the transition to Magento 2 — improving critical touchpoints such as the homepage and checkout flow using PHP, HTML5, CSS3, Bootstrap, JavaScript, and jQuery. I later took ownership of the shift toward a headless architecture, adopting React.js, Next.js, and TailwindCSS to build scalable, performant components and prototypes that laid the foundation for a more modern and agile digital platform.",
+      "summary": "I develop and optimize digital experiences for high-traffic travel platforms. I build reusable components with React JS, vanilla JavaScript and Styled Components, focusing on performance, accessibility and maintainability. I collaborate with UX teams using Figma to translate designs into functional, user-centered interfaces.",
       "highlights": [
-        "Developed high-converting landing pages and email marketing campaigns that directly increased online bookings.",
-        "Optimized website performance, resulting in a measurably improved user experience throughout the purchase funnel.",
-        "Led the front-end migration from Magento to a headless architecture, significantly improving site load times and scalability."
-      ]
+        "Built reusable components from scratch with React JS and Styled Components.",
+        "Collaborated with UX/Figma teams in international environments to ensure visual consistency.",
+        "Continuously optimized the shopping experience with a focus on performance and testing."
+      ],
+      "skills": ["reactjs", "javascript", "styledcomponents", "figma"]
     },
     {
       "name": "GAIA Design",
-      "position": "Front-End Web Developer",
+      "position": "Frontend Web Developer · UX E-Commerce",
       "url": "https://www.gaiadesign.com.mx/",
       "startDate": "2019-03-15",
       "endDate": "2024-03-01",
       "type": "Remote - Full-time",
       "logo": "/gaia_design_logo.jpeg",
-      "summary": "At GAIA Design, one of Mexico's leading furniture and home decor e-commerce brands, I played a key role in evolving their digital storefront. I developed and maintained promotional landing pages on Magento, working hand-in-hand with the UX team to improve the overall shopping experience. I contributed to the complete rebuild of the website and the migration to Magento 2, enhancing the homepage and checkout flow using PHP, HTML5, CSS3, Bootstrap, JavaScript, and jQuery. As the platform matured, I transitioned into a headless architecture role, developing reusable components and prototypes with React.js, Next.js, and TailwindCSS — enabling a more scalable, maintainable, and high-performance e-commerce experience.",
+      "summary": "I participated in the evolution of e-commerce from traditional Magento to a headless architecture. I developed and maintained promotional landing pages, optimized key funnel pages (home, listing, PDP, cart and checkout), and was part of the migration to a modern stack with React, Next.js, Tailwind and DatoCMS.",
       "highlights": [
-        "Built and maintained promotional web pages and email marketing campaigns that drove measurable increases in online sales.",
-        "Improved website performance and front-end responsiveness, enhancing the end-to-end user purchase experience.",
-        "Successfully led the front-end migration from Magento to a headless stack, boosting site speed and long-term scalability."
-      ]
+        "Migrated from Magento to headless architecture using React, Next.js, Vercel and TailwindCSS.",
+        "Optimized key funnel pages improving load times and reducing friction in the checkout flow.",
+        "Implemented A/B testing with VWO for continuous experimentation and conversion improvement."
+      ],
+      "skills": ["reactjs", "nextjs", "tailwindcss", "javascript", "datocms"]
     },
     {
-      "name": "Sales Ready Marketing",
+      "name": "Sales Ready Marketing / Inbox Marketing",
       "position": "Website Content Manager & Webflow Developer",
       "url": "https://www.srm.mx/",
       "startDate": "2020-06-01",
-      "endDate": "2023-03-01",
+      "endDate": "2023-01-01",
       "type": "Remote - Contract",
       "logo": "/salesreadymarketing_logo.jpeg",
-      "summary": "As a Webflow Developer and Website Content Manager, I took full ownership of the design, development, and ongoing management of client websites. Using Webflow's visual development environment, I delivered polished, fully functional, and SEO-ready sites with fast turnaround times — bridging the gap between marketing strategy and technical execution for a B2B-focused marketing agency.",
-      "highlights": []
+      "summary": "I designed and developed websites and landing pages in Webflow from design to publication, based on Figma and Adobe XD references. I implemented Zapier integrations, configured GA4 tracking and social media pixels. Responsible for responsive adaptation, interactions and performance optimization focused on conversion.",
+      "highlights": [
+        "End-to-end development of websites and landing pages in Webflow from Figma/Adobe XD.",
+        "Integration of marketing tools: GA4, social media pixels and Zapier automations.",
+        "Performance and responsive experience optimization to improve conversion rates."
+      ],
+      "skills": ["webflow", "figma", "javascript", "css3"]
     },
     {
       "name": "Interjet",
-      "position": "Front-End Web Developer",
+      "position": "Frontend Web Developer · UX",
       "url": "#",
-      "startDate": "2016-01-01",
-      "endDate": "2019-04-01",
+      "startDate": "2016-06-01",
+      "endDate": "2019-03-01",
       "type": "Full-time",
       "logo": "/interjet_air_lines_logo.jpeg",
-      "summary": "As a Front-End Developer within Interjet's UX team, I was responsible for building and maintaining responsive, visually compelling web interfaces that enhanced the digital experience for millions of travelers. I worked extensively with HTML5, CSS3, JavaScript, and Bootstrap 3 to craft user-friendly layouts and interaction patterns. In addition to front-end development, I contributed to digital marketing initiatives by designing and implementing email marketing campaigns using Oracle Responsys — creating targeted, engaging communications that drove higher audience interaction and conversion rates.",
-      "highlights": []
+      "summary": "Front-End Developer on the UX team, building responsive interfaces with HTML5, CSS3, JavaScript and Bootstrap. I participated in e-marketing campaigns with Oracle Responsys and in continuous improvements to the site's header, footer and main sections. I developed the Disneyland ticket sales microsite and landing pages for the Canadian market.",
+      "highlights": [
+        "Developed the Disneyland ticket sales microsite and landing pages for the Canadian market.",
+        "E-mail marketing campaigns with Oracle Responsys focused on conversion across different markets.",
+        "Continuous improvements to key site components increasing visual consistency and usability."
+      ],
+      "skills": ["javascript", "bootstrap", "css3", "html5"]
     },
     {
       "name": "Liverpool",
-      "position": "Front-End Web Developer",
+      "position": "Frontend Web Developer · E-Commerce",
       "url": "https://liverpool.com.mx/",
       "startDate": "2013-10-01",
       "endDate": "2016-07-01",
       "type": "Full-time",
       "logo": "/liver.jpeg",
-      "summary": "At Liverpool, one of Mexico's largest retail chains, I contributed to the growth and modernization of their e-commerce platform. I played an active role in the migration to Oracle BCC & ATG Web Commerce, improving the management and scalability of the online store. I collaborated with international teams to enhance the checkout process and developed branded landing pages for key retail partners. I also contributed to the successful launch of multi-brand sites including Williams-Sonoma, Pottery Barn, and West Elm — applying UX/UI best practices throughout to deliver seamless, high-quality digital shopping experiences.",
-      "highlights": []
+      "summary": "I was part of the Front-End team at liverpool.com.mx, developing microsites and conversion-driven digital experiences. I participated in the migration to Oracle ATG Web Commerce, developed interactive HTML prototypes for the new checkout flow and collaborated with international teams on the launch of multisites for Williams-Sonoma, Pottery Barn and West Elm.",
+      "highlights": [
+        "Migration to Oracle ATG Web Commerce and development of HTML prototypes for the new checkout.",
+        "Launch of international multisites: Williams-Sonoma, Pottery Barn and West Elm.",
+        "Development of landing pages for commercial campaigns and optimization of key site components."
+      ],
+      "skills": ["javascript", "bootstrap", "css3", "html5"]
     },
     {
-      "name": "CTIN (Telmex Center for Technology & Innovation)",
-      "position": "Front-End Web Developer",
+      "name": "CTIN (Telmex Technology & Innovation Center)",
+      "position": "Frontend Web Developer",
       "url": "http://www.ctinmx.com/",
       "startDate": "2011-11-01",
       "endDate": "2013-07-01",
       "type": "Intern",
       "logo": "/ctin.jpeg",
-      "summary": "During my internship at CTIN, I gained hands-on experience across multiple areas of web development. I worked with HTML5, CSS3, JavaScript, and jQuery to build interactive and visually engaging websites. I also had the opportunity to facilitate digital skills workshops at Aldea Digital TELMEX, sharing knowledge and helping participants explore opportunities in technology and innovation. This experience was foundational in shaping my technical mindset and my passion for building impactful digital products.",
-      "highlights": []
+      "summary": "Web development with HTML5, CSS3, JavaScript and jQuery, creating interactive and visually appealing websites. I delivered training workshops at Aldea Digital TELMEX, sharing technical knowledge and fostering digital skills in new talent.",
+      "highlights": [
+        "Development of interactive websites with HTML5, CSS3, JavaScript and jQuery.",
+        "Delivered technical training workshops at Aldea Digital TELMEX."
+      ],
+      "skills": ["javascript", "jquery", "css3", "html5"]
     },
     {
       "name": "Freelance",
-      "position": "Front-End Web Developer",
+      "position": "Frontend Web Developer · Webflow · WordPress · Shopify",
       "url": "https://ufoconsultingmx.com/",
-      "startDate": "2008",
+      "startDate": "2008-01-01",
       "endDate": null,
       "type": "Freelance",
       "logo": "/alonsoct_me_logo.jpeg",
-      "summary": "As an independent Front-End Developer, I've partnered with clients across industries to design and build high-impact websites tailored to their specific goals. My stack spans HTML5, CSS3, Bootstrap, JavaScript frameworks, WordPress, and Joomla — allowing me to deliver both static and dynamic web experiences with a strong emphasis on performance, usability, and visual quality. I take pride in understanding each client's business needs and translating them into clean, maintainable, and effective digital solutions.",
-      "highlights": []
+      "summary": "Freelance Frontend Developer specialized in high-performance websites. I build and optimize in Webflow, WordPress and Shopify, combining HTML5, CSS3 and modern frameworks like React, Vue and Astro. I manage projects end-to-end from concept to launch, applying WPO, technical SEO and UX best practices.",
+      "highlights": [
+        "End-to-end development in Webflow, WordPress and Shopify for clients across different industries.",
+        "Applied WPO and technical SEO to improve site performance and search engine visibility.",
+        "Technical consulting and web implementation support for e-commerce and corporate websites."
+      ],
+      "skills": [
+        "webflow",
+        "wordpress",
+        "reactjs",
+        "vuejs",
+        "astro",
+        "javascript"
+      ]
     }
   ],
   "education": [
@@ -167,25 +200,99 @@
     }
   ],
   "skills": [
-    { "name": "HTML", "level": "Master", "keywords": ["Web Development", "Frontend"] },
-    { "name": "CSS", "level": "Master", "keywords": ["Web Development", "Frontend", "Responsive Design"] },
-    { "name": "JavaScript", "level": "Intermediate", "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"] },
-    { "name": "TypeScript", "level": "Basic", "keywords": ["Web Development", "Frontend", "Backend", "JavaScript"] },
-    { "name": "Tailwind", "level": "Intermediate", "keywords": ["Web Development", "Frontend", "CSS Framework", "Responsive Design"] },
-    { "name": "SCSS", "level": "Intermediate", "keywords": ["CSS", "Preprocessor"] },
-    { "name": "LESS", "level": "Intermediate", "keywords": ["CSS", "Preprocessor"] },
-    { "name": "React", "level": "Intermediate", "keywords": ["Web Development", "Frontend", "JavaScript Library", "UI"] },
-    { "name": "VueJS", "level": "Intermediate", "keywords": ["Web Development", "Frontend", "JavaScript"] },
-    { "name": "Astro", "level": "Intermediate", "keywords": ["Web Development", "Frontend", "SSG"] },
-    { "name": "WordPress", "level": "Advanced", "keywords": ["CMS", "Web Development"] },
-    { "name": "Webflow", "level": "Advanced", "keywords": ["CMS", "No-code", "Web Development"] },
-    { "name": "MySQL", "level": "Basic", "keywords": ["Databases", "SQL", "Data Storage", "Backend"] },
-    { "name": "Git", "level": "Advanced", "keywords": ["Version Control", "Collaboration", "Source Code"] },
-    { "name": "GitHub", "level": "Advanced", "keywords": ["Version Control", "Collaboration", "Source Code", "Git"] },
+    {
+      "name": "HTML",
+      "level": "Master",
+      "keywords": ["Web Development", "Frontend"]
+    },
+    {
+      "name": "CSS",
+      "level": "Master",
+      "keywords": ["Web Development", "Frontend", "Responsive Design"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Basic",
+      "keywords": ["Web Development", "Frontend", "Backend", "JavaScript"]
+    },
+    {
+      "name": "Tailwind",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "CSS Framework",
+        "Responsive Design"
+      ]
+    },
+    {
+      "name": "SCSS",
+      "level": "Intermediate",
+      "keywords": ["CSS", "Preprocessor"]
+    },
+    {
+      "name": "LESS",
+      "level": "Intermediate",
+      "keywords": ["CSS", "Preprocessor"]
+    },
+    {
+      "name": "React",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "VueJS",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "JavaScript"]
+    },
+    {
+      "name": "Astro",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "SSG"]
+    },
+    {
+      "name": "WordPress",
+      "level": "Advanced",
+      "keywords": ["CMS", "Web Development"]
+    },
+    {
+      "name": "Webflow",
+      "level": "Advanced",
+      "keywords": ["CMS", "No-code", "Web Development"]
+    },
+    {
+      "name": "Shopify",
+      "level": "Advanced",
+      "keywords": ["E-commerce", "CMS", "Web Development"]
+    },
+    {
+      "name": "MySQL",
+      "level": "Basic",
+      "keywords": ["Databases", "SQL", "Data Storage", "Backend"]
+    },
+    {
+      "name": "Git",
+      "level": "Advanced",
+      "keywords": ["Version Control", "Collaboration", "Source Code"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Advanced",
+      "keywords": ["Version Control", "Collaboration", "Source Code", "Git"]
+    },
     { "name": "Jira", "level": "Advanced", "keywords": ["Project Management"] },
     { "name": "Figma", "level": "Basic", "keywords": ["UX", "UI"] },
     { "name": "Sketch", "level": "Basic", "keywords": ["UX", "UI", "Design"] },
-    { "name": "AdobeCS", "level": "Advanced", "keywords": ["Design", "Photoshop", "Illustrator"] }
+    {
+      "name": "AdobeCS",
+      "level": "Advanced",
+      "keywords": ["Design", "Photoshop", "Illustrator"]
+    }
   ],
   "languages": [
     {
@@ -209,10 +316,24 @@
       "name": "Gissela Sauñe - Personal portfolio website",
       "isActive": true,
       "description": "Personal portfolio website for visual artist Gissela Sauñe",
-      "highlights": [
-        "HTML5, CSS3, JavaScript"
-      ],
+      "highlights": ["HTML5, CSS3, JavaScript"],
       "url": "https://gisselasaune.com.mx/"
+    },
+    {
+      "name": "ZentoMX",
+      "isActive": true,
+      "description": "Furniture e-commerce built on Shopify.",
+      "highlights": ["Liquid", "JavaScript", "CSS3"],
+      "url": "https://www.zento.mx/",
+      "shopify": "https://www.zento.mx/"
+    },
+    {
+      "name": "Calladitos",
+      "isActive": true,
+      "description": "Online art store on Shopify.",
+      "highlights": ["Liquid", "CSS3"],
+      "url": "https://calladitos-2.myshopify.com/",
+      "shopify": "https://calladitos-2.myshopify.com/"
     },
     {
       "name": "FONIMA",
@@ -255,9 +376,7 @@
       "name": "Airbnb GOYO",
       "isActive": false,
       "description": "Landing page para renta de Airbnb",
-      "highlights": [
-        "HTML5, CSS3, VueJS, JavaScript"
-      ],
+      "highlights": ["HTML5, CSS3, VueJS, JavaScript"],
       "url": "https://rent-location-navelito.netlify.app/",
       "github": "https://github.com/alonsoct00/renta-locacion"
     },

@@ -3,6 +3,8 @@ import Javascript from "@/icons/javascript.astro";
 import Section from "../Section.astro";
 import { projects as projects_es } from "@cv";
 import { projects as projects_en } from "@cv_en";
+import type { CV } from "@/cv.d.ts"
+
 
 type AstroIcon = (props?: any) => any;
 
@@ -52,6 +54,8 @@ const FRAMEWORK_ICON_MAP: Record<string, string> = {
   javascript: "javascript",
   typescript: "typescript",
   TypeScript: "typescript",
+  Shopify: "shopify",
+  shopify: "shopify"
 };
 
 async function getFrameworkIcons(highlights: string[]) {
@@ -73,20 +77,21 @@ async function getFrameworkIcons(highlights: string[]) {
 // Pre-resolvemos todos los iconos en el frontmatter
 const GitHubIcon = await getIcon("github");
 const WebflowIcon = await getIcon("webflow");
+const ShopifyIcon = await getIcon("shopify");
 
 const resolvedProjects_es = await Promise.all(
-  projects_es.map(async (project) => ({
+  (projects_es as Array<{ shopify?: string } & typeof projects_es[0]>).map(async (project) => ({
     ...project,
     frameworkIcons: await getFrameworkIcons(project.highlights),
   })),
-);
+)
 
 const resolvedProjects_en = await Promise.all(
-  projects_en.map(async (project) => ({
+  (projects_en as Array<{ shopify?: string } & typeof projects_en[0]>).map(async (project) => ({
     ...project,
     frameworkIcons: await getFrameworkIcons(project.highlights),
   })),
-);
+)
 ---
 
 <Section id="projects">
@@ -104,11 +109,14 @@ const resolvedProjects_en = await Promise.all(
           isActive,
           github,
           webflow,
+          shopify,
           frameworkIcons,
         }) => {
           const GH = GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
           const WF =
             WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
+          const SHP =
+            ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
           return (
             <li>
               <article>
@@ -142,8 +150,18 @@ const resolvedProjects_en = await Promise.all(
                         <WF />
                       </a>
                     )}
+                    {shopify && SHP && (
+                      <a
+                        class="shopify-code-link"
+                        href={shopify}
+                        target="_blank"
+                        title={`Shopify ${name}`}
+                      >
+                        <SHP />
+                      </a>
+                    )}
                   </h3>
-                                    {frameworkIcons.length > 0 && (
+                  {frameworkIcons.length > 0 && (
                     <div class="framework-icons">
                       {frameworkIcons.map(({ name, icon }) => {
                         const Icon =
@@ -195,11 +213,14 @@ const resolvedProjects_en = await Promise.all(
           isActive,
           github,
           webflow,
+          shopify,
           frameworkIcons,
         }) => {
           const GH = GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
           const WF =
             WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
+          const SHP =
+            ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
           return (
             <li>
               <article>
@@ -231,6 +252,16 @@ const resolvedProjects_en = await Promise.all(
                         title={`Webflow ${name}`}
                       >
                         <WF />
+                      </a>
+                    )}
+                    {shopify && SHP && (
+                      <a
+                        class="shopify-code-link"
+                        href={shopify}
+                        target="_blank"
+                        title={`Shopify ${name}`}
+                      >
+                        <SHP />
                       </a>
                     )}
                   </h3>

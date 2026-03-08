@@ -47,6 +47,9 @@ interface Work {
   endDate: DateStr | null
   summary: string
   highlights: Highlight
+  type?: string
+  logo?: string
+  skills?: Array<string>
 }
 
 type DateStr = `${string}-${string}-${string}`
@@ -130,6 +133,9 @@ interface Projects {
   highlights: Highlight
   url: string
   github?: string
+  webflow?: string
+  shopify?: string
+  frameworkIcons: Array<string>
 }
 
 interface Interests {
