@@ -33,10 +33,16 @@ async function getIcon(name: string) {
   return null
 }
 
-const resolvedSkills = await Promise.all(
-  skills.map(async ({ name, keywords }) => ({
-    name,
-    keywords,
+const resolvedSkills_es = await Promise.all(
+  skills_es.map(async ({ name, level, keywords }) => ({
+    name, level, keywords,
+    icon: await getIcon(name)
+  }))
+)
+
+const resolvedSkills_en = await Promise.all(
+  skills_en.map(async ({ name, level, keywords }) => ({
+    name, level, keywords,
     icon: await getIcon(name)
   }))
 )
@@ -45,14 +51,30 @@ const resolvedSkills = await Promise.all(
 <Section id="skills">
   <h2 data-lang-content="es">Habilidades y conocimientos</h2>
   <h2 data-lang-content="en">Skills & Knowledge</h2>
-  <ul>
-    {resolvedSkills.map(({ name, keywords, icon }) => {
+
+  <ul class="data-skills" data-lang-content="es">
+    {resolvedSkills_es.map(({ name, level, keywords, icon }) => {
       const Icon = icon?.type === 'astro' ? icon.Component : null
       return (
-        <li title={keywords.join(", ")}>
+        <li style="display: inline-flex;" title={`${name} - ${level}`}>
           {Icon && <Icon />}
           {icon?.type === 'svg' && <img src={icon.url} alt={name} width="14" height="14" />}
           <span>{name}</span>
+          <span class="keywords">{keywords.join(", ")}</span>
+        </li>
+      )
+    })}
+  </ul>
+
+  <ul class="data-skills" data-lang-content="en">
+    {resolvedSkills_en.map(({ name, level, keywords, icon }) => {
+      const Icon = icon?.type === 'astro' ? icon.Component : null
+      return (
+        <li style="display: inline-flex;" title={`${name} - ${level}`}>
+          {Icon && <Icon />}
+          {icon?.type === 'svg' && <img src={icon.url} alt={name} width="14" height="14" />}
+          <span>{name}</span>
+          <span class="keywords">{keywords.join(", ")}</span>
         </li>
       )
     })}
@@ -85,22 +107,37 @@ const resolvedSkills = await Promise.all(
 
 
 <style>
-  ul {
+  ul.data-skills {
     display: inline-flex;
     gap: 8px;
     flex-wrap: wrap;
   }
 
-  li {
+  .data-skills li {
     align-items: center;
     background: #eee;
     border-radius: 6px;
     color: black;
-    display: flex;
+    display: inline-flex;
     font-size: 0.8rem;
     font-weight: 500;
     gap: 4px;
     padding: 0.2rem 0.6rem;
     margin-right: 8px;
+    position: relative;
+    min-height: 30px;
+    width: auto;
   }
+
+  .keywords {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 </style>

@@ -2,6 +2,59 @@
 import Section from "../Section.astro"
 import { work as work_es } from "@cv"
 import { work as work_en } from "@cv_en"
+
+type AstroIcon = (props?: any) => any
+
+const astroIcons = import.meta.glob<{ default: AstroIcon }>('@/icons/*.astro')
+const svgIcons = import.meta.glob<string>('/public/icons/*.svg', { query: '?url', import: 'default' })
+
+function slugify(name: string) {
+  return name.toLowerCase().replace(/[\s.]/g, "").replace(/-/g, "")
+}
+
+async function getIcon(name: string) {
+  const slug = slugify(name)
+
+  const astroMatch = Object.entries(astroIcons).find(([path]) =>
+    path.toLowerCase().includes(`/${slug}.astro`)
+  )
+  if (astroMatch) {
+    const mod = await astroMatch[1]()
+    return { type: 'astro' as const, Component: mod.default }
+  }
+
+  const svgMatch = Object.entries(svgIcons).find(([path]) =>
+    path.toLowerCase().includes(`/${slug}.svg`)
+  )
+  if (svgMatch) return { type: 'svg' as const, url: await svgMatch[1]() }
+
+  return null
+}
+
+// Pre-resolvemos skills de cada trabajo
+const resolvedWork_es = await Promise.all(
+  work_es.map(async (job) => ({
+    ...job,
+    resolvedSkills: await Promise.all(
+      (job.skills ?? []).map(async (skill: string) => ({
+        name: skill,
+        icon: await getIcon(skill)
+      }))
+    )
+  }))
+)
+
+const resolvedWork_en = await Promise.all(
+  work_en.map(async (job) => ({
+    ...job,
+    resolvedSkills: await Promise.all(
+      (job.skills ?? []).map(async (skill: string) => ({
+        name: skill,
+        icon: await getIcon(skill)
+      }))
+    )
+  }))
+)
 ---
 
 <Section id="experience">
@@ -10,11 +63,10 @@ import { work as work_en } from "@cv_en"
 
   <ul id="work_list" class="work-list" data-lang-content="es">
     {
-      work_es.map(
-        ({ name, startDate, endDate, position, summary, highlights, url, type, logo }) => {
+      resolvedWork_es.map(
+        ({ name, startDate, endDate, position, summary, highlights, url, type, logo, resolvedSkills }) => {
           const startYear = new Date(startDate).getFullYear()
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
+          const endYear = endDate != null ? new Date(endDate).getFullYear() : "Actual"
           const years = `${startYear} - ${endYear}`
 
           return (
@@ -22,13 +74,13 @@ import { work as work_en } from "@cv_en"
               <article>
                 <header>
                   <div>
-                      <a href={url} title={`Ver ${name}`} target="_blank">
-                        <span class="work_item_image"><img src={logo} alt={name}></span>
-                        <h2>
-                          {name} <br/>
-                          <span>{position}</span>
-                        </h2>
-                      </a>
+                    <a href={url} title={`Ver ${name}`} target="_blank">
+                      <span class="work_item_image"><img src={logo} alt={name} /></span>
+                      <h2>
+                        {name} <br/>
+                        <span>{position}</span>
+                      </h2>
+                    </a>
                   </div>
                   <div class="work-info">
                     <time>{years}</time>
@@ -38,11 +90,24 @@ import { work as work_en } from "@cv_en"
                 <footer>
                   <p>{summary}</p>
                   {highlights && (
-                  <ul id="work_highlights">
-                    {highlights.map((highlight) => (
-                      <li>{highlight}</li>
-                    ))}
-                  </ul>
+                    <ul id="work_highlights">
+                      {highlights.map((highlight) => (
+                        <li>{highlight}</li>
+                      ))}
+                    </ul>
+                  )}
+                  {resolvedSkills.length > 0 && (
+                    <div class="skill-icons">
+                      {resolvedSkills.map(({ name, icon }) => {
+                        const Icon = icon?.type === 'astro' ? icon.Component : null
+                        return (
+                          <span title={name} class="skill-icon">
+                            {Icon && <Icon />}
+                            {icon?.type === 'svg' && <img src={icon.url} alt={name} width="16" height="16" />}
+                          </span>
+                        )
+                      })}
+                    </div>
                   )}
                 </footer>
               </article>
@@ -55,11 +120,10 @@ import { work as work_en } from "@cv_en"
 
   <ul id="work_list_en" class="work-list" data-lang-content="en">
     {
-      work_en.map(
-        ({ name, startDate, endDate, position, summary, highlights, url, type, logo }) => {
+      resolvedWork_en.map(
+        ({ name, startDate, endDate, position, summary, highlights, url, type, logo, resolvedSkills }) => {
           const startYear = new Date(startDate).getFullYear()
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Present"
+          const endYear = endDate != null ? new Date(endDate).getFullYear() : "Present"
           const years = `${startYear} - ${endYear}`
 
           return (
@@ -67,13 +131,13 @@ import { work as work_en } from "@cv_en"
               <article>
                 <header>
                   <div>
-                      <a href={url} title={`View ${name}`} target="_blank">
-                        <span class="work_item_image"><img src={logo} alt={name}></span>
-                        <h2>
-                          {name} <br/>
-                          <span>{position}</span>
-                        </h2>
-                      </a>
+                    <a href={url} title={`View ${name}`} target="_blank">
+                      <span class="work_item_image"><img src={logo} alt={name} /></span>
+                      <h2>
+                        {name} <br/>
+                        <span>{position}</span>
+                      </h2>
+                    </a>
                   </div>
                   <div class="work-info">
                     <time>{years}</time>
@@ -83,11 +147,24 @@ import { work as work_en } from "@cv_en"
                 <footer>
                   <p>{summary}</p>
                   {highlights && (
-                  <ul id="work_highlights">
-                    {highlights.map((highlight) => (
-                      <li>{highlight}</li>
-                    ))}
-                  </ul>
+                    <ul id="work_highlights">
+                      {highlights.map((highlight) => (
+                        <li>{highlight}</li>
+                      ))}
+                    </ul>
+                  )}
+                  {resolvedSkills.length > 0 && (
+                    <div class="skill-icons">
+                      {resolvedSkills.map(({ name, icon }) => {
+                        const Icon = icon?.type === 'astro' ? icon.Component : null
+                        return (
+                          <span title={name} class="skill-icon">
+                            {Icon && <Icon />}
+                            {icon?.type === 'svg' && <img src={icon.url} alt={name} width="16" height="16" />}
+                          </span>
+                        )
+                      })}
+                    </div>
                   )}
                 </footer>
               </article>
@@ -98,3 +175,26 @@ import { work as work_en } from "@cv_en"
     }
   </ul>
 </Section>
+
+<style>
+  .skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+
+  .skill-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+
+  .skill-icon:hover {
+    opacity: 1;
+  }
+</style>
