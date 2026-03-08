@@ -407,8 +407,9 @@ h2 {
 
     .highlights {
         display: flex;
-        gap: 8px;
+        gap: 4px;
         line-height: 16px;
+        flex-wrap: wrap;
     }
 
     .github-code-link {

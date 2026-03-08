@@ -309,14 +309,14 @@
       "name": "Acervo Animación - AAM",
       "isActive": true,
       "description": "Website for the Mexican Animation Archive (AAM)",
-      "highlights": ["HTML5, CSS3, Astro, TailwindCSS, JavaScript"],
+      "highlights": ["HTML5", "CSS3", "Astro", "TailwindCSS", "JavaScript"],
       "url": "https://acervoanimacion.mx/"
     },
     {
       "name": "Gissela Sauñe - Personal portfolio website",
       "isActive": true,
       "description": "Personal portfolio website for visual artist Gissela Sauñe",
-      "highlights": ["HTML5, CSS3, JavaScript"],
+      "highlights": ["HTML5", "CSS3", "JavaScript"],
       "url": "https://gisselasaune.com.mx/"
     },
     {
@@ -339,28 +339,28 @@
       "name": "FONIMA",
       "isActive": false,
       "description": "Website for the FONIMA cultural festival",
-      "highlights": ["HTML5, CSS3, JavaScript, Bootstrap"],
+      "highlights": ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
       "url": "https://alonsoct00.github.io/fonima-web/"
     },
     {
       "name": "WNDH",
       "isActive": true,
       "description": "Website for divergent artist WNDH",
-      "highlights": ["HTML5, CSS3, JavaScript"],
+      "highlights": ["HTML5", "CSS3", "JavaScript"],
       "url": "https://www.worrynoisedirtheat.com/"
     },
     {
       "name": "ROGOFESA",
       "isActive": true,
       "description": "Informational website for legal and environmental consulting services",
-      "highlights": ["HTML5, CSS3, JavaScript, Bootstrap 4"],
+      "highlights": ["HTML5", "CSS3", "JavaScript", "Bootstrap 4"],
       "url": "https://www.rogofesa.com.mx/"
     },
     {
       "name": "Casiopea",
       "isActive": true,
       "description": "Website for an animation and design production studio",
-      "highlights": ["HTML5, CSS3, JavaScript"],
+      "highlights": ["HTML5", "CSS3", "JavaScript"],
       "url": "https://casiopea.mx/",
       "github": "https://github.com/alonsoct00/Casiopea-website"
     },
@@ -368,7 +368,7 @@
       "name": "BMI Calculator",
       "isActive": false,
       "description": "Custom BMI calculator built for a nutritionist, integrated into their WordPress site",
-      "highlights": ["HTML5, CSS3, JavaScript"],
+      "highlights": ["HTML5", "CSS3", "JavaScript"],
       "url": "https://github.com/alonsoct00/BMI-calculator-dietamx/blob/main/bmi-calc.html",
       "github": "https://github.com/alonsoct00/BMI-calculator-dietamx/blob/main/bmi-calc.html"
     },
@@ -376,7 +376,7 @@
       "name": "Airbnb GOYO",
       "isActive": false,
       "description": "Landing page para renta de Airbnb",
-      "highlights": ["HTML5, CSS3, VueJS, JavaScript"],
+      "highlights": ["HTML5", "CSS3", "VueJS", "JavaScript"],
       "url": "https://rent-location-navelito.netlify.app/",
       "github": "https://github.com/alonsoct00/renta-locacion"
     },
@@ -384,7 +384,7 @@
       "name": "Challenge GBM",
       "isActive": false,
       "description": "Front-end challenge for GBM — landing page design and development",
-      "highlights": ["HTML5, CSS3, JavaScript, Bootstrap, jQuery"],
+      "highlights": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
       "url": "https://alonsoct00.github.io/gbm-demo/",
       "github": "https://alonsoct00.github.io/gbm-demo/"
     },
@@ -392,7 +392,7 @@
       "name": "Additional HR",
       "isActive": true,
       "description": "Website for a US-based HR consulting firm",
-      "highlights": ["HTML5, CSS3"],
+      "highlights": ["HTML5", "CSS3"],
       "url": "https://alonsoct00.github.io/websitehr/"
     },
     {
