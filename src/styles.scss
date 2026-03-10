@@ -163,6 +163,7 @@ h2 {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+            flex-wrap: wrap;
             margin-bottom: 4px;
         }
 
@@ -212,10 +213,11 @@ h2 {
 
     @media (width <=700px) {
         time {
-            text-align: right;
+            text-align: left;
         }
 
-        #work_list {
+        #work_list,
+        #work_list_en {
             article {
                 a {
                     align-items: flex-start;
@@ -223,7 +225,11 @@ h2 {
             }
 
             .work-info {
-                display: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                text-align: left;
             }
         }
     }
@@ -446,5 +452,17 @@ h2 {
         article h3 span {
             animation-name: none;
         }
+    }
+}
+
+
+@media print {
+    article h3 span {
+        animation-name: none;
+    }
+
+    #projects,
+    #courses {
+        display: none !important;
     }
 }

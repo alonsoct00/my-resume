@@ -3,10 +3,8 @@ import { basics as basics_es } from "@cv"
 import { basics as basics_en } from "@cv_en"
 import Section from "@/components/Section.astro"
 
-// Tipo para los iconos: componente Astro
 type AstroIcon = (props?: any) => any
 
-// Cargamos todos los iconos dinámicamente
 const SOCIAL_ICONS: Record<string, AstroIcon> = {}
 const iconModules = import.meta.glob<{ default: AstroIcon }>('@/icons/*.astro')
 
@@ -20,35 +18,43 @@ const linkedInfo = profiles.find(({ network }) => network.toLowerCase() === "lin
 const linkedUrl = linkedInfo?.url
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 
-// Extraemos los iconos específicos para evitar errores de JSX
 const MailIcon = SOCIAL_ICONS["mail"]
 const PhoneIcon = SOCIAL_ICONS["phone"]
 const WorldMapIcon = SOCIAL_ICONS["worldmap"]
 ---
+
 <Section id="hero">
   <div class="container">
     <div class="info">
-      <h1>{name}</h1>
+      <h1>
+        {name}
+        <span class="sr-only"> — Frontend Developer</span>
+      </h1>
 
       <h2 data-lang-content="es">{basics_es.label}</h2>
-      <h2 data-lang-content="en">{basics_en.label}</h2>
+      <h2 data-lang-content="en" aria-hidden="true">{basics_en.label}</h2>
 
       <span>
         {WorldMapIcon && <WorldMapIcon />}
         <span data-lang-content="es">{basics_es.location.city}, {basics_es.location.region}</span>
-        <span data-lang-content="en">{basics_en.location.city}, {basics_en.location.region}</span>
+        <span data-lang-content="en" aria-hidden="true">{basics_en.location.city}, {basics_en.location.region}</span>
       </span>
 
+      <!-- Solo visible al imprimir -->
       <footer class="print">{printInfo}</footer>
+
+      <!-- Solo visible en pantalla -->
       <footer class="no-print">
         {email && MailIcon && (
-          <a href={`mailto:${email}`} title={`Email ${name}`} target="_blank" rel="noopener noreferrer">
+          <a href={`mailto:${email}`} title={email} target="_blank" rel="noopener noreferrer">
             <MailIcon />
+            <span class="sr-only">{email}</span>
           </a>
         )}
         {phone && PhoneIcon && (
-          <a href={`tel:${phone}`} title={`Call ${name}`} target="_blank" rel="noopener noreferrer">
+          <a href={`tel:${phone}`} title={phone} target="_blank" rel="noopener noreferrer">
             <PhoneIcon />
+            <span class="sr-only">{phone}</span>
           </a>
         )}
         {profiles.map(({ network, url }) => {
@@ -56,6 +62,7 @@ const WorldMapIcon = SOCIAL_ICONS["worldmap"]
           return Component ? (
             <a href={url} title={`${name} on ${network}`} target="_blank" rel="noopener noreferrer">
               <Component />
+              <span class="sr-only">{network} — {url}</span>
             </a>
           ) : null
         })}
@@ -66,3 +73,17 @@ const WorldMapIcon = SOCIAL_ICONS["worldmap"]
     </figure>
   </div>
 </Section>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

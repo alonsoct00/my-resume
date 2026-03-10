@@ -3,10 +3,6 @@ import Section from "../Section.astro"
 import { skills as skills_es, languages as languages_es } from "@cv"
 import { skills as skills_en, languages as languages_en } from "@cv_en"
 
-const languaged = "es";
-const skills = languaged === "es" ? skills_es : skills_en;
-const languages = languaged === "es" ? languages_es : languages_en;
-
 const astroIcons = import.meta.glob<{ default: any }>('@/icons/*.astro')
 const svgIcons = import.meta.glob<string>('/public/icons/*.svg', { query: '?url', import: 'default' })
 
@@ -50,13 +46,13 @@ const resolvedSkills_en = await Promise.all(
 
 <Section id="skills">
   <h2 data-lang-content="es">Habilidades y conocimientos</h2>
-  <h2 data-lang-content="en">Skills & Knowledge</h2>
+  <h2 data-lang-content="en" aria-hidden="true">Skills & Knowledge</h2>
 
   <ul class="data-skills" data-lang-content="es">
     {resolvedSkills_es.map(({ name, level, keywords, icon }) => {
       const Icon = icon?.type === 'astro' ? icon.Component : null
       return (
-        <li style="display: inline-flex;" title={`${name} - ${level}`}>
+        <li title={`${name} - ${level}`}>
           {Icon && <Icon />}
           {icon?.type === 'svg' && <img src={icon.url} alt={name} width="14" height="14" />}
           <span>{name}</span>
@@ -66,11 +62,11 @@ const resolvedSkills_en = await Promise.all(
     })}
   </ul>
 
-  <ul class="data-skills" data-lang-content="en">
+  <ul class="data-skills" data-lang-content="en" aria-hidden="true">
     {resolvedSkills_en.map(({ name, level, keywords, icon }) => {
       const Icon = icon?.type === 'astro' ? icon.Component : null
       return (
-        <li style="display: inline-flex;" title={`${name} - ${level}`}>
+        <li title={`${name} - ${level}`}>
           {Icon && <Icon />}
           {icon?.type === 'svg' && <img src={icon.url} alt={name} width="14" height="14" />}
           <span>{name}</span>
@@ -85,7 +81,7 @@ const resolvedSkills_en = await Promise.all(
   <h2 data-lang-content="es">Idiomas</h2>
   <ul class="data-lang" data-lang-content="es">
     {languages_es.map(({ language, fluency }) => (
-      <li style="display: inline-block;">
+      <li>
         <p>{language}</p>
         <span>{fluency}</span>
       </li>
@@ -93,18 +89,17 @@ const resolvedSkills_en = await Promise.all(
   </ul>
 </Section>
 
-<Section id="languages_en" data-lang-content="en">
-  <h2 data-lang-content="en">Languages</h2>
-  <ul class="data-lang" data-lang-content="en">
+<Section id="languages_en" data-lang-content="en" aria-hidden="true">
+  <h2 data-lang-content="en" aria-hidden="true">Languages</h2>
+  <ul class="data-lang" data-lang-content="en" aria-hidden="true">
     {languages_en.map(({ language, fluency }) => (
-      <li style="display: inline-block;">
+      <li>
         <p>{language}</p>
         <span>{fluency}</span>
       </li>
     ))}
   </ul>
 </Section>
-
 
 <style>
   ul.data-skills, ul.data-lang {
@@ -130,14 +125,14 @@ const resolvedSkills_en = await Promise.all(
   }
 
   .keywords {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 </style>

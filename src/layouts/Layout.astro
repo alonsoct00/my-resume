@@ -9,12 +9,10 @@ interface Props {
 
 const { title } = Astro.props
 
-const language = "es";
+const { image, url } = basics_es
 
-const basics = language === "es" ? basics_es : basics_en;
-const { name, label } = basics; 
-const { image, summary, url } = basics_es
-
+const seoDescription_es = "Frontend Developer con más de 10 años de experiencia en React, Vue, Astro, Webflow y Shopify. Especializado en UX, rendimiento web y SEO técnico."
+const seoDescription_en = "Frontend Developer with over 10 years of experience in React, Vue, Astro, Webflow and Shopify. Specialized in UX, web performance and technical SEO."
 ---
 
 <!doctype html>
@@ -22,34 +20,46 @@ const { image, summary, url } = basics_es
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
-    <meta name="description" content={summary} />
+
+    <!-- SEO: descripción corta estática, no el summary largo -->
+    <meta name="description" content={seoDescription_es} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="image" href={image} />
-
     <link rel="sitemap" href="/sitemap-index.xml" />
 
+    <!-- Open Graph -->
     <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={summary} />
+    <meta property="og:description" content={seoDescription_es} />
     <meta property="og:image" content="/me.webp" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
     <meta property="twitter:url" content={url} />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={summary} />
-    <meta name="twitter:image" content="" />
+    <meta name="twitter:description" content={seoDescription_es} />
+    <meta name="twitter:image" content="/me.webp" />
 
-  <script is:inline>
-    (function() {
-      const saved = localStorage.getItem("cv-lang");
-      const browser = navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
-      document.documentElement.setAttribute("data-lang", saved || browser);
-    })();
-  </script>
+    <!-- Cambia description y lang según idioma del usuario -->
+    <script is:inline define:vars={{ seoDescription_es, seoDescription_en }}>
+      (function() {
+        const saved = localStorage.getItem("cv-lang");
+        const browser = navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
+        const lang = saved || browser;
 
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.setAttribute("lang", lang);
+
+        // Actualiza meta description según idioma
+        const desc = lang === "en" ? seoDescription_en : seoDescription_es;
+        document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+        document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+        document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
+      })();
+    </script>
   </head>
   <body>
     <slot />
@@ -122,38 +132,38 @@ const { image, summary, url } = basics_es
     display: none !important;
   }
 
-/* Language switching */
-[data-lang-content="es"],
-[data-lang-content="en"] {
-  display: none !important;
-}
+  /* Language switching */
+  [data-lang-content="es"],
+  [data-lang-content="en"] {
+    display: none !important;
+  }
 
-html[data-lang="es"] [data-lang-content="es"] {
-  display: revert !important;
-}
+  html[data-lang="es"] [data-lang-content="es"] {
+    display: revert !important;
+  }
 
-html[data-lang="en"] [data-lang-content="en"] {
-  display: revert !important;
-}
+  html[data-lang="en"] [data-lang-content="en"] {
+    display: revert !important;
+  }
 
-html[data-lang="es"] .projects-grid[data-lang-content="es"],
-html[data-lang="en"] .projects-grid[data-lang-content="en"] {
-  display: grid !important;
-}
+  html[data-lang="es"] .projects-grid[data-lang-content="es"],
+  html[data-lang="en"] .projects-grid[data-lang-content="en"] {
+    display: grid !important;
+  }
 
-html[data-lang="es"] .work-list[data-lang-content="es"],
-html[data-lang="en"] .work-list[data-lang-content="en"] {
-  display: flex !important;
-  flex-wrap: wrap;
-  flex-direction: column;
-  gap: 40px;
-}
+  html[data-lang="es"] .work-list[data-lang-content="es"],
+  html[data-lang="en"] .work-list[data-lang-content="en"] {
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 40px;
+  }
 
-html[data-lang="es"] .data-skills[data-lang-content="es"],
-html[data-lang="en"] .data-skills[data-lang-content="en"] {
-  display: flex !important;
-  gap: 8px;
-}
+  html[data-lang="es"] .data-skills[data-lang-content="es"],
+  html[data-lang="en"] .data-skills[data-lang-content="en"] {
+    display: flex !important;
+    gap: 8px;
+  }
 
   @media print {
     .no-print {

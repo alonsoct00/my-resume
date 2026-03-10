@@ -1,10 +1,7 @@
 ---
-import Javascript from "@/icons/javascript.astro";
 import Section from "../Section.astro";
 import { projects as projects_es } from "@cv";
 import { projects as projects_en } from "@cv_en";
-import type { CV } from "@/cv.d.ts"
-
 
 type AstroIcon = (props?: any) => any;
 
@@ -37,7 +34,6 @@ async function getIcon(name: string) {
   return null;
 }
 
-// Mapa de keyword en highlights → nombre del icono
 const FRAMEWORK_ICON_MAP: Record<string, string> = {
   astro: "astro",
   tailwindcss: "tailwindcss",
@@ -48,14 +44,10 @@ const FRAMEWORK_ICON_MAP: Record<string, string> = {
   react: "reactjs",
   bootstrap: "bootstrap",
   jquery: "jquery",
-  jQuery: "jquery",
-  Javascript: "javascript",
-  JavaScript: "javascript",
   javascript: "javascript",
   typescript: "typescript",
-  TypeScript: "typescript",
-  Shopify: "shopify",
-  shopify: "shopify"
+  shopify: "shopify",
+  liquid: "liquid",
 };
 
 async function getFrameworkIcons(highlights: string[]) {
@@ -74,7 +66,6 @@ async function getFrameworkIcons(highlights: string[]) {
   );
 }
 
-// Pre-resolvemos todos los iconos en el frontmatter
 const GitHubIcon = await getIcon("github");
 const WebflowIcon = await getIcon("webflow");
 const ShopifyIcon = await getIcon("shopify");
@@ -96,67 +87,36 @@ const resolvedProjects_en = await Promise.all(
 
 <Section id="projects">
   <h2 data-lang-content="es">Proyectos y portafolio</h2>
-  <h2 data-lang-content="en">Projects & Portfolio</h2>
+  <h2 data-lang-content="en" aria-hidden="true">Projects & Portfolio</h2>
 
   <ul class="projects-grid" data-lang-content="es">
     {
       resolvedProjects_es.map(
-        ({
-          url,
-          description,
-          highlights,
-          name,
-          isActive,
-          github,
-          webflow,
-          shopify,
-          frameworkIcons,
-        }) => {
+        ({ url, description, highlights, name, isActive, github, webflow, shopify, frameworkIcons }) => {
           const GH = GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
-          const WF =
-            WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
-          const SHP =
-            ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
+          const WF = WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
+          const SHP = ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
           return (
             <li>
               <article>
                 <header>
                   <h3>
-                    <a
-                      href={url}
-                      target="_blank"
-                      title={`Ver el proyecto ${name}`}
-                    >
+                    <a href={url} target="_blank" title={`Ver el proyecto ${name}`}>
                       {name}
                     </a>
                     {isActive && <span>•</span>}
                     {github && GH && (
-                      <a
-                        class="github-code-link"
-                        href={github}
-                        target="_blank"
-                        title={`Código fuente ${name}`}
-                      >
+                      <a class="github-code-link" href={github} target="_blank" title={`Código fuente ${name}`}>
                         <GH />
                       </a>
                     )}
                     {webflow && WF && (
-                      <a
-                        class="webflow-code-link"
-                        href={webflow}
-                        target="_blank"
-                        title={`Webflow ${name}`}
-                      >
+                      <a class="webflow-code-link" href={webflow} target="_blank" title={`Webflow ${name}`}>
                         <WF />
                       </a>
                     )}
                     {shopify && SHP && (
-                      <a
-                        class="shopify-code-link"
-                        href={shopify}
-                        target="_blank"
-                        title={`Shopify ${name}`}
-                      >
+                      <a class="shopify-code-link" href={shopify} target="_blank" title={`Shopify ${name}`}>
                         <SHP />
                       </a>
                     )}
@@ -164,34 +124,21 @@ const resolvedProjects_en = await Promise.all(
                   {frameworkIcons.length > 0 && (
                     <div class="framework-icons">
                       {frameworkIcons.map(({ name, icon }) => {
-                        const Icon =
-                          icon?.type === "astro" ? icon.Component : null;
+                        const Icon = icon?.type === "astro" ? icon.Component : null;
                         return (
                           <span title={name} class="framework-icon">
                             {Icon && <Icon />}
-                            {icon?.type === "svg" && (
-                              <img
-                                src={icon.url}
-                                alt={name}
-                                width="14"
-                                height="14"
-                              />
-                            )}
+                            {icon?.type === "svg" && <img src={icon.url} alt={name} width="14" height="14" />}
                           </span>
                         );
                       })}
                     </div>
                   )}
                 </header>
-                <body>
-                  <p>{description}</p>
-
-                </body>
+                <p>{description}</p>
                 <footer>
                   <div class="highlights">
-                    {highlights.map((h) => (
-                      <span>{h}</span>
-                    ))}
+                    {highlights.map((h) => <span>{h}</span>)}
                   </div>
                 </footer>
               </article>
@@ -202,65 +149,34 @@ const resolvedProjects_en = await Promise.all(
     }
   </ul>
 
-  <ul class="projects-grid" data-lang-content="en">
+  <ul class="projects-grid" data-lang-content="en" aria-hidden="true">
     {
       resolvedProjects_en.map(
-        ({
-          url,
-          description,
-          highlights,
-          name,
-          isActive,
-          github,
-          webflow,
-          shopify,
-          frameworkIcons,
-        }) => {
+        ({ url, description, highlights, name, isActive, github, webflow, shopify, frameworkIcons }) => {
           const GH = GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
-          const WF =
-            WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
-          const SHP =
-            ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
+          const WF = WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
+          const SHP = ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
           return (
             <li>
               <article>
                 <header>
                   <h3>
-                    <a
-                      href={url}
-                      target="_blank"
-                      title={`View project ${name}`}
-                    >
+                    <a href={url} target="_blank" title={`View project ${name}`}>
                       {name}
                     </a>
                     {isActive && <span>•</span>}
                     {github && GH && (
-                      <a
-                        class="github-code-link"
-                        href={github}
-                        target="_blank"
-                        title={`Source code ${name}`}
-                      >
+                      <a class="github-code-link" href={github} target="_blank" title={`Source code ${name}`}>
                         <GH />
                       </a>
                     )}
                     {webflow && WF && (
-                      <a
-                        class="webflow-code-link"
-                        href={webflow}
-                        target="_blank"
-                        title={`Webflow ${name}`}
-                      >
+                      <a class="webflow-code-link" href={webflow} target="_blank" title={`Webflow ${name}`}>
                         <WF />
                       </a>
                     )}
                     {shopify && SHP && (
-                      <a
-                        class="shopify-code-link"
-                        href={shopify}
-                        target="_blank"
-                        title={`Shopify ${name}`}
-                      >
+                      <a class="shopify-code-link" href={shopify} target="_blank" title={`Shopify ${name}`}>
                         <SHP />
                       </a>
                     )}
@@ -268,33 +184,21 @@ const resolvedProjects_en = await Promise.all(
                   {frameworkIcons.length > 0 && (
                     <div class="framework-icons">
                       {frameworkIcons.map(({ name, icon }) => {
-                        const Icon =
-                          icon?.type === "astro" ? icon.Component : null;
+                        const Icon = icon?.type === "astro" ? icon.Component : null;
                         return (
                           <span title={name} class="framework-icon">
                             {Icon && <Icon />}
-                            {icon?.type === "svg" && (
-                              <img
-                                src={icon.url}
-                                alt={name}
-                                width="14"
-                                height="14"
-                              />
-                            )}
+                            {icon?.type === "svg" && <img src={icon.url} alt={name} width="14" height="14" />}
                           </span>
                         );
                       })}
                     </div>
                   )}
                 </header>
-                <body>
-                  <p>{description}</p>
-                </body>
+                <p>{description}</p>
                 <footer>
                   <div class="highlights">
-                    {highlights.map((h) => (
-                      <span>{h}</span>
-                    ))}
+                    {highlights.map((h) => <span>{h}</span>)}
                   </div>
                 </footer>
               </article>

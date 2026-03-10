@@ -31,7 +31,6 @@ async function getIcon(name: string) {
   return null
 }
 
-// Pre-resolvemos skills de cada trabajo
 const resolvedWork_es = await Promise.all(
   work_es.map(async (job) => ({
     ...job,
@@ -59,7 +58,7 @@ const resolvedWork_en = await Promise.all(
 
 <Section id="experience">
   <h2 data-lang-content="es">Experiencia laboral</h2>
-  <h2 data-lang-content="en">Work Experience</h2>
+  <h2 data-lang-content="en" aria-hidden="true">Work Experience</h2>
 
   <ul id="work_list" class="work-list" data-lang-content="es">
     {
@@ -118,7 +117,7 @@ const resolvedWork_en = await Promise.all(
     }
   </ul>
 
-  <ul id="work_list_en" class="work-list" data-lang-content="en">
+  <ul id="work_list_en" class="work-list" data-lang-content="en" aria-hidden="true">
     {
       resolvedWork_en.map(
         ({ name, startDate, endDate, position, summary, highlights, url, type, logo, resolvedSkills }) => {
