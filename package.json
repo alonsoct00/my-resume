@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
+    "@vercel/analytics": "^2.0.1",
     "astro": "^4.16.10",
     "astro-robots-txt": "^1.0.0",
     "autoprefixer": "^10.4.18",
