@@ -2,6 +2,8 @@
 import { basics as basics_es } from "@cv"
 import { basics as basics_en } from "@cv_en"
 import 'src/styles.scss';
+import Analytics from '@vercel/analytics/astro';
+
 
 interface Props {
   title: string
@@ -19,6 +21,7 @@ const seoDescription_en = "Frontend Developer with over 10 years of experience i
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+        <Analytics />
     <title>{title}</title>
 
     <!-- SEO: descripción corta estática, no el summary largo -->
