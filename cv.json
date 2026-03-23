@@ -336,14 +336,14 @@
       "name": "Gissela Sauñe - Sitio web personal",
       "isActive": true,
       "description": "Sitio web personal para la artista visual Gissela Sauñe",
-      "highlights": ["HTML5", "CSS3", "JavaScript"],
+      "highlights": ["HTML5", "Lanzamiento de multisitios internacionales: Williams-Sonoma, Pottery Barn y West Elm.", "JavaScript"],
       "url": "https://gisselasaune.com.mx/"
     },
     {
       "name": "ZentoMX",
       "isActive": true,
       "description": "E-commerce de venta de muebles",
-      "highlights": ["Liquid", "JavaScript", "CSS3"],
+      "highlights": ["Liquid", "JavaScript", "LESS"],
       "url": "https://www.zento.mx/",
       "shopify": "https://www.zento.mx/"
     },
@@ -454,6 +454,34 @@
       "highlights": ["Webflow"],
       "url": "https://www.compucentro.com.mx/",
       "webflow": "https://www.compucentro.com.mx/"
+    },
+    {
+      "name": "Musgo de roble",
+      "isActive": true,
+      "description": "E-commerce de productos de cuidado personal",
+      "highlights": ["WordPress", "WooCommerce", "PHP", "Elementor"],
+      "url": "https://musgoderoble.mx/"
+    },
+    {
+      "name": "Draco Studios",
+      "isActive": true,
+      "description": "Sitio web para estudio de animación de videojuegos",
+      "highlights": ["WordPress", "Elementor"],
+      "url": "https://dracostudios.com/"
+    },
+    {
+      "name": "Inocquality",
+      "isActive": true,
+      "description": "Sitio web capacitacion y asesoria en inocuidad alimentaria",
+      "highlights": ["WordPress", "WPBakery"],
+      "url": "https://www.inocquality.com/"
+    },
+    {
+      "name": "SITE Inmobiliaria",
+      "isActive": true,
+      "description": "Sitio web inmobiliaria con catálogo de propiedades",
+      "highlights": ["WordPress", "PHP", "Elementor"],
+      "url": "https://www.siteinmobiliaria.com/"
     }
   ]
 }
