@@ -1,5 +1,6 @@
 ---
 ---
+
 <div class="lang-switch no-print" id="lang-switch">
   <button data-lang-btn="es" title="Español">ES</button>
   <span>|</span>
@@ -7,36 +8,72 @@
 </div>
 
 <script>
-  function getPreferredLang(): "es" | "en" {
-    const saved = localStorage.getItem("cv-lang") as "es" | "en" | null;
-    if (saved) return saved;
-    const browser = navigator.language.toLowerCase();
-    return browser.startsWith("es") ? "es" : "en";
+  declare global {
+    interface Window {
+      dataLayer: any[];
+    }
   }
 
-  function applyLang(lang: "es" | "en") {
-    document.documentElement.setAttribute("data-lang", lang);
+  type Lang = "es" | "en";
+
+  const buttons = document.querySelectorAll<HTMLButtonElement>("[data-lang-btn]");
+  const htmlElement = document.documentElement;
+
+  const getPreferredLang = (): Lang => {
+    const saved = localStorage.getItem("cv-lang") as Lang | null;
+    if (saved === "es" || saved === "en") return saved;
+    
+    return navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
+  };
+
+  const updateMetaTags = (lang: Lang): void => {
+    const isEn = lang === "en";
+    
+    // Estos textos deberías idealmente recibirlos o tenerlos centralizados
+    const title = isEn ? "My CV | Frontend Dev" : "Mi CV | Frontend Dev";
+    const desc = isEn 
+      ? "Frontend Developer with over 10 years of experience..." 
+      : "Frontend Developer con más de 10 años de experiencia...";
+
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+  };
+
+  const applyLang = (lang: Lang): void => {
+    // Atributos y LocalStorage
+    htmlElement.setAttribute("data-lang", lang);
+    htmlElement.setAttribute("lang", lang);
     localStorage.setItem("cv-lang", lang);
-    document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
-      const b = btn as HTMLButtonElement;
-      b.classList.toggle("active", b.dataset.langBtn === lang);
+
+    updateMetaTags(lang);
+
+    buttons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.langBtn === lang);
     });
-  }
 
-  // Aplicar idioma al cargar
-  const lang = getPreferredLang();
-  applyLang(lang);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'change_language',
+      language: lang
+    });
+  };
 
-  // Listeners del switch
-  document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
+  // 3. Inicialización segura
+  const initialLang = getPreferredLang();
+  applyLang(initialLang);
+
+  // 4. Listeners con casting de evento
+  buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      const selected = (btn as HTMLButtonElement).dataset.langBtn as "es" | "en";
-      applyLang(selected);
+      const selected = btn.dataset.langBtn as Lang;
+      if (selected) applyLang(selected);
     });
   });
 </script>
 
 <style>
+  /* Mantenemos tus estilos originales */
   .lang-switch {
     position: fixed;
     top: 1rem;

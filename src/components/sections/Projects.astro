@@ -1,4 +1,5 @@
 ---
+import WordPress from "@/icons/WordPress.astro";
 import Section from "../Section.astro";
 import { projects as projects_es } from "@cv";
 import { projects as projects_en } from "@cv_en";
@@ -53,6 +54,10 @@ const FRAMEWORK_ICON_MAP: Record<string, string> = {
   bolt: "bolt",
   openai: "openai",
   lovable: "lovable",
+  wordpress: "wordpress",
+  WordPress: "wordpress",
+  elementor: "elementor",
+  Elementor: "elementor",
 };
 
 async function getFrameworkIcons(highlights: string[]) {
