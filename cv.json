@@ -162,7 +162,7 @@
       "startDate": "2007-08-01",
       "endDate": "2013-01-01",
       "score": "4.0",
-      "logo": "/ipn.jpeg"
+      "logo": "/ipn.png"
     }
   ],
   "courses": [
@@ -344,7 +344,7 @@
       "name": "KONKO.ai",
       "isActive": true,
       "description": "Plataforma médica impulsado por IA para clínicas de salud en América Latina.",
-      "highlights": ["HTML5", "CSS3", "TailwindCSS", "NextJS", "TypeScript", "Bolt", "OpenAI"],
+      "highlights": ["HTML5", "CSS3", "TailwindCSS", "NextJS", "TypeScript", "Bolt", "Claude"],
       "url": "https://konko.ai/",
       "github": "https://github.com/konko-ai/website"
     },
@@ -352,7 +352,7 @@
       "name": "Acervo Animación - AAM",
       "isActive": true,
       "description": "Sitio para el Acervo de Animación Mexicana, desarrollado con Astro y Tailwind CSS.",
-      "highlights": ["HTML5", "CSS3", "Astro", "TailwindCSS", "JavaScript"],
+      "highlights": ["HTML5", "CSS3", "Astro", "TailwindCSS", "JavaScript", "Bolt"],
       "url": "https://acervoanimacion.mx/"
     },
     {
@@ -505,6 +505,40 @@
       "description": "Sitio web inmobiliaria con catálogo de propiedades",
       "highlights": ["WordPress", "PHP", "Elementor"],
       "url": "https://www.siteinmobiliaria.com/"
+    }
+  ],
+  "designs": [
+    {
+      "name": "Shopitrack",
+      "isActive": true,
+      "description": "Sistema de diseño unificado para Shopitrack. Diseño web de landing page.",
+      "highlights": ["Figma", "Design System", "UI Design"],
+      "url": "https://www.figma.com/design/vDWRl2uHCeb8bmI7kjtF3a/Shopitrack?node-id=11-2&t=rwbg2yH71LNpZgPC-1",
+      "figma": "https://www.figma.com/design/vDWRl2uHCeb8bmI7kjtF3a/Shopitrack?node-id=11-2&t=rwbg2yH71LNpZgPC-1"
+    }
+  ],
+  "vibecoding": [
+        {
+      "name": "Quiniela Mundial 2026",
+      "isActive": true,
+      "description": "Quiniela para pronosticar los resultados del Mundial 2026.",
+      "highlights": ["Lovable"],
+      "url": "https://quiniela26.lovable.app"
+    },
+    {
+      "name": "Costco Price Watcher",
+      "isActive": true,
+      "description": "Herramienta que monitorea precios de productos en Costco y avisa cuando bajan.",
+      "highlights": ["Lovable"],
+      "url": "https://costco-price-watcher.vercel.app/",
+      "github": "https://github.com/alonsoct00/costco-price-watcher"
+    },
+    {
+      "name": "BG Remover",
+      "isActive": true,
+      "description": "Herramienta para eliminar el fondo de imágenes automáticamente.",
+      "highlights": ["Lovable"],
+      "url": "https://bg-remover-proplus.lovable.app"
     }
   ]
 }

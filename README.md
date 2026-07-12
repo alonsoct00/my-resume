@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="logo.png" height="90px" width="auto" />
   <h1>Minimalist Resume</h1>
   <p>
     Currículum profesional estático, bilingüe y orientado a rendimiento, construido con Astro + TypeScript sobre el esquema JSON Resume.
@@ -10,7 +9,7 @@
 
 ## 🚀 Overview
 
-Sitio de una sola página (`/`) que renderiza un CV a partir de datos estructurados en JSON. Todo el contenido se genera en build time (sin backend, sin JS de framework en el cliente más allá de islas puntuales), pensado para:
+Sitio de una sola página (`/`) que renderiza un CV a partir de datos estructurados en JSON. Todo el contenido se genera en build time, sin backend, pensado para:
 
 - Cargar rápido y ser 100% estático (`output: "static"` en Astro).
 - Ser bilingüe (ES/EN) sin duplicar HTML por ruta, alternando contenido en el cliente.
@@ -28,11 +27,11 @@ Demo: https://alonsoct.dev
 |---|---|
 | Framework | [Astro 4](https://astro.build) (static output) |
 | Lenguaje | TypeScript (modo `strict`, extiende `astro/tsconfigs/strict`) |
-| Estilos | SCSS global (`src/styles.scss`) + Tailwind CSS (utilidades puntuales) |
+| Estilos | SCSS global (`src/styles.scss`) y estilos encapsulados de componentes |
 | Datos | JSON Resume Schema extendido (`cv.json`, `cv_en.json`) |
 | Command palette | [`hotkeypad`](https://www.npmjs.com/package/hotkeypad) |
-| Analítica | Google Tag Manager, GA4, Vercel Analytics |
-| SEO | `astro-robots-txt` + sitemap automático de Astro |
+| Analítica | Google Tag Manager, GA4 y Web Analytics de Vercel |
+| SEO | Meta tags, Open Graph y Twitter Card |
 | Hosting | Vercel (headers de seguridad y cache en `vercel.json`) |
 | Package manager | pnpm 9.x |
 
@@ -40,7 +39,7 @@ Demo: https://alonsoct.dev
 
 ## 📦 Requisitos
 
-- Node 22.x (fijado en [`.nvmrc`](.nvmrc); con [nvm](https://github.com/nvm-sh/nvm) instalado, corre `nvm use` en la raíz del proyecto)
+- Node 22.22.3 (fijado en [`.nvmrc`](.nvmrc); con [nvm](https://github.com/nvm-sh/nvm) instalado, corre `nvm use` en la raíz del proyecto)
 - pnpm 9.x (recomendado vía Corepack)
 
 ```bash
@@ -54,7 +53,7 @@ corepack prepare pnpm@latest --activate
 ```bash
 pnpm install
 pnpm dev       # servidor de desarrollo (astro dev)
-pnpm build     # astro check + astro build → dist/
+pnpm build     # astro check + astro build → .vercel/output/static/
 pnpm preview   # sirve el build de producción localmente
 ```
 
@@ -76,7 +75,7 @@ src/
 ├── pages/
 │   └── index.astro         # Única página: compone las secciones del CV
 ├── components/
-│   ├── Section.astro       # Wrapper genérico de sección (<section> con scroll reveal)
+│   ├── Section.astro       # Wrapper genérico de sección (<section>)
 │   ├── LanguageSwitch.astro# Botón ES/EN, persiste preferencia en localStorage
 │   ├── KeyboardManager.astro # Paleta de comandos (hotkeypad) + atajo de impresión
 │   └── sections/
@@ -84,12 +83,12 @@ src/
 │       ├── About.astro     # Resumen profesional
 │       ├── Experience.astro# Historial laboral con iconos de stack por skill
 │       ├── Education.astro # Educación, cursos y certificaciones
-│       ├── Projects.astro  # Proyectos personales/freelance
+│       ├── Projects.astro  # Proyectos, diseño UX y experimentos de vibecoding
 │       └── Skills.astro    # Skills agrupadas + idiomas hablados
 ├── icons/                  # Iconos como componentes .astro (y algunos .svg fuente)
 └── lib/
-    ├── icons.ts             # Carga dinámica de iconos vía import.meta.glob
-    └── language.js           # Store simple de idioma (legacy, no usado por LanguageSwitch)
+    ├── icons.ts             # Utilidad de carga dinámica de iconos
+    └── language.js           # Store de idioma legacy (no usado por LanguageSwitch)
 public/                     # Assets estáticos (imágenes, PDFs de certificados, favicons)
 vercel.json                 # Headers de seguridad y cache para Vercel
 astro.config.mjs            # site, output static, alias "@" -> src/
@@ -100,7 +99,7 @@ tsconfig.json               # strict + paths: "@cv", "@cv_en", "@/*"
 
 ## 🌐 Datos del CV
 
-`cv.json` (ES) y `cv_en.json` (EN) siguen el mismo shape, tipado en [`src/cv.d.ts`](src/cv.d.ts): `basics`, `work`, `education`, `skills`, `projects`, `languages`, `certificates`, etc. (extensión del [JSON Resume Schema](https://jsonresume.org/schema/) con campos propios como `logo`, `type` en `work`, o `frameworkIcons` en `projects`).
+`cv.json` (ES) y `cv_en.json` (EN) siguen el mismo shape, tipado en [`src/cv.d.ts`](src/cv.d.ts): `basics`, `work`, `education`, `skills`, `projects`, `designs`, `vibecoding`, `languages` y `certifications`. Es una extensión del [JSON Resume Schema](https://jsonresume.org/schema/) con campos propios como `logo`, `type` y `skills` en `work`, o enlaces a GitHub, Webflow, Shopify y Figma en las entradas del portafolio.
 
 Los alias `@cv` y `@cv_en` (definidos en `tsconfig.json`) permiten importar los JSON directamente:
 
@@ -136,24 +135,23 @@ Al añadir una sección o campo nuevo, sigue el mismo patrón: duplicar el nodo 
 
 ## 🖼 Iconos
 
-`src/icons/*.astro` son componentes SVG individuales (uno por tecnología/red social). Se resuelven dinámicamente por nombre (slug del skill/tecnología) vía `import.meta.glob` en `src/lib/icons.ts` y en cada sección que los necesita (`Hero`, `Experience`, `Projects`, `Skills`), con fallback a `.svg` sueltos en `public/icons/`. Para añadir un icono nuevo: crear `src/icons/<slug>.astro` (o `.svg`) con el nombre en minúsculas igual al `skill`/`network` que debe matchear en el JSON del CV.
+`src/icons/*.astro` son componentes SVG individuales (uno por tecnología/red social). Las secciones que los necesitan (`Hero`, `Experience`, `Projects`, `Skills`) los resuelven dinámicamente por nombre mediante `import.meta.glob`, con fallback a `.svg` sueltos en `public/icons/`. Para añadir un icono nuevo: crear `src/icons/<slug>.astro` (o `.svg`) con el nombre en minúsculas igual al `skill`/`network` que debe matchear en el JSON del CV.
 
 ---
 
 ## 🖨 Impresión / PDF
 
 - El bloque `.print` (contacto en texto plano) solo se muestra en `@media print`; el resto de UI interactiva (`.no-print`: switch de idioma, footer, command palette) se oculta.
-- La sección de proyectos y las animaciones de scroll se desactivan al imprimir.
+- La sección de proyectos se oculta y las animaciones de actividad se desactivan al imprimir.
 - Los `<article>` evitan cortarse entre páginas (`break-inside: avoid`).
 
 ---
 
 ## 🔍 SEO y analítica
 
-- `astro-robots-txt` genera `robots.txt`; Astro genera el sitemap (`/sitemap-index.xml`), referenciado en `Layout.astro`.
 - Meta tags Open Graph / Twitter Card definidos en `Layout.astro`, con descripción SEO estática (no el `summary` largo del CV) y actualizada dinámicamente según idioma.
 - Google Tag Manager (`GTM-MTD6TJZT`) + GA4 (`G-W1Q1L41MZ3`) cargados inline en `<head>`.
-- `@vercel/analytics` integrado para Vercel Analytics.
+- Web Analytics de Vercel habilitado mediante el adaptador `@astrojs/vercel`.
 
 ---
 
@@ -163,7 +161,7 @@ Al añadir una sección o campo nuevo, sigue el mismo patrón: duplicar el nodo 
 - Headers de seguridad globales (`X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, etc.).
 - Cache `no-cache` para HTML y cache inmutable de 1 año para assets estáticos (`js`, `css`, `woff2`, imágenes).
 
-El sitio se despliega como estático puro (`astro build` → `dist/`), sin funciones serverless.
+El sitio se despliega como estático puro (`astro build` → `.vercel/output/static/`), sin funciones serverless.
 
 ---
 

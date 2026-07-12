@@ -327,11 +327,26 @@ h2 {
 }
 
 #projects {
-    ul {
+    display: grid;
+    gap: 5rem;
+
+    > .project-category {
+        margin: 0;
+
+        > h2 {
+            margin: 0 0 1rem;
+        }
+    }
+
+    ul.projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1rem;
         margin-inline: -16px;
+    }
+
+    ul.designs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
     article {
@@ -345,7 +360,7 @@ h2 {
     }
 
     article header {
-        flex: 1;
+        flex: 0;
     }
 
     article h3 {
@@ -399,12 +414,15 @@ h2 {
 
     .framework-icon {
         display: inline-flex;
+        align-items: center;
+        justify-content: center;
         width: 1.2rem;
         height: 1.2rem;
+        border-radius: 4px;
         opacity: 0.8;
         transition: opacity 0.2s;
         padding: unset;
-        background: unset;
+        background: rgb(0 0 0 / 10%);
     }
 
     .framework-icon:hover {
@@ -413,12 +431,15 @@ h2 {
 
     .highlights {
         display: flex;
-        gap: 4px;
+        gap: 8px;
         line-height: 16px;
         flex-wrap: wrap;
     }
 
-    .github-code-link {
+    .github-code-link,
+    .webflow-code-link,
+    .shopify-code-link,
+    .figma-code-link {
         margin-left: 5px;
     }
 
