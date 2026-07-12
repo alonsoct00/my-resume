@@ -11,6 +11,8 @@ export interface CV {
   interests: Array<Interests>
   references: Array<References>
   projects: Array<Projects>
+  designs: Array<Designs>
+  vibecoding: Array<Vibecoding>
 }
 
 interface Basics {
@@ -138,6 +140,26 @@ interface Projects {
   frameworkIcons: Array<string>
 }
 
+export interface Designs {
+  name: string
+  isActive: boolean
+  description: string
+  highlights: Highlight
+  url: string
+  figma?: string
+  frameworkIcons: Array<string>
+}
+
+export interface Vibecoding {
+  name: string
+  isActive: boolean
+  description: string
+  highlights: Highlight
+  url: string
+  github?: string
+  frameworkIcons: Array<string>
+}
+
 interface Interests {
   name: string
   keywords: Array<string>
@@ -148,4 +170,4 @@ interface References {
   reference: string
 }
 
-type Highlight = Array<String>
+type Highlight = Array<string>

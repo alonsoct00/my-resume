@@ -1,8 +1,16 @@
 ---
-import WordPress from "@/icons/WordPress.astro";
 import Section from "../Section.astro";
-import { projects as projects_es } from "@cv";
-import { projects as projects_en } from "@cv_en";
+import {
+  projects as projects_es,
+  designs as designs_es,
+  vibecoding as vibecoding_es,
+} from "@cv";
+import {
+  projects as projects_en,
+  designs as designs_en,
+  vibecoding as vibecoding_en,
+} from "@cv_en";
+import type { Designs, Vibecoding } from "@/cv";
 
 type AstroIcon = (props?: any) => any;
 
@@ -58,6 +66,7 @@ const FRAMEWORK_ICON_MAP: Record<string, string> = {
   WordPress: "wordpress",
   elementor: "elementor",
   Elementor: "elementor",
+  claude: "claude",
 };
 
 async function getFrameworkIcons(highlights: string[]) {
@@ -79,186 +88,598 @@ async function getFrameworkIcons(highlights: string[]) {
 const GitHubIcon = await getIcon("github");
 const WebflowIcon = await getIcon("webflow");
 const ShopifyIcon = await getIcon("shopify");
+const FigmaIcon = await getIcon("figma");
 
 const resolvedProjects_es = await Promise.all(
-  (projects_es as Array<{ shopify?: string } & typeof projects_es[0]>).map(async (project) => ({
-    ...project,
-    frameworkIcons: await getFrameworkIcons(project.highlights),
-  })),
-)
+  (projects_es as Array<{ shopify?: string } & (typeof projects_es)[0]>).map(
+    async (project) => ({
+      ...project,
+      frameworkIcons: await getFrameworkIcons(project.highlights),
+    }),
+  ),
+);
 
 const resolvedProjects_en = await Promise.all(
-  (projects_en as Array<{ shopify?: string } & typeof projects_en[0]>).map(async (project) => ({
+  (projects_en as Array<{ shopify?: string } & (typeof projects_en)[0]>).map(
+    async (project) => ({
+      ...project,
+      frameworkIcons: await getFrameworkIcons(project.highlights),
+    }),
+  ),
+);
+
+const resolvedDesigns_es = await Promise.all(
+  (designs_es as Array<Designs>).map(async (design) => ({
+    ...design,
+    frameworkIcons: await getFrameworkIcons(design.highlights),
+  })),
+);
+
+const resolvedDesigns_en = await Promise.all(
+  (designs_en as Array<Designs>).map(async (design) => ({
+    ...design,
+    frameworkIcons: await getFrameworkIcons(design.highlights),
+  })),
+);
+
+const resolvedVibecoding_es = await Promise.all(
+  (vibecoding_es as Array<Vibecoding>).map(async (project) => ({
     ...project,
     frameworkIcons: await getFrameworkIcons(project.highlights),
   })),
-)
+);
+
+const resolvedVibecoding_en = await Promise.all(
+  (vibecoding_en as Array<Vibecoding>).map(async (project) => ({
+    ...project,
+    frameworkIcons: await getFrameworkIcons(project.highlights),
+  })),
+);
 ---
 
 <Section id="projects">
-  <h2 data-lang-content="es">Proyectos y portafolio</h2>
-  <h2 data-lang-content="en" aria-hidden="true">Projects & Portfolio</h2>
+  <div class="project-category">
+    <h2 data-lang-content="es">Proyectos y portafolio</h2>
+    <h2 data-lang-content="en" aria-hidden="true">Projects & Portfolio</h2>
 
-  <ul class="projects-grid" data-lang-content="es">
-    {
-      resolvedProjects_es.map(
-        ({ url, description, highlights, name, isActive, github, webflow, shopify, frameworkIcons }) => {
-          const GH = GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
-          const WF = WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
-          const SHP = ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
-          return (
-            <li>
-              <article>
-                <header>
-                  <h3>
-                    <a href={url} target="_blank" title={`Ver el proyecto ${name}`}>
-                      {name}
-                    </a>
-                    {isActive && <span>•</span>}
-                    {github && GH && (
-                      <a class="github-code-link" href={github} target="_blank" title={`Código fuente ${name}`}>
-                        <GH />
+    <ul class="projects-grid" data-lang-content="es">
+      {
+        resolvedProjects_es.map(
+          ({
+            url,
+            description,
+            highlights,
+            name,
+            isActive,
+            github,
+            webflow,
+            shopify,
+            frameworkIcons,
+          }) => {
+            const GH =
+              GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
+            const WF =
+              WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
+            const SHP =
+              ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
+            return (
+              <li>
+                <article>
+                  <header>
+                    <h3>
+                      <a
+                        href={url}
+                        target="_blank"
+                        title={`Ver el proyecto ${name}`}
+                      >
+                        {name}
                       </a>
+                      {isActive && <span>•</span>}
+                      {github && GH && (
+                        <a
+                          class="github-code-link"
+                          href={github}
+                          target="_blank"
+                          title={`Código fuente ${name}`}
+                        >
+                          <GH />
+                        </a>
+                      )}
+                      {webflow && WF && (
+                        <a
+                          class="webflow-code-link"
+                          href={webflow}
+                          target="_blank"
+                          title={`Webflow ${name}`}
+                        >
+                          <WF />
+                        </a>
+                      )}
+                      {shopify && SHP && (
+                        <a
+                          class="shopify-code-link"
+                          href={shopify}
+                          target="_blank"
+                          title={`Shopify ${name}`}
+                        >
+                          <SHP />
+                        </a>
+                      )}
+                    </h3>
+                    {frameworkIcons.length > 0 && (
+                      <div class="framework-icons">
+                        {frameworkIcons.map(({ name, icon }) => {
+                          const Icon =
+                            icon?.type === "astro" ? icon.Component : null;
+                          return (
+                            (Icon || icon?.type === "svg") && (
+                              <span title={name} class="framework-icon">
+                                {Icon && <Icon />}
+                                {icon?.type === "svg" && (
+                                  <img
+                                    src={icon.url}
+                                    alt={name}
+                                    width="14"
+                                    height="14"
+                                  />
+                                )}
+                              </span>
+                            )
+                          );
+                        })}
+                      </div>
                     )}
-                    {webflow && WF && (
-                      <a class="webflow-code-link" href={webflow} target="_blank" title={`Webflow ${name}`}>
-                        <WF />
-                      </a>
-                    )}
-                    {shopify && SHP && (
-                      <a class="shopify-code-link" href={shopify} target="_blank" title={`Shopify ${name}`}>
-                        <SHP />
-                      </a>
-                    )}
-                  </h3>
-                  {frameworkIcons.length > 0 && (
-                    <div class="framework-icons">
-                      {frameworkIcons.map(({ name, icon }) => {
-                        const Icon = icon?.type === "astro" ? icon.Component : null;
-                        return (
-                          (Icon || icon?.type === "svg") && (
-                            <span title={name} class="framework-icon">
-                              {Icon && <Icon />}
-                              {icon?.type === "svg" && <img src={icon.url} alt={name} width="14" height="14" />}
-                            </span>
-                          )
-                        );
-                      })}
+                  </header>
+                  <p>{description}</p>
+                  <footer>
+                    <div class="highlights">
+                      {highlights.map((h) => (
+                        <span>{h}</span>
+                      ))}
                     </div>
-                  )}
-                </header>
-                <p>{description}</p>
-                <footer>
-                  <div class="highlights">
-                    {highlights.map((h) => <span>{h}</span>)}
-                  </div>
-                </footer>
-              </article>
-            </li>
-          );
-        },
-      )
-    }
-  </ul>
+                  </footer>
+                </article>
+              </li>
+            );
+          },
+        )
+      }
+    </ul>
 
-  <ul class="projects-grid" data-lang-content="en" aria-hidden="true">
-    {
-      resolvedProjects_en.map(
-        ({ url, description, highlights, name, isActive, github, webflow, shopify, frameworkIcons }) => {
-          const GH = GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
-          const WF = WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
-          const SHP = ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
-          return (
-            <li>
-              <article>
-                <header>
-                  <h3>
-                    <a href={url} target="_blank" title={`View project ${name}`}>
-                      {name}
-                    </a>
-                    {isActive && <span>•</span>}
-                    {github && GH && (
-                      <a class="github-code-link" href={github} target="_blank" title={`Source code ${name}`}>
-                        <GH />
+    <ul class="projects-grid" data-lang-content="en" aria-hidden="true">
+      {
+        resolvedProjects_en.map(
+          ({
+            url,
+            description,
+            highlights,
+            name,
+            isActive,
+            github,
+            webflow,
+            shopify,
+            frameworkIcons,
+          }) => {
+            const GH =
+              GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
+            const WF =
+              WebflowIcon?.type === "astro" ? WebflowIcon.Component : null;
+            const SHP =
+              ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
+            return (
+              <li>
+                <article>
+                  <header>
+                    <h3>
+                      <a
+                        href={url}
+                        target="_blank"
+                        title={`View project ${name}`}
+                      >
+                        {name}
                       </a>
+                      {isActive && <span>•</span>}
+                      {github && GH && (
+                        <a
+                          class="github-code-link"
+                          href={github}
+                          target="_blank"
+                          title={`Source code ${name}`}
+                        >
+                          <GH />
+                        </a>
+                      )}
+                      {webflow && WF && (
+                        <a
+                          class="webflow-code-link"
+                          href={webflow}
+                          target="_blank"
+                          title={`Webflow ${name}`}
+                        >
+                          <WF />
+                        </a>
+                      )}
+                      {shopify && SHP && (
+                        <a
+                          class="shopify-code-link"
+                          href={shopify}
+                          target="_blank"
+                          title={`Shopify ${name}`}
+                        >
+                          <SHP />
+                        </a>
+                      )}
+                    </h3>
+                    {frameworkIcons.length > 0 && (
+                      <div class="framework-icons">
+                        {frameworkIcons.map(({ name, icon }) => {
+                          const Icon =
+                            icon?.type === "astro" ? icon.Component : null;
+                          return (
+                            (Icon || icon?.type === "svg") && (
+                              <span title={name} class="framework-icon">
+                                {Icon && <Icon />}
+                                {icon?.type === "svg" && (
+                                  <img
+                                    src={icon.url}
+                                    alt={name}
+                                    width="14"
+                                    height="14"
+                                  />
+                                )}
+                              </span>
+                            )
+                          );
+                        })}
+                      </div>
                     )}
-                    {webflow && WF && (
-                      <a class="webflow-code-link" href={webflow} target="_blank" title={`Webflow ${name}`}>
-                        <WF />
-                      </a>
-                    )}
-                    {shopify && SHP && (
-                      <a class="shopify-code-link" href={shopify} target="_blank" title={`Shopify ${name}`}>
-                        <SHP />
-                      </a>
-                    )}
-                  </h3>
-                  {frameworkIcons.length > 0 && (
-                    <div class="framework-icons">
-                      {frameworkIcons.map(({ name, icon }) => {
-                        const Icon = icon?.type === "astro" ? icon.Component : null;
-                        return (
-                          (Icon || icon?.type === "svg") && (
-                            <span title={name} class="framework-icon">
-                              {Icon && <Icon />}
-                              {icon?.type === "svg" && <img src={icon.url} alt={name} width="14" height="14" />}
-                            </span>
-                          )
-                        );
-                      })}
+                  </header>
+                  <p>{description}</p>
+                  <footer>
+                    <div class="highlights">
+                      {highlights.map((h) => (
+                        <span>{h}</span>
+                      ))}
                     </div>
-                  )}
-                </header>
-                <p>{description}</p>
-                <footer>
-                  <div class="highlights">
-                    {highlights.map((h) => <span>{h}</span>)}
-                  </div>
-                </footer>
-              </article>
-            </li>
-          );
-        },
-      )
-    }
-  </ul>
+                  </footer>
+                </article>
+              </li>
+            );
+          },
+        )
+      }
+    </ul>
+  </div>
+
+    <div class="project-category">
+    <h2 data-lang-content="es">Vibecoding (Playground)</h2>
+    <h2 data-lang-content="en" aria-hidden="true">Vibecoding (Playground)</h2>
+
+    <ul class="projects-grid vibecoding-grid" data-lang-content="es">
+      {
+        resolvedVibecoding_es.map(
+          ({
+            url,
+            description,
+            highlights,
+            name,
+            isActive,
+            github,
+            frameworkIcons,
+          }) => {
+            const GH =
+              GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
+            return (
+              <li>
+                <article>
+                  <header>
+                    <h3>
+                      <a
+                        href={url}
+                        target="_blank"
+                        title={`Ver el proyecto ${name}`}
+                      >
+                        {name}
+                      </a>
+                      {isActive && <span>•</span>}
+                      {github && GH && (
+                        <a
+                          class="github-code-link"
+                          href={github}
+                          target="_blank"
+                          title={`Código fuente ${name}`}
+                        >
+                          <GH />
+                        </a>
+                      )}
+                    </h3>
+                    {frameworkIcons.length > 0 && (
+                      <div class="framework-icons">
+                        {frameworkIcons.map(({ name, icon }) => {
+                          const Icon =
+                            icon?.type === "astro" ? icon.Component : null;
+                          return (
+                            (Icon || icon?.type === "svg") && (
+                              <span title={name} class="framework-icon">
+                                {Icon && <Icon />}
+                                {icon?.type === "svg" && (
+                                  <img
+                                    src={icon.url}
+                                    alt={name}
+                                    width="14"
+                                    height="14"
+                                  />
+                                )}
+                              </span>
+                            )
+                          );
+                        })}
+                      </div>
+                    )}
+                  </header>
+                  <p>{description}</p>
+                  <footer>
+                    <div class="highlights">
+                      {highlights.map((h) => (
+                        <span>{h}</span>
+                      ))}
+                    </div>
+                  </footer>
+                </article>
+              </li>
+            );
+          },
+        )
+      }
+    </ul>
+
+    <ul
+      class="projects-grid vibecoding-grid"
+      data-lang-content="en"
+      aria-hidden="true"
+    >
+      {
+        resolvedVibecoding_en.map(
+          ({
+            url,
+            description,
+            highlights,
+            name,
+            isActive,
+            github,
+            frameworkIcons,
+          }) => {
+            const GH =
+              GitHubIcon?.type === "astro" ? GitHubIcon.Component : null;
+            return (
+              <li>
+                <article>
+                  <header>
+                    <h3>
+                      <a
+                        href={url}
+                        target="_blank"
+                        title={`View project ${name}`}
+                      >
+                        {name}
+                      </a>
+                      {isActive && <span>•</span>}
+                      {github && GH && (
+                        <a
+                          class="github-code-link"
+                          href={github}
+                          target="_blank"
+                          title={`Source code ${name}`}
+                        >
+                          <GH />
+                        </a>
+                      )}
+                    </h3>
+                    {frameworkIcons.length > 0 && (
+                      <div class="framework-icons">
+                        {frameworkIcons.map(({ name, icon }) => {
+                          const Icon =
+                            icon?.type === "astro" ? icon.Component : null;
+                          return (
+                            (Icon || icon?.type === "svg") && (
+                              <span title={name} class="framework-icon">
+                                {Icon && <Icon />}
+                                {icon?.type === "svg" && (
+                                  <img
+                                    src={icon.url}
+                                    alt={name}
+                                    width="14"
+                                    height="14"
+                                  />
+                                )}
+                              </span>
+                            )
+                          );
+                        })}
+                      </div>
+                    )}
+                  </header>
+                  <p>{description}</p>
+                  <footer>
+                    <div class="highlights">
+                      {highlights.map((h) => (
+                        <span>{h}</span>
+                      ))}
+                    </div>
+                  </footer>
+                </article>
+              </li>
+            );
+          },
+        )
+      }
+    </ul>
+  </div>
+
+  <div class="project-category">
+    <h2 data-lang-content="es">Diseño UX</h2>
+    <h2 data-lang-content="en" aria-hidden="true">UX Design</h2>
+
+    <ul class="projects-grid designs-grid" data-lang-content="es">
+      {
+        resolvedDesigns_es.map(
+          ({
+            url,
+            description,
+            highlights,
+            name,
+            isActive,
+            figma,
+            frameworkIcons,
+          }) => {
+            const FIG =
+              FigmaIcon?.type === "astro" ? FigmaIcon.Component : null;
+            return (
+              <li>
+                <article>
+                  <header>
+                    <h3>
+                      <a
+                        href={url}
+                        target="_blank"
+                        title={`Ver el diseño ${name}`}
+                      >
+                        {name}
+                      </a>
+                      {isActive && <span>•</span>}
+                      {figma && FIG && (
+                        <a
+                          class="figma-code-link"
+                          href={figma}
+                          target="_blank"
+                          title={`Figma ${name}`}
+                        >
+                          <FIG />
+                        </a>
+                      )}
+                    </h3>
+                    {frameworkIcons.length > 0 && (
+                      <div class="framework-icons">
+                        {frameworkIcons.map(({ name, icon }) => {
+                          const Icon =
+                            icon?.type === "astro" ? icon.Component : null;
+                          return (
+                            (Icon || icon?.type === "svg") && (
+                              <span title={name} class="framework-icon">
+                                {Icon && <Icon />}
+                                {icon?.type === "svg" && (
+                                  <img
+                                    src={icon.url}
+                                    alt={name}
+                                    width="14"
+                                    height="14"
+                                  />
+                                )}
+                              </span>
+                            )
+                          );
+                        })}
+                      </div>
+                    )}
+                  </header>
+                  <p>{description}</p>
+                  <footer>
+                    <div class="highlights">
+                      {highlights.map((h) => (
+                        <span>{h}</span>
+                      ))}
+                    </div>
+                  </footer>
+                </article>
+              </li>
+            );
+          },
+        )
+      }
+    </ul>
+
+    <ul
+      class="projects-grid designs-grid"
+      data-lang-content="en"
+      aria-hidden="true"
+    >
+      {
+        resolvedDesigns_en.map(
+          ({
+            url,
+            description,
+            highlights,
+            name,
+            isActive,
+            figma,
+            frameworkIcons,
+          }) => {
+            const FIG =
+              FigmaIcon?.type === "astro" ? FigmaIcon.Component : null;
+            return (
+              <li>
+                <article>
+                  <header>
+                    <h3>
+                      <a
+                        href={url}
+                        target="_blank"
+                        title={`View design ${name}`}
+                      >
+                        {name}
+                      </a>
+                      {isActive && <span>•</span>}
+                      {figma && FIG && (
+                        <a
+                          class="figma-code-link"
+                          href={figma}
+                          target="_blank"
+                          title={`Figma ${name}`}
+                        >
+                          <FIG />
+                        </a>
+                      )}
+                    </h3>
+                    {frameworkIcons.length > 0 && (
+                      <div class="framework-icons">
+                        {frameworkIcons.map(({ name, icon }) => {
+                          const Icon =
+                            icon?.type === "astro" ? icon.Component : null;
+                          return (
+                            (Icon || icon?.type === "svg") && (
+                              <span title={name} class="framework-icon">
+                                {Icon && <Icon />}
+                                {icon?.type === "svg" && (
+                                  <img
+                                    src={icon.url}
+                                    alt={name}
+                                    width="14"
+                                    height="14"
+                                  />
+                                )}
+                              </span>
+                            )
+                          );
+                        })}
+                      </div>
+                    )}
+                  </header>
+                  <p>{description}</p>
+                  <footer>
+                    <div class="highlights">
+                      {highlights.map((h) => (
+                        <span>{h}</span>
+                      ))}
+                    </div>
+                  </footer>
+                </article>
+              </li>
+            );
+          },
+        )
+      }
+    </ul>
+  </div>
+
+
 </Section>
-
-<style>
-  #projects .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-inline: -16px;
-  }
-
-  .framework-icons {
-    display: flex;
-    gap: 0.4rem;
-    align-items: center;
-    margin-top: 0.5rem;
-  }
-
-  .framework-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 4px;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-    padding: unset;
-    background: rgba(0, 0, 0, 0.10);
-  }
-
-  .framework-icon:hover {
-    opacity: 1;
-  }
-
-  .highlights {
-    display: flex;
-    gap: 8px;
-    line-height: 16px;
-  }
-</style>

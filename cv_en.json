@@ -162,7 +162,7 @@
       "startDate": "2007-08-01",
       "endDate": "2013-01-01",
       "score": "4.0",
-      "logo": "/ipn.jpeg"
+      "logo": "/ipn.png"
     }
   ],
   "courses": [
@@ -325,7 +325,7 @@
       "name": "KONKO.ai",
       "isActive": true,
       "description": "AI-powered assistant platform for healthcare clinics across Latin America.",
-      "highlights": ["HTML5", "CSS3", "TailwindCSS", "NextJS", "TypeScript", "Bolt", "OpenAI"],
+      "highlights": ["HTML5", "CSS3", "TailwindCSS", "NextJS", "TypeScript", "Bolt", "Claude"],
       "url": "https://konko.ai/",
       "github": "https://github.com/konko-ai/website"
     },
@@ -333,8 +333,17 @@
       "name": "Acervo Animación - AAM",
       "isActive": true,
       "description": "Website for the Mexican Animation Archive, built with Astro and Tailwind CSS.",
-      "highlights": ["HTML5", "CSS3", "Astro", "TailwindCSS", "JavaScript"],
+      "highlights": ["HTML5", "CSS3", "Astro", "TailwindCSS", "JavaScript", "Bolt"],
       "url": "https://acervoanimacion.mx/"
+    },
+        {
+      "name": "Casiopea",
+      "isActive": true,
+      "description": "Website for an animation and design production studio",
+      "highlights": ["HTML5", "CSS3", "JavaScript"],
+      "url": "https://casiopea.mx/",
+      "github": "https://github.com/alonsoct00/Casiopea-website",
+      "year": "2026"
     },
     {
       "name": "Gissela Sauñe - Personal portfolio website",
@@ -379,14 +388,6 @@
       "description": "Corporate website for legal services and environmental consulting.",
       "highlights": ["HTML5", "CSS3", "JavaScript", "Bootstrap 4"],
       "url": "https://www.rogofesa.com.mx/"
-    },
-    {
-      "name": "Casiopea",
-      "isActive": true,
-      "description": "Website for an animation and design production studio",
-      "highlights": ["HTML5", "CSS3", "JavaScript"],
-      "url": "https://casiopea.mx/",
-      "github": "https://github.com/alonsoct00/Casiopea-website"
     },
     {
       "name": "BMI Calculator",
@@ -486,6 +487,40 @@
       "description": "Real estate website with property catalog",
       "highlights": ["WordPress", "PHP", "Elementor"],
       "url": "https://www.siteinmobiliaria.com/"
+    }
+  ],
+  "designs": [
+    {
+      "name": "Shopitrack",
+      "isActive": true,
+      "description": "Unified design system for Shopitrack. Landing page web design.",
+      "highlights": ["Figma", "Design System", "UI Design"],
+      "url": "https://www.figma.com/design/vDWRl2uHCeb8bmI7kjtF3a/Shopitrack?node-id=11-2&t=rwbg2yH71LNpZgPC-1",
+      "figma": "https://www.figma.com/design/vDWRl2uHCeb8bmI7kjtF3a/Shopitrack?node-id=11-2&t=rwbg2yH71LNpZgPC-1"
+    }
+  ],
+  "vibecoding": [
+    {
+      "name": "Costco Price Watcher",
+      "isActive": true,
+      "description": "Tool that monitors Costco product prices and alerts on price drops.",
+      "highlights": ["Lovable"],
+      "url": "https://costco-price-watcher.vercel.app/",
+      "github": "https://github.com/alonsoct00/costco-price-watcher"
+    },
+    {
+      "name": "Quiniela Mundial 2026",
+      "isActive": true,
+      "description": "Bracket app to predict the 2026 World Cup results.",
+      "highlights": ["Lovable"],
+      "url": "https://quiniela26.lovable.app"
+    },
+    {
+      "name": "BG Remover",
+      "isActive": true,
+      "description": "Tool that automatically removes the background from images.",
+      "highlights": ["Lovable"],
+      "url": "https://bg-remover-proplus.lovable.app"
     }
   ]
 }
