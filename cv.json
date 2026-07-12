@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Alonso Caballero",
-    "label": "Desarrollador Web Front End con enfoque en UX/UI",
+    "label": "Senior Front-End Developer · E-commerce, UX/UI y Web Performance",
     "image": "/me.webp",
     "email": "g.alonso.ct@gmail.com",
     "phone": "+52 5513 979212",
     "url": "https://alonsoct.dev",
-    "summary": "Soy Frontend Developer con más de 10 años creando experiencias web optimizadas, rápidas y útiles. \n Me gusta unir diseño, negocio y código: React, Vue o Astro cuando se necesita robustez; Webflow, WordPress o Shopify cuando importa la velocidad de ejecución. Trabajo con datos, SEO técnico y experimentación A/B (VWO) para mejorar lo que ya existe, no solo lanzar lo nuevo. \n ",
+    "summary": "Senior Front-End Developer con más de 10 años construyendo e-commerce, productos digitales y sitios de marketing. Conecto objetivos de negocio, diseño UX/UI y código para crear experiencias rápidas, accesibles y medibles. Trabajo con React y arquitecturas headless, así como con Webflow, WordPress y Shopify, para llevar productos a producción y mejorar su rendimiento, SEO técnico y conversión mediante analítica y experimentación.",
     "location": {
       "address": "",
       "postalCode": "08600",
@@ -30,32 +30,32 @@
   "work": [
     {
       "name": "Viajes el Corte Inglés México",
-      "position": "Frontend Developer",
+      "position": "Senior Front-End Developer",
       "url": "https://viajesci.liverpool.com.mx/",
       "startDate": "2024-06-15",
       "type": "Híbrido - Tiempo completo",
       "logo": "/veci-logo.jpeg",
-      "summary": "Desarrollo y optimizo experiencias digitales para plataformas de viaje de alto tráfico. Construyo componentes reutilizables con React JS, JavaScript vanilla y Styled Components, con enfoque en rendimiento, accesibilidad y mantenibilidad. Colaboro con equipos de UX usando Figma para traducir diseños en interfaces funcionales y centradas en el usuario.",
+      "summary": "Desarrollo funcionalidades y componentes reutilizables para una plataforma de viajes de alto tráfico. Trabajo con React, JavaScript y Styled Components, incorporando accesibilidad WCAG, rendimiento y mantenibilidad desde la implementación. Colaboro diariamente con equipos de UX y desarrollo en España, Alemania, Colombia y Chile para convertir diseños de Figma en experiencias de producción.",
       "highlights": [
-        "Construcción de componentes reutilizables desde cero con React JS y Styled Components.",
-        "Colaboración con equipos de UX/Figma en entornos internacionales para asegurar consistencia visual.",
-        "Optimización continua de la experiencia de compra con enfoque en performance y testing."
+        "Desarrollo de componentes reutilizables y nuevas funcionalidades con React y Styled Components.",
+        "Participación en code reviews y trabajo multidisciplinario con equipos internacionales de UX y desarrollo.",
+        "Mejora continua de la experiencia de usuario con foco en accesibilidad, performance y pruebas."
       ],
-      "skills": ["react", "javascript", "styledcomponents", "figma"]
+      "skills": ["react", "javascript", "styledcomponents", "figma", "copilot"]
     },
     {
       "name": "GAIA Design",
-      "position": "Desarrollador Web Frontend · UX E-Commerce",
+      "position": "Front-End Developer · E-commerce & UX",
       "url": "https://www.gaiadesign.com.mx/",
       "startDate": "2019-03-15",
       "endDate": "2024-03-01",
       "type": "Remoto - Tiempo completo",
       "logo": "/gaia_design_logo.jpeg",
-      "summary": "Participé en la evolución del e-commerce desde Magento tradicional hacia una arquitectura headless. Desarrollé y mantuve landing pages promocionales, optimicé páginas clave del funnel (home, listing, PDP, carrito y checkout), y formé parte de la migración a un stack moderno con React, Next.js, Tailwind y DatoCMS.",
+      "summary": "Acompañé la evolución del e-commerce desde Magento 1 y Magento 2 hacia una arquitectura headless con React, Next.js, Tailwind, Vercel y DatoCMS. Desarrollé y optimicé landing pages y puntos críticos del funnel —home, PLP, PDP, carrito y checkout— conectando UX, performance y objetivos de conversión.",
       "highlights": [
-        "Migración de Magento a arquitectura headless con React, Next.js, Vercel y TailwindCSS.",
-        "Optimización de páginas clave del funnel mejorando tiempos de carga y reduciendo fricción en el checkout.",
-        "Implementación de pruebas A/B con VWO para experimentación y mejora continua de conversión."
+        "Participación en la transición de Magento a una arquitectura headless con React, Next.js, Vercel y Tailwind CSS.",
+        "Optimización de páginas clave del funnel con foco en WPO, Core Web Vitals y reducción de fricción.",
+        "Implementación de pruebas A/B con VWO para respaldar decisiones de CRO con datos."
       ],
       "skills": ["reactjs", "nextjs", "tailwindcss", "javascript", "datocms"]
     },
@@ -67,11 +67,11 @@
       "endDate": "2023-01-01",
       "type": "Remoto - Contract",
       "logo": "/salesreadymarketing_logo.jpeg",
-      "summary": "Diseñé y desarrollé sitios web y landing pages en Webflow desde diseño hasta publicación, partiendo de referencias en Figma y Adobe XD. Implementé integraciones con Zapier, configuré tracking con GA4 y píxeles de redes sociales. Responsable de adaptación responsive, interacciones y optimización de rendimiento orientada a conversión.",
+      "summary": "Diseñé y desarrollé sitios web y landing pages en Webflow, desde la interpretación de diseños en Figma y Adobe XD hasta la publicación. Implementé CMS, interacciones, formularios, automatizaciones con Zapier y medición con GA4 y píxeles de Meta, cuidando experiencia responsive, performance y conversión.",
       "highlights": [
-        "Desarrollo end-to-end de sitios y landing pages en Webflow desde Figma/Adobe XD.",
-        "Integración de herramientas de marketing: GA4, píxeles de redes sociales y automatizaciones con Zapier.",
-        "Optimización de performance y experiencia responsive para mejorar tasas de conversión."
+        "Entrega end-to-end de sitios y landing pages en Webflow a partir de Figma y Adobe XD.",
+        "Integración de analítica, píxeles de Meta y automatizaciones con Zapier.",
+        "Implementación de experiencias responsive, interacciones y optimizaciones enfocadas en conversión."
       ],
       "skills": ["webflow", "figma", "javascript", "css3"]
     },
@@ -83,7 +83,7 @@
       "endDate": "2019-03-01",
       "type": "Tiempo completo",
       "logo": "/interjet_air_lines_logo.jpeg",
-      "summary": "Front-End Developer en el equipo de UX, desarrollando interfaces responsivas con HTML5, CSS3, JavaScript y Bootstrap. Participé en campañas de e-marketing con Oracle Responsys y en mejoras continuas del header, footer y secciones principales del sitio. Desarrollé el micrositio de venta de boletos para Disneyland y landing pages para el mercado canadiense.",
+      "summary": "Formé parte del equipo de UX desarrollando interfaces responsivas, landing pages y micrositios para la plataforma de la aerolínea. Contribuí a campañas de e-mail marketing con Oracle Responsys y a mejoras continuas en componentes globales y secciones de alto uso, incluido el micrositio de venta de boletos para Disneyland y páginas para el mercado canadiense.",
       "highlights": [
         "Desarrollo del micrositio de venta de boletos para Disneyland y landing pages para mercado canadiense.",
         "Campañas de e-mail marketing con Oracle Responsys orientadas a conversión en distintos mercados.",
@@ -99,7 +99,7 @@
       "endDate": "2016-07-01",
       "type": "Tiempo completo",
       "logo": "/liver.jpeg",
-      "summary": "Formé parte del equipo Front-End de liverpool.com.mx, desarrollando micrositios y experiencias digitales orientadas a conversión. Participé en la migración a Oracle ATG Web Commerce, desarrollé prototipos interactivos HTML para el nuevo flujo de checkout y colaboré con equipos internacionales en el lanzamiento de multisitios para Williams-Sonoma, Pottery Barn y West Elm.",
+      "summary": "Formé parte del equipo Front-End de liverpool.com.mx, creando micrositios, landing pages y experiencias de e-commerce orientadas a conversión. Participé en la migración a Oracle ATG Web Commerce (BCC), desarrollé prototipos HTML para el nuevo checkout y colaboré con equipos internacionales en lanzamientos para Williams-Sonoma, Pottery Barn y West Elm.",
       "highlights": [
         "Migración a Oracle ATG Web Commerce y desarrollo de prototipos HTML para el nuevo checkout.",
         "Lanzamiento de multisitios internacionales: Williams-Sonoma, Pottery Barn y West Elm.",
@@ -115,7 +115,7 @@
       "endDate": "2013-07-01",
       "type": "Becario",
       "logo": "/ctin.jpeg",
-      "summary": "Desarrollo web con HTML5, CSS3, JavaScript y jQuery, creando sitios interactivos y visualmente atractivos. Impartí talleres de capacitación en Aldea Digital TELMEX, compartiendo conocimientos técnicos y fomentando habilidades digitales en nuevos talentos.",
+      "summary": "Desarrollé sitios web interactivos con HTML5, CSS3, JavaScript y jQuery. También impartí talleres técnicos en Aldea Digital TELMEX, compartiendo fundamentos de desarrollo web y habilidades digitales.",
       "highlights": [
         "Desarrollo de sitios web interactivos con HTML5, CSS3, JavaScript y jQuery.",
         "Impartición de talleres de capacitación técnica en Aldea Digital TELMEX."
@@ -124,17 +124,17 @@
     },
     {
       "name": "Freelance",
-      "position": "Frontend Web Developer · Webflow · WordPress · Shopify",
+      "position": "Front-End & CMS Developer · Webflow, WordPress y Shopify",
       "url": "https://ufoconsultingmx.com/",
       "startDate": "2008-01-01",
       "endDate": null,
       "type": "Freelance",
       "logo": "/alonsoct_me_logo.jpeg",
-      "summary": "Desarrollador Frontend freelance especializado en sitios de alto rendimiento. Construyo y optimizo en Webflow, WordPress y Shopify, combinando HTML5, CSS3 y frameworks modernos como React, Vue y Astro. Gestiono proyectos end-to-end desde conceptualización hasta publicación, aplicando WPO, SEO técnico y buenas prácticas de UX.",
+      "summary": "Desarrollo y optimizo sitios corporativos, landing pages y tiendas en Webflow, WordPress y Shopify. Gestiono proyectos desde la implementación hasta la publicación, combinando HTML, CSS y JavaScript con React, Vue o Astro cuando el proyecto lo requiere. Aplico performance web, SEO técnico, accesibilidad y buenas prácticas de UX para entregar experiencias listas para crecer.",
       "highlights": [
-        "Desarrollo end-to-end en Webflow, WordPress y Shopify para clientes de distintos sectores.",
-        "Aplicación de WPO y SEO técnico para mejorar rendimiento y visibilidad en buscadores.",
-        "Consultoría técnica y soporte en implementación web para e-commerce y sitios corporativos."
+        "Desarrollo end-to-end de sitios y e-commerce en Webflow, WordPress y Shopify para distintos sectores.",
+        "Personalización de themes, templates, CSS, JavaScript y Liquid según las necesidades de cada proyecto.",
+        "Aplicación de performance web, SEO técnico y UX para mejorar visibilidad, velocidad y experiencia."
       ],
       "skills": [
         "webflow",
@@ -143,7 +143,13 @@
         "vuejs",
         "astro",
         "javascript",
-        "shopify"
+        "shopify",
+        "bolt",
+        "lovable",
+        "figmamake",
+        "tailwindcss",
+        "claude",
+        "openai"
       ]
     }
   ],
@@ -249,6 +255,11 @@
       "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
     },
     {
+      "name": "NextJS",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "SSR", "React Framework"]
+    },
+    {
       "name": "VueJS",
       "level": "Intermedio",
       "keywords": ["Desarrollo Web", "Frontend", "JavaScript"]
@@ -312,7 +323,11 @@
       "name": "AdobeCS",
       "level": "Avanzado",
       "keywords": ["Diseño", "Photoshop", "Illustrator"]
-    }
+    },
+
+    { "name": "Claude", "level": "Avanzado", "keywords": ["IA", "Asistente de código", "Automatización"] },
+    { "name": "OpenAI", "level": "Intermedio", "keywords": ["IA", "GPT", "Automatización"] },
+    { "name": "Gemini", "level": "Intermedio", "keywords": ["IA", "Automatización"] }
   ],
   "languages": [
     {
@@ -326,23 +341,31 @@
   ],
   "projects": [
     {
+      "name": "KONKO.ai",
+      "isActive": true,
+      "description": "Plataforma médica impulsado por IA para clínicas de salud en América Latina.",
+      "highlights": ["HTML5", "CSS3", "TailwindCSS", "NextJS", "TypeScript", "Bolt", "OpenAI"],
+      "url": "https://konko.ai/",
+      "github": "https://github.com/konko-ai/website"
+    },
+    {
       "name": "Acervo Animación - AAM",
       "isActive": true,
-      "description": "Sitio web para el Acervo de Animación Mexicana (AAM)",
+      "description": "Sitio para el Acervo de Animación Mexicana, desarrollado con Astro y Tailwind CSS.",
       "highlights": ["HTML5", "CSS3", "Astro", "TailwindCSS", "JavaScript"],
       "url": "https://acervoanimacion.mx/"
     },
     {
       "name": "Gissela Sauñe - Sitio web personal",
       "isActive": true,
-      "description": "Sitio web personal para la artista visual Gissela Sauñe",
+      "description": "Portafolio web para la artista visual Gissela Sauñe.",
       "highlights": ["HTML5", "CSS3", "JavaScript"],
       "url": "https://gisselasaune.com.mx/"
     },
     {
       "name": "ZentoMX",
       "isActive": true,
-      "description": "E-commerce de venta de muebles",
+      "description": "Tienda Shopify de mobiliario con personalización de theme y experiencia de compra.",
       "highlights": ["Liquid", "JavaScript", "CSS3"],
       "url": "https://www.zento.mx/",
       "shopify": "https://www.zento.mx/"
@@ -350,7 +373,7 @@
     {
       "name": "Calladitos",
       "isActive": true,
-      "description": "Tienda de arte en línea",
+      "description": "Tienda de arte en Shopify con ajustes de storefront y estilos personalizados.",
       "highlights": ["Liquid", "CSS3"],
       "url": "https://calladitos-2.myshopify.com/",
       "shopify": "https://calladitos-2.myshopify.com/"
@@ -358,28 +381,28 @@
     {
       "name": "FONIMA",
       "isActive": false,
-      "description": "Sitio web para el festival FONIMA",
+      "description": "Sitio promocional para el festival FONIMA.",
       "highlights": ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
       "url": "https://alonsoct00.github.io/fonima-web/"
     },
     {
       "name": "WNDH",
       "isActive": true,
-      "description": "Sitio web para artista divergente - WNDH",
+      "description": "Sitio web para el proyecto artístico WNDH.",
       "highlights": ["HTML5", "CSS3", "JavaScript"],
       "url": "https://www.worrynoisedirtheat.com/"
     },
     {
       "name": "ROGOFESA",
       "isActive": true,
-      "description": "Sitio web informativo de servicios legales y asesoría en materia ambiental",
+      "description": "Sitio corporativo para servicios legales y consultoría ambiental.",
       "highlights": ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
       "url": "https://www.rogofesa.com/"
     },
     {
       "name": "Casiopea",
       "isActive": true,
-      "description": "Sitio web realizado para una productora de animación y diseño.",
+      "description": "Sitio web para una productora de animación y diseño.",
       "highlights": ["HTML5", "CSS3", "JavaScript"],
       "url": "https://casiopea.mx/",
       "github": "https://github.com/alonsoct00/Casiopea-website"
@@ -387,7 +410,7 @@
     {
       "name": "Calculadora BMI",
       "isActive": false,
-      "description": "Calculadora para médico nutricionista integrado a su WordPress",
+      "description": "Calculadora de IMC personalizada e integrada en un sitio WordPress de nutrición.",
       "highlights": ["HTML5", "CSS3", "JavaScript"],
       "url": "https://github.com/alonsoct00/BMI-calculator-dietamx/blob/main/bmi-calc.html",
       "github": "https://github.com/alonsoct00/BMI-calculator-dietamx/blob/main/bmi-calc.html"
@@ -395,7 +418,7 @@
     {
       "name": "Airbnb GOYO",
       "isActive": false,
-      "description": "Landing page para renta de Airbnb",
+      "description": "Landing page para promoción de una propiedad de renta vacacional.",
       "highlights": ["HTML5", "CSS3", "VueJS", "JavaScript"],
       "url": "https://rent-location-navelito.netlify.app/",
       "github": "https://github.com/alonsoct00/renta-locacion"
@@ -403,7 +426,7 @@
     {
       "name": "Challenge GBM",
       "isActive": false,
-      "description": "Un challenge de GBM para participar en la creación de sus landing pages",
+      "description": "Prueba técnica de front-end para el diseño y desarrollo de landing pages de GBM.",
       "highlights": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
       "url": "https://alonsoct00.github.io/gbm-demo/",
       "github": "https://alonsoct00.github.io/gbm-demo/"
@@ -411,14 +434,14 @@
     {
       "name": "Additional HR",
       "isActive": true,
-      "description": "Sitio web realizado para una consultora de HR de USA",
+      "description": "Sitio web para una consultora de recursos humanos en Estados Unidos.",
       "highlights": ["HTML5", "CSS3"],
       "url": "https://alonsoct00.github.io/websitehr/"
     },
     {
       "name": "IMPSA",
       "isActive": true,
-      "description": "Sitio web realizado con Webflow",
+      "description": "Sitio corporativo desarrollado en Webflow.",
       "highlights": ["Webflow"],
       "url": "https://www.impsa.com.mx/",
       "webflow": "https://www.impsa.com.mx/"
@@ -426,7 +449,7 @@
     {
       "name": "Bennets",
       "isActive": true,
-      "description": "Sitio web realizado con Webflow",
+      "description": "Sitio web de servicios de limpieza desarrollado en Webflow.",
       "highlights": ["Webflow"],
       "url": "https://www.limpiezabennetts.com.mx/",
       "webflow": "https://www.limpiezabennetts.com.mx/"
@@ -434,7 +457,7 @@
     {
       "name": "Graff",
       "isActive": true,
-      "description": "Sitio web realizado con Webflow",
+      "description": "Sitio de marca desarrollado en Webflow.",
       "highlights": ["Webflow"],
       "url": "https://www.graff.mx/",
       "webflow": "https://www.graff.mx/"
@@ -442,7 +465,7 @@
     {
       "name": "SRM",
       "isActive": true,
-      "description": "Sitio web realizado con Webflow",
+      "description": "Sitio para agencia de marketing desarrollado en Webflow.",
       "highlights": ["Webflow"],
       "url": "https://www.srm.mx/",
       "webflow": "https://www.srm.mx/"
@@ -450,7 +473,7 @@
     {
       "name": "Compucentro",
       "isActive": true,
-      "description": "Sitio web realizado con Webflow",
+      "description": "Sitio para retail de tecnología desarrollado en Webflow.",
       "highlights": ["Webflow"],
       "url": "https://www.compucentro.com.mx/",
       "webflow": "https://www.compucentro.com.mx/"
