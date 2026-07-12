@@ -43,6 +43,8 @@ const FRAMEWORK_ICON_MAP: Record<string, string> = {
   vue: "vuejs",
   reactjs: "reactjs",
   react: "reactjs",
+  nextjs: "nextjs",
+  "next.js": "nextjs",
   bootstrap: "bootstrap",
   jquery: "jquery",
   javascript: "javascript",
@@ -53,6 +55,9 @@ const FRAMEWORK_ICON_MAP: Record<string, string> = {
   WordPress: "wordpress",
   elementor: "elementor",
   Elementor: "elementor",
+  bolt: "bolt",
+  openai: "openai",
+  lovable: "lovable",
 };
 
 async function getFrameworkIcons(highlights: string[]) {
@@ -131,10 +136,12 @@ const resolvedProjects_en = await Promise.all(
                       {frameworkIcons.map(({ name, icon }) => {
                         const Icon = icon?.type === "astro" ? icon.Component : null;
                         return (
-                          <span title={name} class="framework-icon">
-                            {Icon && <Icon />}
-                            {icon?.type === "svg" && <img src={icon.url} alt={name} width="14" height="14" />}
-                          </span>
+                          (Icon || icon?.type === "svg") && (
+                            <span title={name} class="framework-icon">
+                              {Icon && <Icon />}
+                              {icon?.type === "svg" && <img src={icon.url} alt={name} width="14" height="14" />}
+                            </span>
+                          )
                         );
                       })}
                     </div>
@@ -191,10 +198,12 @@ const resolvedProjects_en = await Promise.all(
                       {frameworkIcons.map(({ name, icon }) => {
                         const Icon = icon?.type === "astro" ? icon.Component : null;
                         return (
-                          <span title={name} class="framework-icon">
-                            {Icon && <Icon />}
-                            {icon?.type === "svg" && <img src={icon.url} alt={name} width="14" height="14" />}
-                          </span>
+                          (Icon || icon?.type === "svg") && (
+                            <span title={name} class="framework-icon">
+                              {Icon && <Icon />}
+                              {icon?.type === "svg" && <img src={icon.url} alt={name} width="14" height="14" />}
+                            </span>
+                          )
                         );
                       })}
                     </div>
@@ -232,12 +241,15 @@ const resolvedProjects_en = await Promise.all(
 
   .framework-icon {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 1.2rem;
     height: 1.2rem;
+    border-radius: 4px;
     opacity: 0.8;
     transition: opacity 0.2s;
     padding: unset;
-    background: unset;
+    background: rgba(0, 0, 0, 0.10);
   }
 
   .framework-icon:hover {

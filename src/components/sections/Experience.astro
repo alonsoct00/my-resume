@@ -100,10 +100,12 @@ const resolvedWork_en = await Promise.all(
                       {resolvedSkills.map(({ name, icon }) => {
                         const Icon = icon?.type === 'astro' ? icon.Component : null
                         return (
-                          <span title={name} class="skill-icon">
-                            {Icon && <Icon />}
-                            {icon?.type === 'svg' && <img src={icon.url} alt={name} width="16" height="16" />}
-                          </span>
+                          (Icon || icon?.type === 'svg') && (
+                            <span title={name} class="skill-icon">
+                              {Icon && <Icon />}
+                              {icon?.type === 'svg' && <img src={icon.url} alt={name} width="16" height="16" />}
+                            </span>
+                          )
                         )
                       })}
                     </div>
@@ -157,10 +159,12 @@ const resolvedWork_en = await Promise.all(
                       {resolvedSkills.map(({ name, icon }) => {
                         const Icon = icon?.type === 'astro' ? icon.Component : null
                         return (
-                          <span title={name} class="skill-icon">
-                            {Icon && <Icon />}
-                            {icon?.type === 'svg' && <img src={icon.url} alt={name} width="16" height="16" />}
-                          </span>
+                          (Icon || icon?.type === 'svg') && (
+                            <span title={name} class="skill-icon">
+                              {Icon && <Icon />}
+                              {icon?.type === 'svg' && <img src={icon.url} alt={name} width="16" height="16" />}
+                            </span>
+                          )
                         )
                       })}
                     </div>
@@ -189,6 +193,8 @@ const resolvedWork_en = await Promise.all(
     justify-content: center;
     width: 1.4rem;
     height: 1.4rem;
+    border-radius: 5px;
+    background: #f0f0f0;
     opacity: 0.75;
     transition: opacity 0.2s;
   }

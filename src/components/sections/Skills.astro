@@ -53,8 +53,12 @@ const resolvedSkills_en = await Promise.all(
       const Icon = icon?.type === 'astro' ? icon.Component : null
       return (
         <li title={`${name} - ${level}`}>
-          {Icon && <Icon />}
-          {icon?.type === 'svg' && <img src={icon.url} alt={name} width="14" height="14" />}
+          {(Icon || icon?.type === 'svg') && (
+            <span class="icon-badge">
+              {Icon && <Icon />}
+              {icon?.type === 'svg' && <img src={icon.url} alt={name} width="14" height="14" />}
+            </span>
+          )}
           <span>{name}</span>
           <span class="keywords">{keywords.join(", ")}</span>
         </li>
@@ -67,8 +71,12 @@ const resolvedSkills_en = await Promise.all(
       const Icon = icon?.type === 'astro' ? icon.Component : null
       return (
         <li title={`${name} - ${level}`}>
-          {Icon && <Icon />}
-          {icon?.type === 'svg' && <img src={icon.url} alt={name} width="14" height="14" />}
+          {(Icon || icon?.type === 'svg') && (
+            <span class="icon-badge">
+              {Icon && <Icon />}
+              {icon?.type === 'svg' && <img src={icon.url} alt={name} width="14" height="14" />}
+            </span>
+          )}
           <span>{name}</span>
           <span class="keywords">{keywords.join(", ")}</span>
         </li>
@@ -110,7 +118,7 @@ const resolvedSkills_en = await Promise.all(
 
   .data-skills li, .data-lang li {
     align-items: center;
-    background: #eee;
+    background: #F0F0F0;
     border-radius: 6px;
     color: black;
     display: inline-flex;
@@ -122,6 +130,17 @@ const resolvedSkills_en = await Promise.all(
     position: relative;
     min-height: 30px;
     width: auto;
+  }
+
+  .icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: transparent;
+    flex-shrink: 0;
   }
 
   .keywords {
