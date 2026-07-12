@@ -359,14 +359,14 @@
       "name": "Gissela Sauñe - Sitio web personal",
       "isActive": true,
       "description": "Portafolio web para la artista visual Gissela Sauñe.",
-      "highlights": ["HTML5", "CSS3", "JavaScript"],
+      "highlights": ["HTML5", "Lanzamiento de multisitios internacionales: Williams-Sonoma, Pottery Barn y West Elm.", "JavaScript"],
       "url": "https://gisselasaune.com.mx/"
     },
     {
       "name": "ZentoMX",
       "isActive": true,
       "description": "Tienda Shopify de mobiliario con personalización de theme y experiencia de compra.",
-      "highlights": ["Liquid", "JavaScript", "CSS3"],
+      "highlights": ["Liquid", "JavaScript", "LESS"],
       "url": "https://www.zento.mx/",
       "shopify": "https://www.zento.mx/"
     },
