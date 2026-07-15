@@ -17,9 +17,15 @@
       ]
     },
     {
-      "source": "/(.*)\\.(js|css|woff2|png|jpg|jpeg|webp|svg|ico)",
+      "source": "/_astro/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(png|jpg|jpeg|webp|svg|ico)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
       ]
     }
   ]
