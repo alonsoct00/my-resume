@@ -163,6 +163,16 @@
       "endDate": "2013-01-01",
       "score": "4.0",
       "logo": "/ipn.png"
+        },
+        {
+      "institution": "Instituto Politécnico Nacional - CECyT 12",
+      "url": "https://www.ipn.mx/",
+      "area": "Computer Science",
+      "studyType": "Associate Degree",
+      "startDate": "2004-08-01",
+      "endDate": "2007-06-01",
+      "score": "7.0",
+      "logo": "/cecyt12.png"
     }
   ],
   "courses": [
