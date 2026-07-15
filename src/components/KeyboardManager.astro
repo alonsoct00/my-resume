@@ -71,7 +71,7 @@ const profilesInfo = profiles.map(({ network, url }) => {
     height="32"
     viewBox="0 0 24 24"
     stroke-width="1.5"
-    stroke="#777"
+    stroke="var(--icon-stroke)"
     fill="none"
     stroke-linecap="round"
     stroke-linejoin="round"
@@ -137,6 +137,28 @@ const profilesInfo = profiles.map(({ network, url }) => {
         window.print()
       }
     },
+    {
+      id: "toggle-theme",
+      title: lang === "es" ? "Cambiar tema" : "Toggle theme",
+      icon: `<svg style="margin-right: 8px" width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36 6.36-.7-.7M6.34 6.34l-.7-.7m12.72 0-.7.7M6.34 17.66l-.7.7M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />
+</svg>`,
+      hotkey: "ctrl+J",
+      section: lang === "es" ? "Acciones" : "Actions",
+      handler: () => {
+        const htmlElement = document.documentElement
+        const switchTheme = () => {
+          const next = htmlElement.getAttribute("data-theme") === "dark" ? "light" : "dark"
+          htmlElement.setAttribute("data-theme", next)
+          localStorage.setItem("cv-theme", next)
+        }
+        if (!document.startViewTransition) {
+          switchTheme()
+          return
+        }
+        document.startViewTransition(switchTheme)
+      }
+    },
     ...data
   ])
 
@@ -183,9 +205,9 @@ const profilesInfo = profiles.map(({ network, url }) => {
     }
 
     #footer-button {
-      background: #fff;
+      background: var(--bg);
       position: fixed;
-      border: 1px solid #eee;
+      border: 1px solid var(--border);
       right: 10px;
       bottom: 10px;
       width: 50px;
@@ -199,8 +221,8 @@ const profilesInfo = profiles.map(({ network, url }) => {
   }
 
   footer {
-    background: #fdfdfd;
-    border-top: 1px solid #eee;
+    background: var(--surface-alt);
+    border-top: 1px solid var(--border);
     position: fixed;
     bottom: 0px;
     width: 100%;
@@ -217,7 +239,8 @@ const profilesInfo = profiles.map(({ network, url }) => {
   }
 
   kbd {
-    background: #eee;
+    background: var(--chip-bg);
+    color: var(--text-primary);
     border-radius: 4px;
     padding: 2px 4px;
     font-size: 12px;
