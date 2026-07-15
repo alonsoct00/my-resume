@@ -1,10 +1,10 @@
 ---
-import 'hotkeypad/reset.css'
-import 'hotkeypad/index.css'
-import { type SocialIcon } from "@/types"
-import { basics } from "@cv"
+import "hotkeypad/reset.css";
+import "hotkeypad/index.css";
+import { type SocialIcon } from "@/types";
+import { basics } from "@cv";
 
-const { profiles } = basics
+const { profiles } = basics;
 
 const SOCIAL_ICONS: SocialIcon = {
   GitHub: `<svg
@@ -40,12 +40,12 @@ const SOCIAL_ICONS: SocialIcon = {
     d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
   ></path></svg
 >
-`
-}
+`,
+};
 
 const profilesInfo = profiles.map(({ network, url }) => {
-  const icon = SOCIAL_ICONS[network]
-  const firstLetter = network[0].toUpperCase()
+  const icon = SOCIAL_ICONS[network];
+  const firstLetter = network[0].toUpperCase();
 
   return {
     id: network,
@@ -53,14 +53,18 @@ const profilesInfo = profiles.map(({ network, url }) => {
     title: `${network}`,
     url,
     icon,
-    hotkey: `ctrl+${firstLetter}`
-  }
-})
+    hotkey: `ctrl+${firstLetter}`,
+  };
+});
 ---
 
 <footer id="normal-footer" class="no-print">
-  <span data-lang-content="es">Pulsa <kbd>Cmd</kbd> + <kbd>K</kbd> para abrir la paleta de comandos.</span>
-  <span data-lang-content="en">Press <kbd>Cmd</kbd> + <kbd>K</kbd> to open the command palette.</span>
+  <span data-lang-content="es"
+    >Pulsa <kbd>Cmd</kbd> + <kbd>K</kbd> para abrir la paleta de comandos.</span
+  >
+  <span data-lang-content="en"
+    >Press <kbd>Cmd</kbd> + <kbd>K</kbd> to open the command palette.</span
+  >
 </footer>
 
 <div id="footer-button" class="no-print">
@@ -92,37 +96,35 @@ const profilesInfo = profiles.map(({ network, url }) => {
 
 <script>
   interface Info {
-    id: string
-    section: string
-    title: string
-    url: string
-    icon: string
-    hotkey: string
-    handler?: () => void
+    id: string;
+    section: string;
+    title: string;
+    url: string;
+    icon: string;
+    hotkey: string;
+    handler?: () => void;
   }
 
-  import HotKeyPad from "hotkeypad"
+  import HotKeyPad from "hotkeypad";
 
-  const hotkeypad = new HotKeyPad()
-  const info = hotkeypad.instance.getAttribute("data-info") ?? "[]"
-  const parsedInfo = JSON.parse(info) as Info[]
+  const hotkeypad = new HotKeyPad();
+  const info = hotkeypad.instance.getAttribute("data-info") ?? "[]";
+  const parsedInfo = JSON.parse(info) as Info[];
 
-  const data = parsedInfo.map(
-    ({ url, hotkey, icon, id, section, title }) => {
-      return {
-        id,
-        title,
-        icon,
-        hotkey,
-        section,
-        handler: () => {
-          window.open(url, "_blank")
-        }
-      }
-    }
-  )
+  const data = parsedInfo.map(({ url, hotkey, icon, id, section, title }) => {
+    return {
+      id,
+      title,
+      icon,
+      hotkey,
+      section,
+      handler: () => {
+        window.open(url, "_blank");
+      },
+    };
+  });
 
-  const lang = document.documentElement.getAttribute("data-lang") ?? "es"
+  const lang = document.documentElement.getAttribute("data-lang") ?? "es";
 
   hotkeypad.setCommands([
     {
@@ -134,8 +136,8 @@ const profilesInfo = profiles.map(({ network, url }) => {
       hotkey: "ctrl+P",
       section: lang === "es" ? "Acciones" : "Actions",
       handler: () => {
-        window.print()
-      }
+        window.print();
+      },
     },
     {
       id: "toggle-theme",
@@ -146,23 +148,26 @@ const profilesInfo = profiles.map(({ network, url }) => {
       hotkey: "ctrl+J",
       section: lang === "es" ? "Acciones" : "Actions",
       handler: () => {
-        const htmlElement = document.documentElement
+        const htmlElement = document.documentElement;
         const switchTheme = () => {
-          const next = htmlElement.getAttribute("data-theme") === "dark" ? "light" : "dark"
-          htmlElement.setAttribute("data-theme", next)
-          localStorage.setItem("cv-theme", next)
-        }
+          const next =
+            htmlElement.getAttribute("data-theme") === "dark"
+              ? "light"
+              : "dark";
+          htmlElement.setAttribute("data-theme", next);
+          localStorage.setItem("cv-theme", next);
+        };
         if (!document.startViewTransition) {
-          switchTheme()
-          return
+          switchTheme();
+          return;
         }
-        document.startViewTransition(switchTheme)
-      }
+        document.startViewTransition(switchTheme);
+      },
     },
-    ...data
-  ])
+    ...data,
+  ]);
 
-  const footerButton = document.getElementById("footer-button")
+  const footerButton = document.getElementById("footer-button");
   footerButton?.addEventListener("click", () => {
     var event = new KeyboardEvent("keydown", {
       key: "K",
@@ -172,11 +177,11 @@ const profilesInfo = profiles.map(({ network, url }) => {
       ctrlKey: true,
       altKey: false,
       shiftKey: false,
-      metaKey: false
-    })
+      metaKey: false,
+    });
 
-    document.dispatchEvent(event)
-  })
+    document.dispatchEvent(event);
+  });
 </script>
 
 <style>
