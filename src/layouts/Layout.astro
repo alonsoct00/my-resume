@@ -1,6 +1,7 @@
 ---
 import { basics as basics_es } from "@cv"
 import 'src/styles.scss';
+import ThemeToggle from "../components/ThemeToggle.astro";
 
 
 interface Props {
@@ -60,6 +61,15 @@ const seoDescription_en = "Frontend Developer with over 10 years of experience i
 
     
 
+    <!-- Tema claro/oscuro: se aplica antes del primer paint para evitar parpadeo -->
+    <script is:inline>
+      (function() {
+        const saved = localStorage.getItem("cv-theme");
+        const theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+
     <!-- Cambia description y lang según idioma del usuario -->
     <script is:inline define:vars={{ seoDescription_es, seoDescription_en }}>
       (function() {
@@ -80,18 +90,55 @@ const seoDescription_en = "Frontend Developer with over 10 years of experience i
   </head>
   <body>
     <noscript>
-      <iframe 
+      <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-MTD6TJZT"
-        height="0" 
-        width="0" 
+        height="0"
+        width="0"
         style="display:none;visibility:hidden"
       ></iframe>
     </noscript>
+    <ThemeToggle />
     <slot />
   </body>
 </html>
 
 <style is:global>
+  :root {
+    --bg: #fff;
+    --surface: rgba(255, 255, 255, 0.9);
+    --surface-alt: #fdfdfd;
+    --border: #eee;
+    --border-strong: #ddd;
+    --text-primary: #111;
+    --text-heading: #101010;
+    --text-body: #666;
+    --text-muted: #555;
+    --text-faint: #999;
+    --text-faintest: #ccc;
+    --chip-bg: #eee;
+    --chip-text: #444;
+    --card-border: #f2f2f2;
+    --icon-stroke: #777;
+  }
+
+  [data-theme="dark"] {
+    --bg: #111214;
+    --surface: rgba(24, 25, 28, 0.9);
+    --surface-alt: #1a1b1e;
+    --border: #2a2b2e;
+    --border-strong: #3a3b3e;
+    --text-primary: #f2f2f2;
+    --text-heading: #f0f0f0;
+    --text-body: #b3b3b3;
+    --text-muted: #999;
+    --text-faint: #888;
+    --text-faintest: #555;
+    --chip-bg: #2a2b2e;
+    --chip-text: #ccc;
+    --card-border: #2a2b2e;
+    --icon-stroke: #aaa;
+  }
+
   html {
     font-family:
       Menlo,
@@ -100,8 +147,10 @@ const seoDescription_en = "Frontend Developer with over 10 years of experience i
       "Courier New",
       Courier,
       monospace;
-    background: #fff;
+    background: var(--bg);
+    color: var(--text-primary);
     letter-spacing: -0.025rem;
+    transition: background 0.2s ease, color 0.2s ease;
   }
 
   body,
@@ -146,7 +195,7 @@ const seoDescription_en = "Frontend Developer with over 10 years of experience i
   }
 
   p {
-    color: #666;
+    color: var(--text-body);
     font-size: 0.9rem;
     line-height: 1.5;
     margin: 0;

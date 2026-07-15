@@ -43,7 +43,7 @@ h2 {
     }
 
     h2 {
-        color: #444;
+        color: var(--text-body);
         font-weight: 500;
         font-size: 1.1rem;
         text-wrap: balance;
@@ -57,7 +57,7 @@ h2 {
     }
 
     span {
-        color: #666;
+        color: var(--text-body);
         display: flex;
         align-items: center;
         gap: 0.25rem;
@@ -66,7 +66,7 @@ h2 {
     }
 
     footer {
-        color: #555;
+        color: var(--text-muted);
         font-size: 0.65rem;
         display: flex;
         gap: 4px;
@@ -74,11 +74,11 @@ h2 {
     }
 
     footer a {
-        color: #777;
+        color: var(--text-faint);
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid #eee;
+        border: 1px solid var(--border);
         padding: 4px;
         height: 32px;
         width: 32px;
@@ -87,8 +87,8 @@ h2 {
     }
 
     footer a:hover {
-        background: #eee;
-        border: 1px solid #ddd;
+        background: var(--border);
+        border: 1px solid var(--border-strong);
     }
 
     @media (width <=700px) {
@@ -123,7 +123,7 @@ h2 {
 #summary {
     .summary-text {
         font-size: 16px;
-        color: #101010;
+        color: var(--text-heading);
     }
 }
 
@@ -136,7 +136,7 @@ h2 {
         gap: 40px;
 
         article a {
-            color: #111;
+            color: var(--text-primary);
             display: flex;
             align-items: center;
             column-gap: 8px;
@@ -147,7 +147,7 @@ h2 {
         }
 
         article h2 {
-            color: #222;
+            color: var(--text-heading);
             font-weight: 600;
             font-size: 18px;
             line-height: normal;
@@ -155,7 +155,7 @@ h2 {
         }
 
         article h2 span {
-            color: #101010;
+            color: var(--text-heading);
             font-size: 16px;
         }
 
@@ -169,7 +169,7 @@ h2 {
 
         footer {
             p {
-                color: #101010;
+                color: var(--text-heading);
                 font-size: 14px;
             }
         }
@@ -182,7 +182,7 @@ h2 {
 
         .work-info {
             text-align: right;
-            color: #555;
+            color: var(--text-muted);
 
             p {
                 font-size: 12px;
@@ -198,14 +198,14 @@ h2 {
             padding-left: 18px;
             list-style-type: disc;
             margin: 8px auto 4px 0px;
-            color: #333;
+            color: var(--text-heading);
 
             li {
                 display: list-item;
                 margin-bottom: 4px;
                 line-height: normal;
                 font-size: 13px;
-                color: #333;
+                color: var(--text-heading);
             }
         }
 
@@ -244,7 +244,7 @@ h2 {
 
     article h3 {
         font-weight: 600;
-        color: #101010;
+        color: var(--text-heading);
         font-size: 18px;
     }
 
@@ -256,7 +256,7 @@ h2 {
     }
 
     time {
-        color: #555;
+        color: var(--text-muted);
         font-size: 0.85rem;
         min-width: 102px;
     }
@@ -283,7 +283,7 @@ h2 {
 
         article h3 {
             font-weight: 600;
-            color: #101010;
+            color: var(--text-heading);
             font-size: 16px;
         }
     }
@@ -302,12 +302,12 @@ h2 {
                 header {
                     h3 {
                         font-weight: 600;
-                        color: #101010;
+                        color: var(--text-heading);
                         font-size: 18px;
                     }
 
                     time {
-                        color: #555;
+                        color: var(--text-muted);
                         font-size: 0.85rem;
                         min-width: 102px;
                         float: right;
@@ -351,7 +351,7 @@ h2 {
 
     article {
         border-radius: 8px;
-        border: 1px solid #f2f2f2;
+        border: 1px solid var(--card-border);
         gap: 8px;
         display: flex;
         flex-direction: column;
@@ -368,7 +368,7 @@ h2 {
     }
 
     article a {
-        color: #111;
+        color: var(--text-primary);
     }
 
     article a:hover {
@@ -398,8 +398,8 @@ h2 {
 
     footer span {
         border-radius: 6px;
-        background: #eee;
-        color: #444;
+        background: var(--chip-bg);
+        color: var(--chip-text);
         font-size: 0.6rem;
         font-weight: 500;
         padding: 0.2rem 0.6rem;
@@ -464,7 +464,7 @@ h2 {
 
         article {
             border: none;
-            box-shadow: 0 1px 1px #f2f2f2;
+            box-shadow: 0 1px 1px var(--card-border);
             padding: 0 0 16px 0;
         }
     }
