@@ -539,7 +539,7 @@
       "name": "World Cup 2026 Predictor",
       "isActive": true,
       "description": "Consulta para los pronosticos y probables resultados de la justa mundialista",
-      "highlights": ["Bolt", "Vercel"],
+      "highlights": ["Bolt", "Claude", "Vercel"],
       "url": "https://worldcup2026pred.vercel.app/",
       "github": "https://github.com/alonsoct00/worldcup2026pred"
     },
