@@ -136,7 +136,10 @@ const profilesInfo = profiles.map(({ network, url }) => {
       hotkey: "ctrl+P",
       section: lang === "es" ? "Acciones" : "Actions",
       handler: () => {
-        window.print();
+        window.open(
+          encodeURI("/docs/Alonso Caballero - Front-End Web Developer_EN.pdf"),
+          "_blank",
+        );
       },
     },
     {

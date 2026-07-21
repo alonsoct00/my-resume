@@ -4,7 +4,6 @@ section {
 
     h2 {
         margin-bottom: 20px;
-        ;
     }
 }
 
@@ -13,6 +12,18 @@ h2 {
     font-weight: 700;
     line-height: 1.5;
     font-size: 1.5rem;
+}
+
+%entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+%time-meta {
+    font-size: 0.85rem;
+    min-width: 102px;
 }
 
 @media (width <=700px) {
@@ -160,11 +171,8 @@ h2 {
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            @extend %entry-header;
             flex-wrap: wrap;
-            margin-bottom: 4px;
         }
 
         footer {
@@ -190,8 +198,7 @@ h2 {
         }
 
         time {
-            font-size: 0.85rem;
-            min-width: 102px;
+            @extend %time-meta;
         }
 
         #work_highlights {
@@ -249,16 +256,12 @@ h2 {
     }
 
     header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 4px;
+        @extend %entry-header;
     }
 
     time {
+        @extend %time-meta;
         color: var(--text-muted);
-        font-size: 0.85rem;
-        min-width: 102px;
     }
 
     .header_school {
@@ -297,7 +300,6 @@ h2 {
 
         li {
             margin-bottom: 16px;
-            ;
 
             article {
                 header {
@@ -308,9 +310,8 @@ h2 {
                     }
 
                     time {
+                        @extend %time-meta;
                         color: var(--text-muted);
-                        font-size: 0.85rem;
-                        min-width: 102px;
                         float: right;
                         text-align: right;
                     }
@@ -331,10 +332,10 @@ h2 {
     display: grid;
     gap: 5rem;
 
-    > .project-category {
+    >.project-category {
         margin: 0;
 
-        > h2 {
+        >h2 {
             margin: 0 0 1rem;
         }
     }
@@ -366,7 +367,17 @@ h2 {
 
     article h3 {
         margin-bottom: 4px;
+        
+
     }
+
+    article h3 > a:first-of-type {
+    display: inline-block;
+    max-width: 15ch;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
     article a {
         color: var(--text-primary);
@@ -470,11 +481,6 @@ h2 {
         }
     }
 
-    @media print {
-        article h3 span {
-            animation-name: none;
-        }
-    }
 }
 
 
