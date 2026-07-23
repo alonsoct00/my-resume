@@ -369,7 +369,7 @@
       "name": "Gissela Sauñe - Sitio web personal",
       "isActive": true,
       "description": "Portafolio web para la artista visual Gissela Sauñe.",
-      "highlights": ["HTML5", "Lanzamiento de multisitios internacionales: Williams-Sonoma, Pottery Barn y West Elm.", "JavaScript"],
+      "highlights": ["HTML5", "SCSS", "JavaScript"],
       "url": "https://gisselasaune.com.mx/"
     },
     {
@@ -392,7 +392,7 @@
       "name": "FONIMA",
       "isActive": false,
       "description": "Sitio promocional para el festival FONIMA.",
-      "highlights": ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
+      "highlights": ["HTML5", "LESS", "JavaScript", "Bootstrap"],
       "url": "https://alonsoct00.github.io/fonima-web/"
     },
     {
@@ -413,7 +413,7 @@
       "name": "Casiopea",
       "isActive": true,
       "description": "Sitio web para una productora de animación y diseño.",
-      "highlights": ["HTML5", "CSS3", "JavaScript"],
+      "highlights": ["HTML5", "SCSS", "JavaScript"],
       "url": "https://casiopea.mx/",
       "github": "https://github.com/alonsoct00/Casiopea-website"
     },
@@ -547,7 +547,7 @@
       "name": "Costco Price Watcher",
       "isActive": true,
       "description": "Herramienta que monitorea precios de productos en Costco y avisa cuando bajan.",
-      "highlights": ["Lovable"],
+      "highlights": ["Lovable", "Vercel"],
       "url": "https://costco-price-watcher.vercel.app/",
       "github": "https://github.com/alonsoct00/costco-price-watcher"
     },

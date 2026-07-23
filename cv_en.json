@@ -514,7 +514,7 @@
       "name": "Costco Price Watcher",
       "isActive": true,
       "description": "Tool that monitors Costco product prices and alerts on price drops.",
-      "highlights": ["Lovable"],
+      "highlights": ["Lovable", "Vercel"],
       "url": "https://costco-price-watcher.vercel.app/",
       "github": "https://github.com/alonsoct00/costco-price-watcher"
     },
