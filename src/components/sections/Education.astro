@@ -7,7 +7,7 @@ import { education as education_en, courses as courses_en, certifications as cer
 
 <Section id="education" class="educaction">
   <h2 data-lang-content="es">Educación</h2>
-  <h2 data-lang-content="en" aria-hidden="true">Education</h2>
+  <h2 data-lang-content="en">Education</h2>
 
   <ul id="institution_list" data-lang-content="es">
     {
@@ -20,7 +20,7 @@ import { education as education_en, courses as courses_en, certifications as cer
             <article>
               <header>
                 <div class="header_school">
-                  <span class="school_item_image"><img src={logo} alt={institution}></span>
+                  <span class="school_item_image"><img src={logo} alt={institution} width="50" height="50" loading="lazy"></span>
                   <div>
                     <h3>{institution}</h3>
                     <p><span>{studyType}</span> en {area}</p>
@@ -36,7 +36,7 @@ import { education as education_en, courses as courses_en, certifications as cer
     }
   </ul>
 
-  <ul id="institution_list_en" data-lang-content="en" aria-hidden="true">
+  <ul id="institution_list_en" data-lang-content="en">
     {
       education_en.map(({ institution, startDate, endDate, area, studyType, logo}) => {
         const startYear = new Date(startDate).getFullYear()
@@ -47,7 +47,7 @@ import { education as education_en, courses as courses_en, certifications as cer
             <article>
               <header>
                 <div class="header_school">
-                  <span class="school_item_image"><img src={logo} alt={institution}></span>
+                  <span class="school_item_image"><img src={logo} alt={institution} width="50" height="50" loading="lazy"></span>
                   <div>
                     <h3>{institution}</h3>
                     <p><span>{studyType}</span> in {area}</p>
@@ -66,7 +66,7 @@ import { education as education_en, courses as courses_en, certifications as cer
 
 <Section id="courses" class="education">
   <h2 data-lang-content="es">Certificados y Cursos</h2>
-  <h2 data-lang-content="en" aria-hidden="true">Certifications & Courses</h2>
+  <h2 data-lang-content="en">Certifications & Courses</h2>
 
   <ul id="courses_list" data-lang-content="es">
     {
@@ -88,7 +88,7 @@ import { education as education_en, courses as courses_en, certifications as cer
     }
   </ul>
 
-  <ul id="courses_list_en" data-lang-content="en" aria-hidden="true">
+  <ul id="courses_list_en" data-lang-content="en">
     {
       courses_en.map(({ courseName, institution, date, url}) => {
         return (
@@ -119,7 +119,7 @@ import { education as education_en, courses as courses_en, certifications as cer
                 <time>{date}</time>
               </header>
               <footer>
-                <p><a href={url} title={name} target="_blank">{issuer}</a> <span>{license}</span></p>
+                <p>{url ? <a href={url} title={name} target="_blank">{issuer}</a> : issuer} <span>{license}</span></p>
               </footer>
             </article>
           </li>
@@ -128,7 +128,7 @@ import { education as education_en, courses as courses_en, certifications as cer
     }
   </ul>
 
-  <ul id="certifications_list_en" data-lang-content="en" aria-hidden="true">
+  <ul id="certifications_list_en" data-lang-content="en">
     {
       certifications_en.map(({ name, date, issuer, license, url}) => {
         return (
@@ -139,7 +139,7 @@ import { education as education_en, courses as courses_en, certifications as cer
                 <time>{date}</time>
               </header>
               <footer>
-                <p><a href={url} title={name} target="_blank">{issuer}</a> <span>{license}</span></p>
+                <p>{url ? <a href={url} title={name} target="_blank">{issuer}</a> : issuer} <span>{license}</span></p>
               </footer>
             </article>
           </li>

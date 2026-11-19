@@ -75,7 +75,7 @@ const structuredData = {
     <meta name="viewport" content="width=device-width" />
     <meta name="app-impact" content="Impact-Site-Verification: ca95245b-35e2-4deb-9f77-aa3a95c05161" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" as="image" href={image} />
+    <link rel="preload" as="image" href="/me-portrait.webp" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, "\\u003c")} />
@@ -203,6 +203,11 @@ const structuredData = {
 
   a {
     text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 3px;
   }
 
   ul {

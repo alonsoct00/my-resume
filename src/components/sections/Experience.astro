@@ -58,7 +58,7 @@ const resolvedWork_en = await Promise.all(
 
 <Section id="experience">
   <h2 data-lang-content="es">Experiencia laboral</h2>
-  <h2 data-lang-content="en" aria-hidden="true">Work Experience</h2>
+  <h2 data-lang-content="en">Work Experience</h2>
 
   <ul id="work_list" class="work-list" data-lang-content="es">
     {
@@ -74,7 +74,7 @@ const resolvedWork_en = await Promise.all(
                 <header>
                   <div>
                     <a href={url} title={`Ver ${name}`} target="_blank">
-                      <span class="work_item_image"><img src={logo} alt={name} /></span>
+                      <span class="work_item_image"><img src={logo} alt={name} width="50" height="50" loading="lazy" /></span>
                       <h2>
                         {name} <br/>
                         <span>{position}</span>
@@ -119,7 +119,7 @@ const resolvedWork_en = await Promise.all(
     }
   </ul>
 
-  <ul id="work_list_en" class="work-list" data-lang-content="en" aria-hidden="true">
+  <ul id="work_list_en" class="work-list" data-lang-content="en">
     {
       resolvedWork_en.map(
         ({ name, startDate, endDate, position, summary, highlights, url, type, logo, resolvedSkills }) => {
@@ -133,7 +133,7 @@ const resolvedWork_en = await Promise.all(
                 <header>
                   <div>
                     <a href={url} title={`View ${name}`} target="_blank">
-                      <span class="work_item_image"><img src={logo} alt={name} /></span>
+                      <span class="work_item_image"><img src={logo} alt={name} width="50" height="50" loading="lazy" /></span>
                       <h2>
                         {name} <br/>
                         <span>{position}</span>

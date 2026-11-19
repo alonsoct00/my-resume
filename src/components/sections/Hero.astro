@@ -13,7 +13,7 @@ for (const [path, loader] of Object.entries(iconModules)) {
   SOCIAL_ICONS[name] = (await loader()).default
 }
 
-const { name, image, profiles, phone, email } = basics_es
+const { name, profiles, phone, email } = basics_es
 const linkedInfo = profiles.find(({ network }) => network.toLowerCase() === "linkedin")
 const linkedUrl = linkedInfo?.url
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
@@ -37,7 +37,7 @@ const WorldMapIcon = SOCIAL_ICONS["worldmap"]
       <span>
         {WorldMapIcon && <WorldMapIcon />}
         <span data-lang-content="es">{basics_es.location.city}, {basics_es.location.region}</span>
-        <span data-lang-content="en" aria-hidden="true">{basics_en.location.city}, {basics_en.location.region}</span>
+        <span data-lang-content="en">{basics_en.location.city}, {basics_en.location.region}</span>
       </span>
 
       <!-- Solo visible al imprimir -->
@@ -69,7 +69,7 @@ const WorldMapIcon = SOCIAL_ICONS["worldmap"]
       </footer>
     </div>
     <figure>
-      <img src={image} alt={name} />
+      <img src="/me-portrait.webp" alt={name} width="128" height="128" />
     </figure>
   </div>
 </Section>
