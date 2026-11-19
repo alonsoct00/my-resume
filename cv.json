@@ -50,7 +50,7 @@
       "startDate": "2019-03-15",
       "endDate": "2024-03-01",
       "type": "Remoto - Tiempo completo",
-      "logo": "/gaia_design_logo.jpeg",
+      "logo": "/gaia_design_logo.webp",
       "summary": "Acompañé la evolución del e-commerce desde Magento 1 y Magento 2 hacia una arquitectura headless con React, Next.js, Tailwind, Vercel y DatoCMS. Desarrollé y optimicé landing pages y puntos críticos del funnel —home, PLP, PDP, carrito y checkout— conectando UX, performance y objetivos de conversión.",
       "highlights": [
         "Participación en la transición de Magento a una arquitectura headless con React, Next.js, Vercel y Tailwind CSS.",
@@ -98,7 +98,7 @@
       "startDate": "2013-10-01",
       "endDate": "2016-07-01",
       "type": "Tiempo completo",
-      "logo": "/liver.jpeg",
+      "logo": "/liver.webp",
       "summary": "Formé parte del equipo Front-End de liverpool.com.mx, creando micrositios, landing pages y experiencias de e-commerce orientadas a conversión. Participé en la migración a Oracle ATG Web Commerce (BCC), desarrollé prototipos HTML para el nuevo checkout y colaboré con equipos internacionales en lanzamientos para Williams-Sonoma, Pottery Barn y West Elm.",
       "highlights": [
         "Migración a Oracle ATG Web Commerce y desarrollo de prototipos HTML para el nuevo checkout.",
@@ -164,7 +164,7 @@
       "startDate": "2007-08-01",
       "endDate": "2013-01-01",
       "score": "7.0",
-      "logo": "/ipn.png"
+      "logo": "/ipn.webp"
     },
     {
       "institution": "Instituto Politécnico Nacional - CECyT 12",
@@ -174,7 +174,7 @@
       "startDate": "2004-08-01",
       "endDate": "2007-06-01",
       "score": "7.0",
-      "logo": "/cecyt12.png"
+      "logo": "/cecyt12.webp"
     }
   ],
   "courses": [
