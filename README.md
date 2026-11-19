@@ -173,6 +173,12 @@ Convención de color: los iconos de marca/tecnología usan su color oficial fijo
 
 El sitio se despliega como estático puro (`astro build` → `.vercel/output/static/`), sin funciones serverless.
 
+### IndexNow
+
+La clave de verificación pública está en `public/`; el script comprueba que el mismo archivo esté disponible en el dominio de producción antes de enviar nada. Lee el sitemap publicado y verifica las páginas canónicas, su indexabilidad y `robots.txt` antes de notificar a IndexNow. Las compilaciones locales no envían notificaciones.
+
+Para activar la automatización tras publicar el archivo de clave, configura la variable de repositorio de GitHub Actions `INDEXNOW_ENABLED` con el valor `true`. El workflow solo procesa eventos `deployment_status` exitosos de producción creados por Vercel; confirma en Vercel que dichos eventos estén habilitados. La clave es pública por diseño y no se requiere ningún secreto adicional. El primer envío automático ocurrirá después del siguiente deploy exitoso de producción.
+
 ---
 
 ## 📄 Licencia
