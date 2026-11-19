@@ -580,6 +580,13 @@
       "url": "https://amigosecreto.alonsoct.dev"
     },
     {
+      "name": "SEO & Sitemap Auditor",
+      "isActive": true,
+      "description": "Herramienta de auditoría SEO para analizar sitios web, revisar sitemaps e identificar oportunidades de optimización para mejorar su visibilidad en buscadores.",
+      "highlights": ["Google AI Studio", "SEO", "Sitemap"],
+      "url": "https://seo-sitemap-auditor.ai.studio/"
+    },
+    {
       "name": "TriviaMX",
       "isActive": true,
       "description": "Juego interactivo de preguntas y respuestas inspirado en Jeopardy y El Rival Más Débil, con temporizador, preguntas abiertas y dinámicas de competencia.",

@@ -575,6 +575,13 @@
       "url": "https://triviamx.lovable.app"
     },
     {
+      "name": "SEO & Sitemap Auditor",
+      "isActive": true,
+      "description": "SEO auditing tool for analyzing websites, reviewing sitemaps, and identifying optimization opportunities to improve search engine visibility.",
+      "highlights": ["Google AI Studio", "SEO", "Sitemap"],
+      "url": "https://seo-sitemap-auditor.ai.studio/"
+    },
+    {
       "name": "Where Should We Go?",
       "isActive": true,
       "description": "Interactive platform for discovering places, comparing options, and planning outings with friends through AI-assisted recommendations.",

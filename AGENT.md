@@ -77,6 +77,18 @@ Para que un skill/tecnología nueva en el CV muestre icono, hay que crear `src/i
 
 Nota: esta lógica de resolución de iconos está **duplicada** entre `Experience.astro`, `Projects.astro`, `Skills.astro` y (parcialmente) `src/lib/icons.ts`/`Hero.astro`. Si se toca, considerar si vale la pena consolidar, pero no es prerequisito para cambios puntuales.
 
+### Caso especial: `highlights` de Projects/Designs/Vibecoding
+
+`Projects.astro` resuelve los iconos de `projects`/`designs`/`vibecoding` de forma distinta a los `skills` directos: usa `FRAMEWORK_ICON_MAP` (un diccionario `keyword en minúsculas -> slug de icono`) y busca, para cada `highlight`, si su versión en minúsculas **contiene** alguna de esas keywords (`lower.includes(keyword)`). Esto permite mapear highlights como `"Next.js"` o `"Google AI Studio"` a un slug de icono aunque no coincidan 1:1 con el nombre del archivo. Si agregas un highlight nuevo que deba mostrar icono, añade la entrada correspondiente a `FRAMEWORK_ICON_MAP` en vez de solo crear el `.astro` — crear el icono sin la entrada en el mapa no lo hace aparecer ahí (aunque sí funcionaría si ese mismo nombre se usa como `skill` en `Experience`/`Skills`, que no pasan por este mapa).
+
+### Convención de color en `src/icons/*.astro`
+
+- **Iconos de marca/tecnología** (React, TypeScript, Tailwind, Vite, Vercel, etc.): color de marca fijo (hex oficial), igual en ambos temas — se muestran dentro de chips con fondo propio (`--chip-bg` / `rgba(0,0,0,.1)`) que ya dan contraste suficiente en claro y oscuro.
+- **Iconos genéricos/sociales** (Mail, Phone, WorldMap, GitHub, X, LinkedIn): usan `fill`/`stroke="currentColor"` para heredar el color de texto del contenedor y adaptarse automáticamente a ambos temas.
+- **Iconos multicolor con gradiente oficial** (Lovable, Google AI Studio): usan `<linearGradient>` con un `id` generado vía `crypto.randomUUID()` en el frontmatter (p. ej. `` `lovable-${crypto.randomUUID()}` ``) para evitar IDs duplicados en el DOM cuando el mismo componente se renderiza varias veces en la misma página (ES+EN, múltiples proyectos).
+- Evita convertir PNG/JPG a SVG embebiendo imágenes rasterizadas (`<image>` con `data:image/png;base64,...`) — si la fuente oficial solo ofrece ese formato, reconstruye el icono como vector puro (paths + `<linearGradient>`/color plano) tomando como referencia los colores reales de la fuente oficial, en vez de incrustar el raster.
+- `src/icons/*.svg` sueltos (no `.astro`) **no se resuelven nunca** — ningún `import.meta.glob` los lee (solo se globa `src/icons/*.astro` y `public/icons/*.svg`). Si ves un `.svg` en `src/icons/` sin uso, probablemente es basura/duplicado de un `.astro` ya existente.
+
 ## Analítica y SEO ya integrados
 
 - Google Tag Manager (`GTM-MTD6TJZT`) y GA4 (`G-W1Q1L41MZ3`) cargados inline en `Layout.astro`. El cambio de idioma dispara un evento `change_language` al `dataLayer`.
