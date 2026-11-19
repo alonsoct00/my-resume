@@ -128,8 +128,11 @@ type Language =
   | "Bengali"
   | string
 
+export type ProjectCategory = "websites" | "landing" | "ecommerce" | "shopify" | "wordpress" | "webflow" | "webapp"
+
 interface Projects {
   name: string
+  categories: Array<ProjectCategory>
   isActive: boolean
   description: string
   highlights: Highlight

@@ -1,5 +1,7 @@
 ---
-import { basics as basics_es } from "@cv"
+import { basics as basics_es, projects, skills } from "@cv"
+import { basics as basics_en } from "@cv_en"
+import { seoDescriptions } from "@/lib/seo"
 import 'src/styles.scss';
 import ThemeToggle from "../components/ThemeToggle.astro";
 
@@ -10,14 +12,45 @@ interface Props {
 
 const { title } = Astro.props
 
-const { image, url } = basics_es
+const { image } = basics_es
 
-const seoDescription_es = "Frontend Developer con más de 10 años de experiencia en React, Vue, Astro, Webflow y Shopify. Especializado en UX, rendimiento web y SEO técnico."
-const seoDescription_en = "Frontend Developer with over 10 years of experience in React, Vue, Astro, Webflow and Shopify. Specialized in UX, web performance and technical SEO."
+if (!Astro.site) throw new Error("Astro.site is required for canonical URLs")
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href
+const imageUrl = new URL(image, Astro.site).href
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": `${canonicalUrl}#profile`,
+  url: canonicalUrl,
+  inLanguage: ["es", "en"],
+  mainEntity: {
+    "@type": "Person",
+    "@id": `${canonicalUrl}#person`,
+    name: basics_es.name,
+    url: canonicalUrl,
+    image: imageUrl,
+    jobTitle: [
+      { "@value": basics_es.label, "@language": "es" },
+      { "@value": basics_en.label, "@language": "en" },
+    ],
+    description: [
+      { "@value": basics_es.summary, "@language": "es" },
+      { "@value": basics_en.summary, "@language": "en" },
+    ],
+    knowsAbout: [...new Set([...skills.map(({ name }) => name), "E-commerce", "UX/UI", "Web Performance", "SEO técnico"])],
+    sameAs: basics_es.profiles.map(({ url }) => url),
+  },
+  mentions: projects.map(({ name, description, url }) => ({
+    "@type": "CreativeWork",
+    name,
+    description,
+    url,
+  })),
+}
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" data-lang="es">
   <head>
     <meta charset="UTF-8" />
     <script is:inline>
@@ -37,27 +70,30 @@ const seoDescription_en = "Frontend Developer with over 10 years of experience i
     <title>{title}</title>
 
     <!-- SEO: descripción corta estática, no el summary largo -->
-    <meta name="description" content={seoDescription_es} />
+    <meta name="description" content={seoDescriptions.es} />
+    <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width" />
     <meta name="app-impact" content="Impact-Site-Verification: ca95245b-35e2-4deb-9f77-aa3a95c05161" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="image" href={image} />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, "\\u003c")} />
 
     <!-- Open Graph -->
-    <meta property="og:url" content={url} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={seoDescription_es} />
-    <meta property="og:image" content="/me.webp" />
+    <meta property="og:description" content={seoDescriptions.es} />
+    <meta property="og:image" content={imageUrl} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
-    <meta property="twitter:url" content={url} />
+    <meta property="twitter:domain" content={Astro.site.host} />
+    <meta property="twitter:url" content={canonicalUrl} />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={seoDescription_es} />
-    <meta name="twitter:image" content="/me.webp" />
+    <meta name="twitter:description" content={seoDescriptions.es} />
+    <meta name="twitter:image" content={imageUrl} />
 
     
 
@@ -71,17 +107,17 @@ const seoDescription_en = "Frontend Developer with over 10 years of experience i
     </script>
 
     <!-- Cambia description y lang según idioma del usuario -->
-    <script is:inline define:vars={{ seoDescription_es, seoDescription_en }}>
+    <script is:inline define:vars={{ seoDescriptions }}>
       (function() {
         const saved = localStorage.getItem("cv-lang");
         const browser = navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
-        const lang = saved || browser;
+        const lang = saved === "es" || saved === "en" ? saved : browser;
 
         document.documentElement.setAttribute("data-lang", lang);
         document.documentElement.setAttribute("lang", lang);
 
         // Actualiza meta description según idioma
-        const desc = lang === "en" ? seoDescription_en : seoDescription_es;
+        const desc = seoDescriptions[lang];
         document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
         document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
         document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);

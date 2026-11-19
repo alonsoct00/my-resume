@@ -149,7 +149,9 @@
         "figmamake",
         "tailwindcss",
         "claude",
-        "openai"
+        "openai",
+        "airtable",
+        "vercel v0"
       ]
     }
   ],
@@ -364,6 +366,7 @@
   "projects": [
     {
       "name": "KONKO.ai",
+      "categories": ["landing", "websites"],
       "isActive": true,
       "description": "Plataforma médica impulsado por IA para clínicas de salud en América Latina.",
       "highlights": [
@@ -380,6 +383,7 @@
     },
     {
       "name": "Shopitrack",
+      "categories": ["landing", "websites"],
       "isActive": true,
       "description": "Plataforma web para soluciones logísticas y fulfillment, formularios inteligentes e integración con Airtable y Resend para la gestión automatizada de prospectos.",
       "highlights": [
@@ -397,6 +401,7 @@
     },
     {
       "name": "Acervo Animación - AAM",
+      "categories": ["websites"],
       "isActive": true,
       "description": "Sitio para el Acervo de Animación Mexicana, desarrollado con Astro y Tailwind CSS.",
       "highlights": [
@@ -411,6 +416,7 @@
     },
     {
       "name": "Gissela Sauñe - Sitio web personal",
+      "categories": ["websites"],
       "isActive": true,
       "description": "Portafolio web para la artista visual Gissela Sauñe.",
       "highlights": ["HTML5", "SCSS", "JavaScript"],
@@ -418,6 +424,7 @@
     },
     {
       "name": "ZentoMX",
+      "categories": ["ecommerce", "shopify"],
       "isActive": true,
       "description": "Tienda Shopify de mobiliario con personalización de theme y experiencia de compra.",
       "highlights": ["Liquid", "JavaScript", "LESS"],
@@ -426,6 +433,7 @@
     },
     {
       "name": "Calladitos",
+      "categories": ["ecommerce", "shopify"],
       "isActive": true,
       "description": "Tienda de arte en Shopify con ajustes de storefront y estilos personalizados.",
       "highlights": ["Liquid", "CSS3"],
@@ -434,6 +442,7 @@
     },
     {
       "name": "FONIMA",
+      "categories": ["landing", "websites"],
       "isActive": false,
       "description": "Sitio promocional para el festival FONIMA.",
       "highlights": ["HTML5", "LESS", "JavaScript", "Bootstrap"],
@@ -441,6 +450,7 @@
     },
     {
       "name": "WNDH",
+      "categories": ["websites"],
       "isActive": true,
       "description": "Sitio web para el proyecto artístico WNDH.",
       "highlights": ["HTML5", "CSS3", "JavaScript"],
@@ -448,6 +458,7 @@
     },
     {
       "name": "ROGOFESA",
+      "categories": ["websites"],
       "isActive": true,
       "description": "Sitio corporativo para servicios legales y consultoría ambiental.",
       "highlights": ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
@@ -455,6 +466,7 @@
     },
     {
       "name": "Casiopea",
+      "categories": ["websites"],
       "isActive": true,
       "description": "Sitio web para una productora de animación y diseño.",
       "highlights": ["HTML5", "SCSS", "JavaScript"],
@@ -463,6 +475,7 @@
     },
     {
       "name": "Calculadora BMI",
+      "categories": ["webapp", "wordpress"],
       "isActive": false,
       "description": "Calculadora de IMC personalizada e integrada en un sitio WordPress de nutrición.",
       "highlights": ["HTML5", "CSS3", "JavaScript"],
@@ -471,6 +484,7 @@
     },
     {
       "name": "Airbnb GOYO",
+      "categories": ["landing", "websites"],
       "isActive": false,
       "description": "Landing page para promoción de una propiedad de renta vacacional.",
       "highlights": ["HTML5", "CSS3", "VueJS", "JavaScript"],
@@ -479,6 +493,7 @@
     },
     {
       "name": "Challenge GBM",
+      "categories": ["landing", "websites"],
       "isActive": false,
       "description": "Prueba técnica de front-end para el diseño y desarrollo de landing pages de GBM.",
       "highlights": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
@@ -487,6 +502,7 @@
     },
     {
       "name": "Additional HR",
+      "categories": ["websites"],
       "isActive": true,
       "description": "Sitio web para una consultora de recursos humanos en Estados Unidos.",
       "highlights": ["HTML5", "CSS3"],
@@ -494,6 +510,7 @@
     },
     {
       "name": "IMPSA",
+      "categories": ["websites", "webflow"],
       "isActive": true,
       "description": "Sitio corporativo desarrollado en Webflow.",
       "highlights": ["Webflow"],
@@ -502,6 +519,7 @@
     },
     {
       "name": "Bennets",
+      "categories": ["websites", "webflow"],
       "isActive": true,
       "description": "Sitio web de servicios de limpieza desarrollado en Webflow.",
       "highlights": ["Webflow"],
@@ -510,6 +528,7 @@
     },
     {
       "name": "Graff",
+      "categories": ["websites", "webflow"],
       "isActive": true,
       "description": "Sitio de marca desarrollado en Webflow.",
       "highlights": ["Webflow"],
@@ -518,6 +537,7 @@
     },
     {
       "name": "SRM",
+      "categories": ["websites", "webflow"],
       "isActive": true,
       "description": "Sitio para agencia de marketing desarrollado en Webflow.",
       "highlights": ["Webflow"],
@@ -526,6 +546,7 @@
     },
     {
       "name": "Compucentro",
+      "categories": ["websites", "webflow"],
       "isActive": true,
       "description": "Sitio para retail de tecnología desarrollado en Webflow.",
       "highlights": ["Webflow"],
@@ -534,6 +555,7 @@
     },
     {
       "name": "Musgo de roble",
+      "categories": ["ecommerce", "wordpress"],
       "isActive": true,
       "description": "E-commerce de productos de cuidado personal",
       "highlights": ["WordPress", "WooCommerce", "PHP", "Elementor"],
@@ -541,6 +563,7 @@
     },
     {
       "name": "Draco Studios",
+      "categories": ["websites", "wordpress"],
       "isActive": true,
       "description": "Sitio web para estudio de animación de videojuegos",
       "highlights": ["WordPress", "Elementor"],
@@ -548,6 +571,7 @@
     },
     {
       "name": "Inocquality",
+      "categories": ["websites", "wordpress"],
       "isActive": true,
       "description": "Sitio web capacitacion y asesoria en inocuidad alimentaria",
       "highlights": ["WordPress", "WPBakery"],
@@ -555,6 +579,7 @@
     },
     {
       "name": "SITE Inmobiliaria",
+      "categories": ["websites", "wordpress"],
       "isActive": true,
       "description": "Sitio web inmobiliaria con catálogo de propiedades",
       "highlights": ["WordPress", "PHP", "Elementor"],

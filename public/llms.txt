@@ -1,0 +1,21 @@
+# Alonso Caballero
+
+> Senior Front-End Developer con más de 10 años de experiencia en e-commerce, productos digitales y sitios de marketing.
+
+Especializaciones: React y arquitecturas headless, Webflow, WordPress, Shopify, UX/UI, rendimiento web, accesibilidad y SEO técnico.
+
+Senior Front-End Developer with 10+ years of experience building e-commerce platforms, digital products and marketing websites, with a focus on UX/UI, web performance, accessibility and technical SEO.
+
+## Proyectos
+
+- [KONKO.ai](https://konko.ai/): plataforma médica impulsada por IA para clínicas de salud en América Latina.
+- [Shopitrack](https://shopitrack.com/): plataforma web para soluciones logísticas y fulfillment.
+- [Acervo Animación - AAM](https://acervoanimacion.mx/): sitio para el Acervo de Animación Mexicana.
+- [Amigo Secreto](https://amigosecreto.alonsoct.dev): plataforma para organizar intercambios de regalos.
+- [SEO & Sitemap Auditor](https://seo-sitemap-auditor.ai.studio/): herramienta para auditar SEO y sitemaps.
+
+## Enlaces
+
+- [Portafolio y CV](https://alonsoct.dev/)
+- [LinkedIn](https://www.linkedin.com/in/alonsoct/)
+- [GitHub](https://github.com/alonsoct00)

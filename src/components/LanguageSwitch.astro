@@ -1,10 +1,13 @@
 ---
+import { basics as basics_es } from "@cv"
+import { basics as basics_en } from "@cv_en"
+import { seoDescriptions, seoTitle } from "@/lib/seo"
 ---
 
 <div class="lang-switch no-print" id="lang-switch">
-  <button data-lang-btn="es" title="Español">ES</button>
+  <button data-lang-btn="es" data-seo-title={seoTitle(basics_es.name, basics_es.label)} data-seo-description={seoDescriptions.es} title="Español">ES</button>
   <span>|</span>
-  <button data-lang-btn="en" title="English">EN</button>
+  <button data-lang-btn="en" data-seo-title={seoTitle(basics_en.name, basics_en.label)} data-seo-description={seoDescriptions.en} title="English">EN</button>
 </div>
 
 <script>
@@ -27,17 +30,19 @@
   };
 
   const updateMetaTags = (lang: Lang): void => {
-    const isEn = lang === "en";
-    
-    // Estos textos deberías idealmente recibirlos o tenerlos centralizados
-    const title = isEn ? "My CV | Frontend Dev" : "Mi CV | Frontend Dev";
-    const desc = isEn 
-      ? "Frontend Developer with over 10 years of experience..." 
-      : "Frontend Developer con más de 10 años de experiencia...";
-
-    document.title = title;
-    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
-    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    const button = document.querySelector<HTMLButtonElement>(`[data-lang-btn="${lang}"]`);
+    const title = button?.dataset.seoTitle;
+    const description = button?.dataset.seoDescription;
+    if (title) {
+      document.title = title;
+      document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+      document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    }
+    if (description) {
+      document.querySelector('meta[name="description"]')?.setAttribute("content", description);
+      document.querySelector('meta[property="og:description"]')?.setAttribute("content", description);
+      document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", description);
+    }
   };
 
   const applyLang = (lang: Lang): void => {

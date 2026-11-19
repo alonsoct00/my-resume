@@ -137,6 +137,16 @@ Al añadir una sección o campo nuevo, sigue el mismo patrón: duplicar el nodo 
 
 `src/icons/*.astro` son componentes SVG individuales (uno por tecnología/red social). Las secciones que los necesitan (`Hero`, `Experience`, `Projects`, `Skills`) los resuelven dinámicamente por nombre mediante `import.meta.glob`, con fallback a `.svg` sueltos en `public/icons/`. Para añadir un icono nuevo: crear `src/icons/<slug>.astro` (o `.svg`) con el nombre en minúsculas igual al `skill`/`network` que debe matchear en el JSON del CV.
 
+En `Projects.astro`, los `highlights` de `projects`/`designs`/`vibecoding` usan además `FRAMEWORK_ICON_MAP`, un diccionario de palabra clave → slug de icono (coincidencia por substring en minúsculas), para mostrar el icono correspondiente a cada highlight sin depender de que el texto coincida exactamente con el nombre del archivo.
+
+Convención de color: los iconos de marca/tecnología usan su color oficial fijo (hex); los iconos genéricos/sociales (Mail, Phone, GitHub, X, WorldMap, LinkedIn) usan `currentColor` para adaptarse a ambos temas; los multicolor con gradiente (Lovable, Google AI Studio) usan `<linearGradient>` con un `id` único generado vía `crypto.randomUUID()` para evitar colisiones cuando el icono se repite en la misma página (ES/EN, varios proyectos).
+
+**Última auditoría de la biblioteca de iconos** (ver [AGENT.md](AGENT.md) para el detalle técnico):
+- Agregados: `vite`, `airtable`, `resend`, `daisyui`, `seo`, `sitemap` y `googleaistudio` (reconstruido como vector puro —paths + gradiente— a partir del SVG oficial de Google en [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Google_AI_Studio_icon_(May_2026).svg), CC0, evitando el raster embebido del archivo original).
+- Reutilizados sin cambios: `scss` y `figma` ahora también se mapean en `FRAMEWORK_ICON_MAP` de `Projects.astro` (antes solo se usaban en `Skills`/enlaces directos).
+- Pendiente: **Muse** no tiene un SVG de marca verificable en catálogos abiertos (Simple Icons, etc.); se deja sin icono (solo texto) hasta encontrar una fuente oficial confiable.
+- Limpieza: se eliminaron 14 `.svg` sueltos en `src/icons/` (duplicados de componentes `.astro` ya existentes, nunca resueltos por ningún `import.meta.glob`).
+
 ---
 
 ## 🖨 Impresión / PDF

@@ -10,7 +10,7 @@ import {
   designs as designs_en,
   vibecoding as vibecoding_en,
 } from "@cv_en";
-import type { Designs, Vibecoding } from "@/cv";
+import type { Designs, ProjectCategory, Vibecoding } from "@/cv";
 
 type AstroIcon = (props?: any) => any;
 
@@ -119,6 +119,19 @@ const resolvedProjects_en = await Promise.all(
   ),
 );
 
+const projectFilters = ([
+  { id: "all", es: "Todos", en: "All" },
+  { id: "websites", es: "Sitios web", en: "Websites" },
+  { id: "landing", es: "Landing Pages", en: "Landing Pages" },
+  { id: "ecommerce", es: "eCommerce", en: "eCommerce" },
+  { id: "shopify", es: "Shopify", en: "Shopify" },
+  { id: "wordpress", es: "WordPress", en: "WordPress" },
+  { id: "webflow", es: "Webflow", en: "Webflow" },
+  { id: "webapp", es: "Aplicaciones web", en: "Web Apps" },
+] satisfies Array<{ id: "all" | ProjectCategory; es: string; en: string }>).filter(({ id }) =>
+  id === "all" || projects_es.some((project) => project.categories.includes(id)),
+);
+
 const resolvedDesigns_es = await Promise.all(
   (designs_es as Array<Designs>).map(async (design) => ({
     ...design,
@@ -149,17 +162,49 @@ const resolvedVibecoding_en = await Promise.all(
 ---
 
 <Section id="projects">
-  <div class="project-category">
+  <div class="project-category filterable-projects">
     <h2 data-lang-content="es">Proyectos y portafolio</h2>
-    <h2 data-lang-content="en" aria-hidden="true">Projects & Portfolio</h2>
+    <h2 data-lang-content="en">Projects & Portfolio</h2>
 
-    <ul class="projects-grid" data-lang-content="es">
+    {(["es", "en"] as const).map((lang) => (
+      <div data-lang-content={lang}>
+        <div class="project-filters" data-project-filters={lang} hidden>
+          <div class="filter-buttons" role="group" aria-label={lang === "es" ? "Filtrar proyectos por categoría" : "Filter projects by category"}>
+            {projectFilters.map(({ id, ...labels }) => (
+              <button type="button" data-filter={id} aria-pressed={id === "all" ? "true" : "false"}>
+                {labels[lang]}
+              </button>
+            ))}
+          </div>
+          <label class="filter-select">
+            <span>{lang === "es" ? "Filtrar proyectos" : "Filter projects"}</span>
+            <span class="filter-select-control">
+              <select data-project-select>
+                {projectFilters.map(({ id, ...labels }) => (
+                  <option value={id}>{labels[lang]}</option>
+                ))}
+              </select>
+            </span>
+          </label>
+          <p class="filter-count" role="status" aria-live="polite" aria-atomic="true">
+            <span data-project-count>{lang === "es" ? projects_es.length : projects_en.length}</span>
+            {lang === "es" ? " proyectos visibles" : " projects visible"}
+          </p>
+          <p class="filter-empty" data-project-empty hidden>
+            {lang === "es" ? "No hay proyectos en esta categoría." : "No projects in this category."}
+          </p>
+        </div>
+      </div>
+    ))}
+
+    <ul class="projects-grid" data-project-grid="es" data-lang-content="es">
       {
         resolvedProjects_es.map(
           ({
             url,
             description,
             highlights,
+            categories,
             name,
             isActive,
             github,
@@ -174,7 +219,7 @@ const resolvedVibecoding_en = await Promise.all(
             const SHP =
               ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
             return (
-              <li>
+              <li data-categories={categories.join(" ")}>
                 <article>
                   <header>
                     <h3>
@@ -257,13 +302,14 @@ const resolvedVibecoding_en = await Promise.all(
       }
     </ul>
 
-    <ul class="projects-grid" data-lang-content="en" aria-hidden="true">
+    <ul class="projects-grid" data-project-grid="en" data-lang-content="en">
       {
         resolvedProjects_en.map(
           ({
             url,
             description,
             highlights,
+            categories,
             name,
             isActive,
             github,
@@ -278,7 +324,7 @@ const resolvedVibecoding_en = await Promise.all(
             const SHP =
               ShopifyIcon?.type === "astro" ? ShopifyIcon.Component : null;
             return (
-              <li>
+              <li data-categories={categories.join(" ")}>
                 <article>
                   <header>
                     <h3>
@@ -694,3 +740,155 @@ const resolvedVibecoding_en = await Promise.all(
 
 
 </Section>
+
+<script>
+  const toolbars = document.querySelectorAll<HTMLElement>("[data-project-filters]");
+  const grids = document.querySelectorAll<HTMLUListElement>("[data-project-grid]");
+
+  function applyFilter(filter: string) {
+    toolbars.forEach((toolbar) => {
+      toolbar.querySelectorAll<HTMLButtonElement>("[data-filter]").forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.filter === filter));
+      });
+      const select = toolbar.querySelector<HTMLSelectElement>("[data-project-select]");
+      if (select) select.value = filter;
+    });
+
+    grids.forEach((grid) => {
+      let count = 0;
+      grid.querySelectorAll<HTMLLIElement>(":scope > li[data-categories]").forEach((card) => {
+        const matches = filter === "all" || (card.dataset.categories ?? "").split(" ").includes(filter);
+        card.hidden = !matches;
+        if (matches) count++;
+      });
+
+      const toolbar = document.querySelector<HTMLElement>(
+        `[data-project-filters="${grid.dataset.projectGrid}"]`,
+      );
+      const counter = toolbar?.querySelector<HTMLElement>("[data-project-count]");
+      const empty = toolbar?.querySelector<HTMLElement>("[data-project-empty]");
+      if (counter) counter.textContent = String(count);
+      if (empty) empty.hidden = count !== 0;
+    });
+  }
+
+  toolbars.forEach((toolbar) => {
+    toolbar.querySelectorAll<HTMLButtonElement>("[data-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        if (button.dataset.filter) applyFilter(button.dataset.filter);
+      });
+    });
+    toolbar.querySelector<HTMLSelectElement>("[data-project-select]")?.addEventListener("change", (event) => {
+      if (event.currentTarget instanceof HTMLSelectElement) applyFilter(event.currentTarget.value);
+    });
+    toolbar.hidden = false;
+  });
+  applyFilter("all");
+</script>
+
+<style>
+  .filterable-projects {
+    min-width: 0;
+  }
+
+  .project-filters {
+    margin-bottom: 1rem;
+  }
+
+  .filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 3px;
+  }
+
+  .filter-buttons button {
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.75rem;
+    padding: 0.45rem 0.75rem;
+    white-space: nowrap;
+  }
+
+  .filter-buttons button:hover {
+    border-color: var(--text-primary);
+  }
+
+  .filter-buttons button[aria-pressed="true"] {
+    background: var(--text-primary);
+    border-color: var(--text-primary);
+    color: var(--bg);
+  }
+
+  .filter-buttons button:focus-visible,
+  .filter-select select:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
+  }
+
+  .filter-select {
+    display: none;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+  }
+
+  .filter-select-control {
+    position: relative;
+    display: block;
+    margin-top: 0.4rem;
+  }
+
+  .filter-select-control::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-right: 1.5px solid var(--text-primary);
+    border-bottom: 1.5px solid var(--text-primary);
+    transform: translateY(-70%) rotate(45deg);
+    pointer-events: none;
+  }
+
+  .filter-select select {
+    appearance: none;
+    width: 100%;
+    border: 1px solid var(--border-strong);
+    border-radius: 0.5rem;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    padding: 0.65rem 2.5rem 0.65rem 0.75rem;
+  }
+
+  .filter-select select:hover {
+    border-color: var(--text-primary);
+  }
+
+  .filter-count,
+  .filter-empty {
+    margin: 0.5rem 3px 0;
+    font-size: 0.75rem;
+  }
+
+  .projects-grid > li[hidden] {
+    display: none !important;
+  }
+
+  @media (max-width: 767px) {
+    .filter-buttons {
+      display: none;
+    }
+
+    .filter-select {
+      display: block;
+    }
+  }
+</style>
