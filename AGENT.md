@@ -99,6 +99,7 @@ Nota: esta lógica de resolución de iconos está **duplicada** entre `Experienc
 ## Impresión / PDF
 
 El CV está pensado para imprimirse (`Cmd/Ctrl+P`, disponible también como comando en la paleta `hotkeypad`):
+
 - `.no-print` oculta UI interactiva (switch de idioma, footer, botón de paleta de comandos) en `@media print`.
 - `.print` (oculto normalmente) se muestra solo al imprimir — contacto en texto plano.
 - `article { break-inside: avoid }` evita cortes de página dentro de un ítem.
