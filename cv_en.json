@@ -41,7 +41,13 @@
         "Contributed to code reviews and cross-functional work with international UX and engineering teams.",
         "Continuously improved the user experience with a focus on accessibility, performance, and testing."
       ],
-      "skills": ["reactjs", "javascript", "styledcomponents", "figma", "copilot"]
+      "skills": [
+        "reactjs",
+        "javascript",
+        "styledcomponents",
+        "figma",
+        "copilot"
+      ]
     },
     {
       "name": "GAIA Design",
@@ -163,8 +169,8 @@
       "endDate": "2013-01-01",
       "score": "4.0",
       "logo": "/ipn.png"
-        },
-        {
+    },
+    {
       "institution": "Instituto Politécnico Nacional - CECyT 12",
       "url": "https://www.ipn.mx/",
       "area": "Computer Science",
@@ -316,9 +322,21 @@
       "keywords": ["Design", "Photoshop", "Illustrator"]
     },
 
-    { "name": "Claude", "level": "Advanced", "keywords": ["AI", "Coding Assistant", "Automation"] },
-    { "name": "OpenAI", "level": "Intermediate", "keywords": ["AI", "GPT", "Automation"] },
-    { "name": "Gemini", "level": "Intermediate", "keywords": ["AI", "Automation"] }
+    {
+      "name": "Claude",
+      "level": "Advanced",
+      "keywords": ["AI", "Coding Assistant", "Automation"]
+    },
+    {
+      "name": "OpenAI",
+      "level": "Intermediate",
+      "keywords": ["AI", "GPT", "Automation"]
+    },
+    {
+      "name": "Gemini",
+      "level": "Intermediate",
+      "keywords": ["AI", "Automation"]
+    }
   ],
   "languages": [
     {
@@ -335,18 +353,50 @@
       "name": "KONKO.ai",
       "isActive": true,
       "description": "AI-powered assistant platform for healthcare clinics across Latin America.",
-      "highlights": ["HTML5", "CSS3", "TailwindCSS", "NextJS", "TypeScript", "Bolt", "Claude"],
+      "highlights": [
+        "HTML5",
+        "CSS3",
+        "TailwindCSS",
+        "NextJS",
+        "TypeScript",
+        "Bolt",
+        "Claude"
+      ],
       "url": "https://konko.ai/",
       "github": "https://github.com/konko-ai/website"
+    },
+    {
+      "name": "Shopitrack",
+      "isActive": true,
+      "description": "Web platform for logistics and fulfillment solutions, built with React and TypeScript. Features responsive design, smart forms, and Airtable and Resend integrations for automated lead management.",
+      "highlights": [
+        "ReactJS",
+        "TypeScript",
+        "Vite",
+        "TailwindCSS",
+        "DaisyUI",
+        "SCSS",
+        "Airtable",
+        "Resend",
+        "Vercel"
+      ],
+      "url": "https://shopitrack.com/"
     },
     {
       "name": "Acervo Animación - AAM",
       "isActive": true,
       "description": "Website for the Mexican Animation Archive, built with Astro and Tailwind CSS.",
-      "highlights": ["HTML5", "CSS3", "Astro", "TailwindCSS", "JavaScript", "Bolt"],
+      "highlights": [
+        "HTML5",
+        "CSS3",
+        "Astro",
+        "TailwindCSS",
+        "JavaScript",
+        "Bolt"
+      ],
       "url": "https://acervoanimacion.mx/"
     },
-        {
+    {
       "name": "Casiopea",
       "isActive": true,
       "description": "Website for an animation and design production studio",
@@ -511,32 +561,60 @@
   ],
   "vibecoding": [
     {
-      "name": "Costco Price Watcher",
+      "name": "Secret Santa",
       "isActive": true,
-      "description": "Tool that monitors Costco product prices and alerts on price drops.",
-      "highlights": ["Lovable", "Vercel"],
-      "url": "https://costco-price-watcher.vercel.app/",
-      "github": "https://github.com/alonsoct00/costco-price-watcher"
+      "description": "Platform for organizing gift exchanges with automated draws, invitations, and participant management.",
+      "highlights": ["Lovable"],
+      "url": "https://amigosecreto.alonsoct.dev"
     },
     {
-      "name": "Quiniela Mundial 2026",
+      "name": "TriviaMX",
       "isActive": true,
-      "description": "Bracket app to predict the 2026 World Cup results.",
+      "description": "Interactive trivia game inspired by Jeopardy and The Weakest Link, featuring timers, open-ended questions, and competitive gameplay.",
+      "highlights": ["Lovable"],
+      "url": "https://triviamx.lovable.app"
+    },
+    {
+      "name": "Where Should We Go?",
+      "isActive": true,
+      "description": "Interactive platform for discovering places, comparing options, and planning outings with friends through AI-assisted recommendations.",
+      "highlights": ["Muse", "Google AI Studio"],
+      "url": "https://adondevamos.ai.studio/"
+    },
+    {
+      "name": "AI Image Converter",
+      "isActive": true,
+      "description": "Tool for converting images between different formats and enhancing image quality using artificial intelligence.",
+      "highlights": ["Google AI Studio"],
+      "url": "https://imageconverter.fluentops.org/"
+    },
+    {
+      "name": "World Cup 2026 Predictions",
+      "isActive": true,
+      "description": "Prediction game for forecasting match results during the 2026 FIFA World Cup.",
       "highlights": ["Lovable"],
       "url": "https://quiniela26.lovable.app"
     },
-        {
+    {
       "name": "World Cup 2026 Predictor",
       "isActive": true,
-      "description": "Predictions for World Cup 2026",
+      "description": "Tool for exploring match predictions and potential outcomes for the 2026 FIFA World Cup.",
       "highlights": ["Bolt", "Claude", "Vercel"],
       "url": "https://worldcup2026pred.vercel.app/",
       "github": "https://github.com/alonsoct00/worldcup2026pred"
     },
     {
+      "name": "Costco Price Watcher",
+      "isActive": true,
+      "description": "Tool that monitors Costco product prices and sends alerts when prices drop.",
+      "highlights": ["Lovable", "Vercel"],
+      "url": "https://costco-price-watcher.vercel.app/",
+      "github": "https://github.com/alonsoct00/costco-price-watcher"
+    },
+    {
       "name": "BG Remover",
       "isActive": true,
-      "description": "Tool that automatically removes the background from images.",
+      "description": "Tool for automatically removing backgrounds from images.",
       "highlights": ["Lovable"],
       "url": "https://bg-remover-proplus.lovable.app"
     }

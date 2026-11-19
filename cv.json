@@ -164,7 +164,7 @@
       "score": "7.0",
       "logo": "/ipn.png"
     },
-        {
+    {
       "institution": "Instituto Politécnico Nacional - CECyT 12",
       "url": "https://www.ipn.mx/",
       "area": "Informática",
@@ -335,9 +335,21 @@
       "keywords": ["Diseño", "Photoshop", "Illustrator"]
     },
 
-    { "name": "Claude", "level": "Avanzado", "keywords": ["IA", "Asistente de código", "Automatización"] },
-    { "name": "OpenAI", "level": "Intermedio", "keywords": ["IA", "GPT", "Automatización"] },
-    { "name": "Gemini", "level": "Intermedio", "keywords": ["IA", "Automatización"] }
+    {
+      "name": "Claude",
+      "level": "Avanzado",
+      "keywords": ["IA", "Asistente de código", "Automatización"]
+    },
+    {
+      "name": "OpenAI",
+      "level": "Intermedio",
+      "keywords": ["IA", "GPT", "Automatización"]
+    },
+    {
+      "name": "Gemini",
+      "level": "Intermedio",
+      "keywords": ["IA", "Automatización"]
+    }
   ],
   "languages": [
     {
@@ -354,15 +366,47 @@
       "name": "KONKO.ai",
       "isActive": true,
       "description": "Plataforma médica impulsado por IA para clínicas de salud en América Latina.",
-      "highlights": ["HTML5", "CSS3", "TailwindCSS", "NextJS", "TypeScript", "Bolt", "Claude"],
+      "highlights": [
+        "HTML5",
+        "CSS3",
+        "TailwindCSS",
+        "NextJS",
+        "TypeScript",
+        "Bolt",
+        "Claude"
+      ],
       "url": "https://konko.ai/",
       "github": "https://github.com/konko-ai/website"
+    },
+    {
+      "name": "Shopitrack",
+      "isActive": true,
+      "description": "Plataforma web para soluciones logísticas y fulfillment, desarrollada con React y TypeScript. Incluye diseño responsive, formularios inteligentes e integración con Airtable y Resend para la gestión automatizada de prospectos.",
+      "highlights": [
+        "ReactJS",
+        "TypeScript",
+        "Vite",
+        "TailwindCSS",
+        "DaisyUI",
+        "SCSS",
+        "Airtable",
+        "Resend",
+        "Vercel"
+      ],
+      "url": "https://shopitrack.com/"
     },
     {
       "name": "Acervo Animación - AAM",
       "isActive": true,
       "description": "Sitio para el Acervo de Animación Mexicana, desarrollado con Astro y Tailwind CSS.",
-      "highlights": ["HTML5", "CSS3", "Astro", "TailwindCSS", "JavaScript", "Bolt"],
+      "highlights": [
+        "HTML5",
+        "CSS3",
+        "Astro",
+        "TailwindCSS",
+        "JavaScript",
+        "Bolt"
+      ],
       "url": "https://acervoanimacion.mx/"
     },
     {
@@ -529,6 +573,34 @@
   ],
   "vibecoding": [
     {
+      "name": "Amigo Secreto",
+      "isActive": true,
+      "description": "Plataforma para organizar intercambios de regalos mediante sorteos automatizados, invitaciones y gestión de participantes.",
+      "highlights": ["Lovable"],
+      "url": "https://amigosecreto.alonsoct.dev"
+    },
+    {
+      "name": "TriviaMX",
+      "isActive": true,
+      "description": "Juego interactivo de preguntas y respuestas inspirado en Jeopardy y El Rival Más Débil, con temporizador, preguntas abiertas y dinámicas de competencia.",
+      "highlights": ["Lovable"],
+      "url": "https://triviamx.lovable.app"
+    },
+    {
+      "name": "¿A dónde vamos?",
+      "isActive": true,
+      "description": "Plataforma interactiva para descubrir lugares, comparar opciones y organizar salidas con amigos mediante recomendaciones asistidas por IA.",
+      "highlights": ["Muse", "Google AI Studio"],
+      "url": "https://adondevamos.ai.studio/"
+    },
+    {
+      "name": "AI Image Converter",
+      "isActive": true,
+      "description": "Herramienta para convertir imágenes entre diferentes formatos y mejorar su calidad mediante inteligencia artificial.",
+      "highlights": ["Google AI Studio"],
+      "url": "https://imageconverter.fluentops.org/"
+    },
+    {
       "name": "Quiniela Mundial 2026",
       "isActive": true,
       "description": "Quiniela para pronosticar los resultados del Mundial 2026.",
@@ -538,7 +610,7 @@
     {
       "name": "World Cup 2026 Predictor",
       "isActive": true,
-      "description": "Consulta para los pronosticos y probables resultados de la justa mundialista",
+      "description": "Herramienta para consultar pronósticos y posibles resultados de los partidos del Mundial 2026.",
       "highlights": ["Bolt", "Claude", "Vercel"],
       "url": "https://worldcup2026pred.vercel.app/",
       "github": "https://github.com/alonsoct00/worldcup2026pred"
@@ -554,7 +626,7 @@
     {
       "name": "BG Remover",
       "isActive": true,
-      "description": "Herramienta para eliminar el fondo de imágenes automáticamente.",
+      "description": "Herramienta para eliminar automáticamente el fondo de imágenes.",
       "highlights": ["Lovable"],
       "url": "https://bg-remover-proplus.lovable.app"
     }
