@@ -2,6 +2,24 @@
 import Section from "../Section.astro"
 import { skills as skills_es, languages as languages_es } from "@cv"
 import { skills as skills_en, languages as languages_en } from "@cv_en"
+import type { SkillCategory, Skills } from "@/cv"
+
+const skillCategories = [
+  { id: "frontend", es: "Desarrollo frontend", en: "Frontend Development" },
+  { id: "ecommerce-cms", es: "eCommerce y CMS", en: "eCommerce & CMS" },
+  { id: "tools-integrations", es: "Herramientas e integraciones", en: "Tools & Integrations" },
+  { id: "ai-assisted", es: "Desarrollo asistido por IA", en: "AI-Assisted Development" },
+] satisfies Array<{ id: SkillCategory; es: string; en: string }>
+
+const iconAliases: Record<string, string> = { html5: "html", css3: "css" }
+
+const languageFlags: Record<string, string> = { es: "🇲🇽", en: "🇺🇸" }
+
+function getLanguageFlag(code: string) {
+  const flag = languageFlags[code]
+  if (!flag) throw new Error(`Unknown language flag: ${code}`)
+  return flag
+}
 
 const astroIcons = import.meta.glob<{ default: any }>('@/icons/*.astro')
 const svgIcons = import.meta.glob<string>('/public/icons/*.svg', { query: '?url', import: 'default' })
@@ -11,7 +29,7 @@ function slugify(name: string) {
 }
 
 async function getIcon(name: string) {
-  const slug = slugify(name)
+  const slug = iconAliases[slugify(name)] ?? slugify(name)
   
   const astroMatch = Object.entries(astroIcons).find(([path]) =>
     path.toLowerCase().includes(`/${slug}.astro`)
@@ -29,67 +47,60 @@ async function getIcon(name: string) {
   return null
 }
 
-const resolvedSkills_es = await Promise.all(
-  skills_es.map(async ({ name, level, keywords }) => ({
-    name, level, keywords,
-    icon: await getIcon(name)
+async function resolveSkills(skills: Array<Omit<Skills, "category"> & { category: string }>) {
+  return Promise.all(skills.map(async ({ name, level, keywords, category }) => {
+    if (!skillCategories.some(({ id }) => id === category)) {
+      throw new Error(`Unknown skill category: ${category}`)
+    }
+    return { name, level, keywords, category, icon: await getIcon(name) }
   }))
-)
+}
 
-const resolvedSkills_en = await Promise.all(
-  skills_en.map(async ({ name, level, keywords }) => ({
-    name, level, keywords,
-    icon: await getIcon(name)
-  }))
-)
+const resolvedSkills_es = await resolveSkills(skills_es)
+const resolvedSkills_en = await resolveSkills(skills_en)
 ---
 
 <Section id="skills">
   <h2 data-lang-content="es">Habilidades y conocimientos</h2>
-  <h2 data-lang-content="en" aria-hidden="true">Skills & Knowledge</h2>
+  <h2 data-lang-content="en">Skills & Knowledge</h2>
 
-  <ul class="data-skills" data-lang-content="es">
-    {resolvedSkills_es.map(({ name, level, keywords, icon }) => {
-      const Icon = icon?.type === 'astro' ? icon.Component : null
-      return (
-        <li title={`${name} - ${level}`}>
-          {(Icon || icon?.type === 'svg') && (
-            <span class="icon-badge">
-              {Icon && <Icon />}
-              {icon?.type === 'svg' && <img src={icon.url} alt={name} width="14" height="14" />}
-            </span>
-          )}
-          <span>{name}</span>
-          <span class="keywords">{keywords.join(", ")}</span>
-        </li>
-      )
-    })}
-  </ul>
-
-  <ul class="data-skills" data-lang-content="en" aria-hidden="true">
-    {resolvedSkills_en.map(({ name, level, keywords, icon }) => {
-      const Icon = icon?.type === 'astro' ? icon.Component : null
-      return (
-        <li title={`${name} - ${level}`}>
-          {(Icon || icon?.type === 'svg') && (
-            <span class="icon-badge">
-              {Icon && <Icon />}
-              {icon?.type === 'svg' && <img src={icon.url} alt={name} width="14" height="14" />}
-            </span>
-          )}
-          <span>{name}</span>
-          <span class="keywords">{keywords.join(", ")}</span>
-        </li>
-      )
-    })}
-  </ul>
+  {([
+    { lang: "es", skills: resolvedSkills_es },
+    { lang: "en", skills: resolvedSkills_en },
+  ] as const).map(({ lang, skills }) => (
+    <div data-lang-content={lang}>
+      {skillCategories.map(({ id, ...labels }) => (
+        <div class="skill-group">
+          <h3>{labels[lang]}</h3>
+          <ul class="data-skills">
+            {skills.filter(({ category }) => category === id).map(({ name, level, keywords, icon }) => {
+              const Icon = icon?.type === 'astro' ? icon.Component : null
+              return (
+                <li title={level ? `${name} - ${level}` : undefined}>
+                  {(Icon || icon?.type === 'svg') && (
+                    <span class="icon-badge" data-icon={slugify(name)} aria-hidden="true">
+                      {Icon && <Icon />}
+                      {icon?.type === 'svg' && <img src={icon.url} alt="" width="14" height="14" />}
+                    </span>
+                  )}
+                  <span>{name}</span>
+                  {keywords.length > 0 && <span class="keywords">{keywords.join(", ")}</span>}
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      ))}
+    </div>
+  ))}
 </Section>
 
 <Section id="languages_es" data-lang-content="es">
   <h2 data-lang-content="es">Idiomas</h2>
   <ul class="data-lang" data-lang-content="es">
-    {languages_es.map(({ language, fluency }) => (
+    {languages_es.map(({ code, language, fluency }) => (
       <li>
+        <span aria-hidden="true">{getLanguageFlag(code)}</span>
         <p>{language}</p>
         <span>{fluency}</span>
       </li>
@@ -97,11 +108,12 @@ const resolvedSkills_en = await Promise.all(
   </ul>
 </Section>
 
-<Section id="languages_en" data-lang-content="en" aria-hidden="true">
-  <h2 data-lang-content="en" aria-hidden="true">Languages</h2>
-  <ul class="data-lang" data-lang-content="en" aria-hidden="true">
-    {languages_en.map(({ language, fluency }) => (
+<Section id="languages_en" data-lang-content="en">
+  <h2 data-lang-content="en">Languages</h2>
+  <ul class="data-lang" data-lang-content="en">
+    {languages_en.map(({ code, language, fluency }) => (
       <li>
+        <span aria-hidden="true">{getLanguageFlag(code)}</span>
         <p>{language}</p>
         <span>{fluency}</span>
       </li>
@@ -110,10 +122,25 @@ const resolvedSkills_en = await Promise.all(
 </Section>
 
 <style>
+  .skill-group + .skill-group {
+    margin-top: 1.25rem;
+  }
+
+  .skill-group h3 {
+    color: var(--text-heading);
+    font-size: 0.875rem;
+    margin-bottom: 0.6rem;
+  }
+
   ul.data-skills, ul.data-lang {
     display: inline-flex;
     gap: 8px;
     flex-wrap: wrap;
+  }
+
+  :global(html[data-lang="es"]) ul.data-lang[data-lang-content="es"],
+  :global(html[data-lang="en"]) ul.data-lang[data-lang-content="en"] {
+    display: flex !important;
   }
 
   .data-skills li, .data-lang li {
@@ -132,6 +159,10 @@ const resolvedSkills_en = await Promise.all(
     width: auto;
   }
 
+  .data-lang li {
+    margin-right: 0;
+  }
+
   .icon-badge {
     display: inline-flex;
     align-items: center;
@@ -141,6 +172,21 @@ const resolvedSkills_en = await Promise.all(
     border-radius: 4px;
     background: transparent;
     flex-shrink: 0;
+  }
+
+  .icon-badge[data-icon="nextjs"] :global(svg) {
+    stroke: currentColor;
+  }
+
+  .icon-badge[data-icon="vercel"] :global(svg),
+  .icon-badge[data-icon="resend"] :global(svg) {
+    fill: currentColor;
+  }
+
+  :global([data-theme="dark"]) .icon-badge[data-icon="astro"] :global(path),
+  :global([data-theme="dark"]) .icon-badge[data-icon="elementor"] :global(g),
+  :global([data-theme="dark"]) .icon-badge[data-icon="less"] :global(svg) {
+    fill: currentColor;
   }
 
   .keywords {

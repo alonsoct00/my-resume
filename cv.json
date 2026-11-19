@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Alonso Caballero",
-    "label": "Senior Front-End Developer · E-commerce, UX/UI y Web Performance",
+    "label": "Senior Frontend Developer | React, JavaScript & eCommerce",
     "image": "/me.webp",
     "email": "g.alonso.ct@gmail.com",
     "phone": "+52 5513 979212",
     "url": "https://alonsoct.dev",
-    "summary": "Senior Front-End Developer con más de 10 años construyendo e-commerce, productos digitales y sitios de marketing. Conecto objetivos de negocio, diseño UX/UI y código para crear experiencias rápidas, accesibles y medibles. Trabajo con React y arquitecturas headless, así como con Webflow, WordPress y Shopify, para llevar productos a producción y mejorar su rendimiento, SEO técnico y conversión mediante analítica y experimentación.",
+    "summary": "Frontend Developer con más de 10 años creando sitios corporativos, landing pages y experiencias eCommerce. Trabajo con JavaScript, React y TypeScript, y desarrollo soluciones con Shopify, WordPress y Webflow. Transformo diseños en experiencias responsive y optimizadas, desde la interfaz y las integraciones hasta su publicación. Utilizo herramientas de IA para acelerar el prototipado y el desarrollo, apoyándome en fundamentos técnicos.",
     "location": {
       "address": "",
       "postalCode": "08600",
@@ -219,148 +219,54 @@
     }
   ],
   "skills": [
-    {
-      "name": "HTML",
-      "level": "Master",
-      "keywords": ["Desarrollo Web", "Frontend"]
-    },
-    {
-      "name": "CSS",
-      "level": "Master",
-      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
-    },
-    {
-      "name": "JavaScript",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
-    },
-    {
-      "name": "TypeScript",
-      "level": "Básico",
-      "keywords": ["Desarrollo Web", "Frontend", "Backend", "JavaScript"]
-    },
-
-    {
-      "name": "Tailwind",
-      "level": "Intermedio",
-      "keywords": [
-        "Desarrollo Web",
-        "Frontend",
-        "CSS Framework",
-        "Diseño Responsive"
-      ]
-    },
-    {
-      "name": "SCSS",
-      "level": "Intermedio",
-      "keywords": ["CSS", "Preprocesador"]
-    },
-    {
-      "name": "LESS",
-      "level": "Intermedio",
-      "keywords": ["CSS", "Preprocesador"]
-    },
-
-    {
-      "name": "React",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
-    },
-    {
-      "name": "NextJS",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "SSR", "React Framework"]
-    },
-    {
-      "name": "VueJS",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "JavaScript"]
-    },
-    {
-      "name": "Astro",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "SSG"]
-    },
-
-    {
-      "name": "WordPress",
-      "level": "Avanzado",
-      "keywords": ["CMS", "Desarrollo Web"]
-    },
-    {
-      "name": "Webflow",
-      "level": "Avanzado",
-      "keywords": ["CMS", "No-code", "Desarrollo Web"]
-    },
-    {
-      "name": "Shopify",
-      "level": "Avanzado",
-      "keywords": ["E-commerce", "CMS", "Desarrollo Web"]
-    },
-    {
-      "name": "MySQL",
-      "level": "Básico",
-      "keywords": [
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
-      ]
-    },
-
-    {
-      "name": "Git",
-      "level": "Avanzado",
-      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"]
-    },
-    {
-      "name": "GitHub",
-      "level": "Avanzado",
-      "keywords": [
-        "Control de Versiones",
-        "Colaboración",
-        "Código Fuente",
-        "Git"
-      ]
-    },
-    {
-      "name": "Jira",
-      "level": "Avanzado",
-      "keywords": ["Gestión de proyectos"]
-    },
-
-    { "name": "Figma", "level": "Básico", "keywords": ["UX", "UI"] },
-    { "name": "Sketch", "level": "Básico", "keywords": ["UX", "UI", "Diseño"] },
-    {
-      "name": "AdobeCS",
-      "level": "Avanzado",
-      "keywords": ["Diseño", "Photoshop", "Illustrator"]
-    },
-
-    {
-      "name": "Claude",
-      "level": "Avanzado",
-      "keywords": ["IA", "Asistente de código", "Automatización"]
-    },
-    {
-      "name": "OpenAI",
-      "level": "Intermedio",
-      "keywords": ["IA", "GPT", "Automatización"]
-    },
-    {
-      "name": "Gemini",
-      "level": "Intermedio",
-      "keywords": ["IA", "Automatización"]
-    }
+    { "name": "HTML5", "category": "frontend", "level": "Master", "keywords": ["Desarrollo Web", "Frontend"] },
+    { "name": "CSS3", "category": "frontend", "level": "Master", "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"] },
+    { "name": "JavaScript", "category": "frontend", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"] },
+    { "name": "TypeScript", "category": "frontend", "level": "Básico", "keywords": ["Desarrollo Web", "Frontend", "Backend", "JavaScript"] },
+    { "name": "ReactJS", "category": "frontend", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"] },
+    { "name": "NextJS", "category": "frontend", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "SSR", "React Framework"] },
+    { "name": "Astro", "category": "frontend", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "SSG"] },
+    { "name": "VueJS", "category": "frontend", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "JavaScript"] },
+    { "name": "TailwindCSS", "category": "frontend", "level": "Intermedio", "keywords": ["Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"] },
+    { "name": "SCSS", "category": "frontend", "level": "Intermedio", "keywords": ["CSS", "Preprocesador"] },
+    { "name": "LESS", "category": "frontend", "level": "Intermedio", "keywords": ["CSS", "Preprocesador"] },
+    { "name": "Bootstrap", "category": "frontend", "keywords": [] },
+    { "name": "jQuery", "category": "frontend", "keywords": [] },
+    { "name": "Shopify", "category": "ecommerce-cms", "level": "Avanzado", "keywords": ["E-commerce", "CMS", "Desarrollo Web"] },
+    { "name": "Liquid", "category": "ecommerce-cms", "keywords": [] },
+    { "name": "WordPress", "category": "ecommerce-cms", "level": "Avanzado", "keywords": ["CMS", "Desarrollo Web"] },
+    { "name": "WooCommerce", "category": "ecommerce-cms", "keywords": [] },
+    { "name": "Webflow", "category": "ecommerce-cms", "level": "Avanzado", "keywords": ["CMS", "No-code", "Desarrollo Web"] },
+    { "name": "Elementor", "category": "ecommerce-cms", "keywords": [] },
+    { "name": "WPBakery", "category": "ecommerce-cms", "keywords": [] },
+    { "name": "Git", "category": "tools-integrations", "level": "Avanzado", "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"] },
+    { "name": "GitHub", "category": "tools-integrations", "level": "Avanzado", "keywords": ["Control de Versiones", "Colaboración", "Código Fuente", "Git"] },
+    { "name": "Vite", "category": "tools-integrations", "keywords": [] },
+    { "name": "Vercel", "category": "tools-integrations", "keywords": [] },
+    { "name": "Airtable", "category": "tools-integrations", "keywords": [] },
+    { "name": "Resend", "category": "tools-integrations", "keywords": [] },
+    { "name": "MySQL", "category": "tools-integrations", "level": "Básico", "keywords": ["Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"] },
+    { "name": "Jira", "category": "tools-integrations", "level": "Avanzado", "keywords": ["Gestión de proyectos"] },
+    { "name": "Figma", "category": "tools-integrations", "level": "Básico", "keywords": ["UX", "UI"] },
+    { "name": "Sketch", "category": "tools-integrations", "level": "Básico", "keywords": ["UX", "UI", "Diseño"] },
+    { "name": "AdobeCS", "category": "tools-integrations", "level": "Avanzado", "keywords": ["Diseño", "Photoshop", "Illustrator"] },
+    { "name": "Claude", "category": "ai-assisted", "level": "Avanzado", "keywords": ["IA", "Asistente de código", "Automatización"] },
+    { "name": "Lovable", "category": "ai-assisted", "keywords": [] },
+    { "name": "Bolt", "category": "ai-assisted", "keywords": [] },
+    { "name": "Google AI Studio", "category": "ai-assisted", "keywords": [] },
+    { "name": "OpenAI", "category": "ai-assisted", "level": "Intermedio", "keywords": ["IA", "GPT", "Automatización"] },
+    { "name": "Gemini", "category": "ai-assisted", "level": "Intermedio", "keywords": ["IA", "Automatización"] }
   ],
   "languages": [
     {
+      "code": "es",
       "language": "Español",
       "fluency": "Nativo"
     },
     {
+      "code": "en",
       "language": "Inglés",
-      "fluency": "Técnico - B2"
+      "fluency": "Técnico · B2"
     }
   ],
   "projects": [

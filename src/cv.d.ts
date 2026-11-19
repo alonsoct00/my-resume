@@ -66,9 +66,12 @@ interface Volunteer {
   highlights: Highlight
 }
 
-interface Skills {
+export type SkillCategory = "frontend" | "ecommerce-cms" | "tools-integrations" | "ai-assisted"
+
+export interface Skills {
   name: string
-  level: string
+  category: SkillCategory
+  level?: string
   keywords: Array<string>
 }
 
@@ -106,6 +109,7 @@ interface Education {
 }
 
 interface Languages {
+  code: string
   language: Language
   fluency: string
 }
