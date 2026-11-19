@@ -381,7 +381,7 @@
     {
       "name": "Shopitrack",
       "isActive": true,
-      "description": "Plataforma web para soluciones logísticas y fulfillment, desarrollada con React y TypeScript. Incluye diseño responsive, formularios inteligentes e integración con Airtable y Resend para la gestión automatizada de prospectos.",
+      "description": "Plataforma web para soluciones logísticas y fulfillment, formularios inteligentes e integración con Airtable y Resend para la gestión automatizada de prospectos.",
       "highlights": [
         "ReactJS",
         "TypeScript",
